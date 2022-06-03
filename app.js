@@ -10,7 +10,7 @@ app.listen(3010,() => {
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/index', (req,res)=>{
+app.get('/', (req,res)=>{
     res.sendFile(path.join( __dirname,'./views/index.html'))
 })
 
