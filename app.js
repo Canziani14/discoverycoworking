@@ -4,7 +4,7 @@ const path = require('path');
 const publicPath = path.resolve( __dirname, './public' );
 
 
-app.listen(3010,() => {
+app.listen( process.env.PORT || 3010,() => {
     console.log("Servidor corriendo!");
 })
 
