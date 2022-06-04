@@ -26,3 +26,20 @@ app.get('/login', function (req, res) {
   app.get('/change-password', function (req, res) {
     res.sendFile(path.join( __dirname,'/views/change-password.html'));
   });
+
+  /*Definimos los Get para las membresias*/ 
+    app.get("/lab", function(req,res){
+    res.sendFile(path.join (__dirname, "/views/labs.html"))
+  })
+
+  app.get("/flex", function(req,res){
+    res.sendFile(path.join (__dirname, "/views/flex.html"))
+  })
+
+  app.get("/desk", function(req,res){
+    res.sendFile(path.join (__dirname, "/views/desk.html"))
+  })
+
+  app.get("/office", function(req,res){
+    res.sendFile(path.join (__dirname, "/views/office.html"))
+  })
