@@ -5,6 +5,7 @@
     --color4: #81D6E3;
     --color5: #4CB5AE;
 }
+
 header{
     width:100%;
     border-bottom: 2px black solid;
@@ -69,11 +70,45 @@ video {
   align-items:  center;
   color:gainsboro
 }
+
 .loveyourwork {
+  position: absolute;
+  top: 110px;
+  right: 0px;
   font-size: 25px;
   text-align: center;
   align-items: center;
   width: 40%;
+}
+
+/*SECTION2*/
+.contenedorimgs{
+  display: flex;
+  flex-direction: row;
+ justify-content: space-between;
+}
+.contenedorimg{
+  position: relative;
+  display: inline-block;
+  
+}
+
+
+
+
+.texto-encima{
+  font-size: 25px;
+  color: red;
+  position: absolute;
+  top:80%
+}
+.precio{
+  color: red;
+  font-size: 20px;
+  position: absolute;
+  top: 95%;
+  left: 40%;
+  transform: translate(-50%, -50%);
 }
 
 
