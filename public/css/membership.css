@@ -1,0 +1,66 @@
+body{
+    background-color: gray;
+}
+
+.container{
+    width: 1300px;
+    height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenedorimg{  
+    margin: 0 auto;
+    width: 80%;
+    height: 45%;
+}
+
+.contenedorimg img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.containerdetalle{
+    
+    width: 48%;
+    height: 50%;
+    text-align: center;
+}
+.containerdetalle h2{
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+    top: 18%;
+}
+
+
+.containerlista{ 
+    
+    background-color: white;
+    width: 35%;
+    height: 80%;
+    text-align: justify;
+    position: absolute;
+    top: 450px;
+    left: 700px;
+}
+.containerlista h2{
+    font-size: 40px;
+    text-align: center;
+}
+.containerlista li{
+    font-size:20px ;
+}
+.containerlista button{
+    position: absolute;
+    bottom: 10%;
+    right: 35%;
+    left: 35%;
+    border-radius: 15px;
+}
+
+
+
+
+
