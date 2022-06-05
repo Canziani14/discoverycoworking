@@ -1,44 +1,52 @@
-:root{
-    --color1:#CABAC8;
-    --color2: #FF101F;
-    --color3: #B2DDF7;
-    --color4: #81D6E3;
-    --color5: #4CB5AE;
+:root {
+  --color1: #CABAC8;
+  --color2: #FF101F;
+  --color3: #B2DDF7;
+  --color4: #81D6E3;
+  --color5: #4CB5AE;
 }
 
-header{
-    width:100%;
-    border-bottom: 2px black solid;
-    background-color: white;
-    
+header {
+ position: fixed;
+  width: 100%;
+  border-bottom: 5px black solid;
+  background-color: white;
+  z-index: 1;
+  height: 80px;
 }
 
-.container{
-    display: flex;
-    flex-direction: row;
-    align-items:  center;
+header img {
+  width: 300px;
+  height: 80px;
 }
 
-.container nav {
-    display: flex;
-    width: 100%;
-    font-size: 20px;
-    justify-content: space-around;
+.containerhead {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.headernav {
+  display: flex;
+  width: 100%;
+  font-size: 20px;
+  justify-content: space-around;
 }
 
 
 body {
   margin: 0;
 }
+
 .sect {
   width: 100%;
   min-height: 500px;
 }
 
-.containermain{
+.containermain {
   display: flex;
-  height: 500px; 
-  
+  height: 500px;
+
 }
 
 #sect1,
@@ -46,15 +54,18 @@ body {
   background-color: #3333337d;
   color: #fff;
 }
+
 #sect2 {
   background-color: #dddddd7d;
   color: #333;
 }
+
 #sect1 {
   position: relative;
   overflow: hidden;
   display: flex;
 }
+
 video {
   position: absolute;
   left: 0;
@@ -62,13 +73,14 @@ video {
   width: 100%;
   z-index: -1;
 }
+
 .presentacion {
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
   width: 60%;
   display: flex;
-  align-items:  center;
-  color:gainsboro
+  align-items: center;
+  color: gainsboro
 }
 
 .loveyourwork {
@@ -82,33 +94,36 @@ video {
 }
 
 /*SECTION2*/
-.contenedorimgs{
+.contenedorimgs {
   display: flex;
   flex-direction: row;
- justify-content: space-between;
- border: 2px blue solid;
- height: 700px;
+  justify-content: space-between;
+  border: 2px blue solid;
+  height: 700px;
 }
-.contenedorimg{
+
+.contenedorimg {
   position: relative;
   display: inline-block;
   border: 2px red solid;
   width: 24.6%;
-  
-}
-img{
-  object-fit: cover;
-  width:100%;
-  height:100%;
+
 }
 
-.texto-encima{
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.texto-encima {
   font-size: 25px;
   color: red;
   position: absolute;
-  top:80%
+  top: 80%
 }
-.precio{
+
+.precio {
   color: red;
   font-size: 20px;
   position: absolute;
@@ -117,7 +132,7 @@ img{
   transform: translate(-50%, -50%);
 }
 
-.btn{
+.btn {
   color: red;
   font-size: 20px;
   position: absolute;
@@ -137,9 +152,36 @@ img{
 
 
 
-footer{
-    margin: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+footer {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerface {
+  color: blue;
+  position: relative;
+  bottom: 15px;
+}
+
+.footerinsta {
+  color: orange;
+  position: relative;
+  right: 200px;
+  bottom: 15px;
+}
+
+.footertwiter {
+  color: rgb(77, 77, 228);
+  position: relative;
+  right: 400px;
+  bottom: 15px;
+}
+
+.footerwhatsapp {
+  color: rgb(15, 99, 15);
+  position: fixed;
+  right: 15px;
+  bottom: 35px
 }

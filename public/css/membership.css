@@ -1,33 +1,63 @@
-body{
+header {
+    width: 100%;
+    border-bottom: 5px black solid;
+    background-color: white;
+    z-index: 1;
+    height: 80px;
+}
+
+header img {
+    width: 300px;
+    height: 80px;
+}
+
+.containerhead {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.headernav {
+    display: flex;
+    width: 100%;
+    font-size: 20px;
+    justify-content: space-around;
+}
+
+
+
+
+body {
     background-color: gray;
 }
 
-.container{
+.container {
     width: 1300px;
     height: 1000px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.contenedorimg{  
+.contenedorimg {
     margin: 0 auto;
     width: 80%;
     height: 45%;
 }
 
-.contenedorimg img{
+.contenedorimg img {
     width: 100%;
     height: 100%;
 }
 
 
-.containerdetalle{
-    
+.containerdetalle {
+
     width: 48%;
     height: 50%;
     text-align: center;
 }
-.containerdetalle h2{
+
+.containerdetalle h2 {
     font-size: 60px;
     text-align: center;
     position: relative;
@@ -35,8 +65,8 @@ body{
 }
 
 
-.containerlista{ 
-    
+.containerlista {
+
     background-color: white;
     width: 35%;
     height: 80%;
@@ -45,14 +75,17 @@ body{
     top: 450px;
     left: 700px;
 }
-.containerlista h2{
+
+.containerlista h2 {
     font-size: 40px;
     text-align: center;
 }
-.containerlista li{
-    font-size:20px ;
+
+.containerlista li {
+    font-size: 20px;
 }
-.containerlista button{
+
+.containerlista button {
     position: absolute;
     bottom: 10%;
     right: 35%;
@@ -62,5 +95,36 @@ body{
 
 
 
+footer {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.footerface {
+    color: blue;
+    position: relative;
+    bottom: 15px;
+}
 
+.footerinsta {
+    color: orange;
+    position: relative;
+    right: 200px;
+    bottom: 15px;
+}
+
+.footertwiter {
+    color: rgb(77, 77, 228);
+    position: relative;
+    right: 400px;
+    bottom: 15px;
+}
+
+.footerwhatsapp {
+    color: rgb(15, 99, 15);
+    position: fixed;
+    right: 15px;
+    bottom: 35px
+}
