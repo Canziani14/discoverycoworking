@@ -107,7 +107,11 @@ video {
   display: inline-block;
   border: 2px red solid;
   width: 24.6%;
-
+  transition: 500ms;
+}
+.contenedorimg:hover {
+  width:450px;
+  box-shadow: 10px 10px 5px  #757575;
 }
 
 img {
