@@ -186,7 +186,7 @@ ul.slider li {
     width: inherit;
     height: inherit;
     transition: opacity .5s;
-    background:rgba(255, 255, 255, 0.397);
+    background:rgba(255, 255, 255, 0.99);
 }
 
 .slider li img{
@@ -215,7 +215,7 @@ ul.slider li {
 
 .slider-num li a{
   display: inline-block;
-  color: white;
+  color: blue;
   text-decoration: none;
   background-color: blue;
   padding: 10px;
