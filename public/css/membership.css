@@ -1,59 +1,89 @@
-header {
+:root {
+    --color1: #CABAC8;
+    --color2: #FF101F;
+    --color3: #B2DDF7;
+    --color4: #81D6E3;
+    --color5: #4CB5AE;
+  }
+  body{
+    background-color: #4cb5ae79;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding:0;
+  }
+  header {
+    /* position: fixed; */
     width: 100%;
-    border-bottom: 5px black solid;
-    background-color: white;
+    border-bottom: 5px var(--color5) solid;
+    background-color: var(--color3);
     z-index: 1;
     height: 80px;
-}
-
-header img {
-    width: 300px;
-    height: 80px;
-}
-
-.containerhead {
+  }
+  .header-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-
-.headernav {
+  }
+  .header-nav {
     display: flex;
     width: 100%;
     font-size: 20px;
     justify-content: space-around;
-}
+  }
+  header a{
+    
+    text-decoration: underline 3px var(--color5);
+    color: black;
+  }
+  
+  header img {
+    width: 300px;
+    height: 80px;
+  }
 
-
-
-
-body {
-    background-color: gray;
+.main-title{
+    text-align: center;
+    text-decoration: underline 3px var(--color4);
 }
 
 .container {
-    width: 1300px;
-    height: 1000px;
-    display: flex;
-    flex-wrap: wrap;
-}
+display:flex; 
+flex-direction: column;
 
-.contenedorimg {
-    margin: 0 auto;
-    width: 80%;
-    height: 45%;
-}
-
-.contenedorimg img {
-    width: 100%;
+   width: 100%;
     height: 100%;
 }
 
+.container-img {
+    margin: 0 auto;
+    width: 80%;
+    height: 30%;
+    object-fit: cover;
+}
 
-.containerdetalle {
+.container-img img {
+    position: relative;
+    margin:auto;
+    top: 10%;
+    left: 0%;
+    width: 100%;
+    height: 10%;
+    border-radius:30px;
+}
+.container-detalle {
+    padding:5px;
+    background-color: #cabac8d2;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    top: 80%;
+    left: 40%;
+    border-radius: 30px;
+}
 
-    width: 48%;
-    height: 50%;
+.container-detalle2 {
+    position: relative;
     text-align: center;
 }
 
@@ -65,16 +95,7 @@ body {
 }
 
 
-.containerlista {
 
-    background-color: white;
-    width: 35%;
-    height: 80%;
-    text-align: justify;
-    position: absolute;
-    top: 450px;
-    left: 700px;
-}
 
 .containerlista h2 {
     font-size: 40px;
