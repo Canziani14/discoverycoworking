@@ -27,6 +27,10 @@ app.get('/login', function (req, res) {
     res.sendFile(path.join( __dirname,'/views/change-password.html'));
   });
 
+  app.get ("/carrito", function(req,res){
+    res.sendFile(path.join(__dirname, "/views/carrito.html" ))
+  })
+
   /*Definimos los Get para las membresias*/ 
     app.get("/lab", function(req,res){
     res.sendFile(path.join (__dirname, "/views/labs.html"))

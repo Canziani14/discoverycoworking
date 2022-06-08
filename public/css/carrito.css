@@ -1,0 +1,111 @@
+header {
+    position: fixed;
+    width: 100%;
+    border-bottom: 5px var(--color5) solid;
+    background-color: var(--color3);
+    z-index: 1;
+    height: 80px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-nav {
+    display: flex;
+    width: 100%;
+    font-size: 20px;
+    justify-content: space-around;
+}
+
+header a {
+    text-decoration: none;
+    text-decoration: underline 3px var(--color5);
+    color: black;
+}
+
+header img {
+    width: 300px;
+    height: 80px;
+}
+
+.main-title {
+    text-align: center;
+    text-decoration: underline 3px var(--color4);
+}
+
+.section-total {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.carrito-container {
+    border: 2px red solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.carrito-img {
+    height: 200px;
+    width: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER*/
+footer {
+    margin: 20px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerface {
+    color: blue;
+    position: relative;
+    bottom: 15px;
+}
+
+.footerinsta {
+    color: orange;
+    position: relative;
+    right: 200px;
+    bottom: 15px;
+}
+
+.footertwiter {
+    color: rgb(77, 77, 228);
+    position: relative;
+    right: 400px;
+    bottom: 15px;
+}
+
+.footerwhatsapp {
+    color: rgb(15, 99, 15);
+    position: fixed;
+    right: 15px;
+    bottom: 35px
+}
