@@ -1,53 +1,33 @@
 const express = require('express');
 const app = express();
-const path = require('path');
-const publicPath = path.resolve( __dirname, './public' );
+const router = require ("./router/main")
 
-
-app.listen( process.env.PORT || 3010,() => {
-    console.log("Servidor corriendo!");
-})
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req,res)=>{
-    res.sendFile(path.join( __dirname,'./views/index.html'))
-})
+app.listen(process.env.PORT || 3010, () => {
+  console.log("Servidor corriendo!");
+});
 
-app.get('/login', function (req, res) {
-    res.sendFile(path.join( __dirname,'./views/login.html'));
-  });
-  app.get('/signin', function (req, res) {
-    res.sendFile(path.join( __dirname,'./views/signin.html'));
-  });
-  app.get('/edit-account', function (req, res) {
-    res.sendFile(path.join( __dirname,'./views/edit-account.html'));
-  });
-  app.get('/change-password', function (req, res) {
-    res.sendFile(path.join( __dirname,'/views/change-password.html'));
-  });
+app.use('/', router);
 
-  app.get ("/carrito", function(req,res){
-    res.sendFile(path.join(__dirname, "/views/carrito.html" ))
-  })
+app.use('/login', router);
 
-  app.get("/membership", function(req,res){
-    res.sendFile(path.join (__dirname, "/views/membership.html"))
-  })
+app.use('/signin', router);
 
-  /*Definimos los Get para las membresias*/ 
-    app.get("/lab", function(req,res){
-    res.sendFile(path.join (__dirname, "/views/labs.html"))
-  })
+app.use('/edit-account', router);
 
-  app.get("/flex", function(req,res){
-    res.sendFile(path.join (__dirname, "/views/flex.html"))
-  })
+app.use('/change-password', router);
 
-  app.get("/desk", function(req,res){
-    res.sendFile(path.join (__dirname, "/views/desk.html"))
-  })
+app.use("/carrito", router);
 
-  app.get("/office", function(req,res){
-    res.sendFile(path.join (__dirname, "/views/office.html"))
-  })
+app.use("/membership", router);
+
+/*Definimos para las membresias*/
+app.use("/lab", router);
+
+app.use("/flex", router);
+
+app.use("/desk", router);
+
+app.use("/office", router);
