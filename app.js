@@ -3,6 +3,8 @@ const app = express();
 const router = require ("./router/main")
 
 
+app.set('view engine','ejs');
+
 app.use(express.static(__dirname + '/public'));
 
 app.listen(process.env.PORT || 3010, () => {
