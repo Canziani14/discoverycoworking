@@ -4,38 +4,38 @@ const path = require ("path")
 
 const mainController = {
     home: function (req,res) {
-        res.sendFile(path.join( __dirname,'../views/index.html'))
+        res.render("index")
     },
     login: function (req, res) {
-        res.sendFile(path.join( __dirname,'../views/login.html'));
+        res.render("login")
     },
     signin: function (req, res) {
-        res.sendFile(path.join( __dirname,'../views/signin.html'));
+        res.render("signin")
     },
     editaccount: function (req, res) { /*me tomaba error si ponia edit-account*/
-        res.sendFile(path.join( __dirname,'../views/edit-account.html'));
+        res.render("edit-account")
     },
     changepassword: function (req, res) {/*me tomaba error si ponia change-password*/
-        res.sendFile(path.join( __dirname,'../views/change-password.html'));
+        res.render("change-password")
     },
     carrito: function(req,res){
-        res.sendFile(path.join(__dirname, "../views/carrito.html" ))
+        res.render("carrito" )
     },
     membership: function(req,res){
-        res.sendFile(path.join (__dirname, "../views/membership.html"))
+        res.render("membership")
     },    
     /*Definimos para las membresias*/ 
     lab: function(req,res){
-        res.sendFile(path.join (__dirname, "../views/labs.html"))
+        res.render("labs")
     },
     flex: function(req,res){
-        res.sendFile(path.join (__dirname, "../views/flex.html"))
+        res.render("flex")
     },
     desk: function(req,res){
-        res.sendFile(path.join (__dirname, "../views/desk.html"))
+        res.render("desk")
     },
     office: function(req,res){
-        res.sendFile(path.join (__dirname, "../views/office.html"))
+        res.render("office")
     }
 };
 
