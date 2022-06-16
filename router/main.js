@@ -17,6 +17,8 @@ router.get ("/carrito", mainController.carrito);
 
 router.get ("/membership", mainController.membership);
 
+router.get ("/membership/:name", mainController.membershipDinamic);
+
 router.get ("/lab", mainController.lab);
 
 router.get ("/flex", mainController.flex);
