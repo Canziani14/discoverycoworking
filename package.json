@@ -8,15 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MrTripeo/grupo_10_DiscoveryCoWorking.git"
+    "url": "git+https://github.com/Canziani14/discoverycoworking.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MrTripeo/grupo_10_DiscoveryCoWorking/issues"
+    "url": "https://github.com/Canziani14/discoverycoworking.git/issues"
   },
-  "homepage": "https://github.com/MrTripeo/grupo_10_DiscoveryCoWorking#readme",
+  "homepage": "https://github.com/Canziani14/discoverycoworking.git",
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.1"
   }
 }

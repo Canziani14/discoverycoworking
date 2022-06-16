@@ -1,5 +1,4 @@
 const express = require ("express");
-const app = express();
 const router = express.Router()
 const mainController = require ("../controller/mainController")
 
@@ -17,6 +16,8 @@ router.get ("/changepassword", mainController.changepassword);
 router.get ("/carrito", mainController.carrito);
 
 router.get ("/membership", mainController.membership);
+
+router.get ("/membership/:name", mainController.membershipDinamic);
 
 router.get ("/lab", mainController.lab);
 
