@@ -19,7 +19,7 @@ const mainController = {
         res.render("change-password")
     },
     carrito: function(req,res){
-        res.render("carrito" )
+        res.render("carrito")
     },
     membership: function(req,res){
         res.render("membership")
