@@ -19,63 +19,9 @@
     <title>HOME</title>
   </head>
   <body>
-    <!-- <header>
-      <nav>
-        <img src="/imgs/logo.png" alt="logo" class="header-menu"> esto tendria que ser el icono hamburguesa
-        <div class="header-menu">icono-hamburguesa</div>
 
-        <div class="navbar-left">
-          <img src="/imgs/logo.png" alt="logo" class="header-logo" />
+    <%- include ("./partials/header") %>
 
-          <ul>
-            <li>
-              <a href="http://localhost:3010/">Home</a>
-            </li>
-            <li>
-              <a href="http://localhost:3010/login">Login</a>
-            </li>
-            <li>
-              <a href="http://localhost:3010/signin">SignIn</a>
-            </li>
-            <li>
-              <a href="http://localhost:3010/membership">Memberships</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="navbar-right">
-          <ul>
-            <a href="http://localhost:3010/carrito"></a>
-            <li class="navbar-shopping-cart">
-            
-              <p>shop</p>
-              <div>1</div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header> -->
-    <header>
-      <section class="header-icons-container">
-        <div class="icons">
-          <a href="http://localhost:3010/">Home</a>
-          <a href="http://localhost:3010/login">Login</a>
-          <a href="http://localhost:3010/signin">SignIN</a>
-          <a href="http://localhost:3010/membership">Memberships</a>
-        </div>
-      </section>
-      <nav>
-        <section class="nav-logo-container">
-          <a href="/">
-            <img src="/imgs/logo.png" alt="logo" class="header-logo" />
-          </a>
-        </section>
-        <section class="carrito-link">
-          <a href="http://localhost:3010/carrito.ejs">Shopp</a>
-          <a href="http://localhost:3010/carrito.ejs">My plans</a>
-        </section>
-      </nav>
-    </header>
     <main>
       <section id="section-1">
         <div class="video-wrapper">
@@ -183,19 +129,7 @@
     </section> -->
       <!-- section3 -->
     </main>
-    <footer>
-      <a class="footerwhatsapp" href="https://www.whatsapp.com/"
-        ><i class="fa-brands fa-whatsapp fa-3x"></i
-      ></a>
-      <a id="face" href="https://www.facebook.com/"
-        ><i class="fa-brands fa-facebook fa-3x"></i
-      ></a>
-      <a id="insta" href="https://www.instagram.com/"
-        ><i class="fa-brands fa-instagram fa-3x"></i
-      ></a>
-      <a id="tweet" href="https://twitter.com/"
-        ><i class="fa-brands fa-twitter fa-3x"></i
-      ></a>
-    </footer>
+    <%- include ("./partials/footer") %>
+
   </body>
 </html>

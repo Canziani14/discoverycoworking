@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const router = require ("./router/main")
+const mainRouter = require ("./routes/mainRouter");
+const membershipsRouter = require ('./routes/membershipsRouter')
 
 
 app.set('view engine','ejs');
@@ -11,25 +12,16 @@ app.listen(process.env.PORT || 3010, () => {
   console.log("Servidor corriendo!");
 });
 
-app.use('/', router);
+app.use('/', mainRouter);
 
-app.use('/login', router);
+app.use('/login', mainRouter);
 
-app.use('/signin', router);
+app.use('/signin', mainRouter);
 
-app.use('/edit-account', router);
+app.use('/edit-account', mainRouter);
 
-app.use('/change-password', router);
+app.use('/change-password', mainRouter);
 
-app.use("/carrito", router);
+app.use("/carrito", mainRouter);
 
-app.use("/membership", router);
-
-/*Definimos para las membresias*/
-app.use("/lab", router);
-
-app.use("/flex", router);
-
-app.use("/desk", router);
-
-app.use("/office", router);
+app.use("/memberships", membershipsRouter);
