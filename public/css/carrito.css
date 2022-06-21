@@ -42,10 +42,11 @@ header img {
 }
 
 .carrito-container {
-    border: 2px red solid;
     display: flex;
+    border: 10px var(--color5) solid;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: 500px;
 }
 
 .carrito-img {

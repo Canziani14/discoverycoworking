@@ -5,11 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Quicksand:wght@300;500;700&display=swap"
-        rel="stylesheet">
-        <script src="https://kit.fontawesome.com/d181f1e1a5.js" crossorigin="anonymous"></script>
+    <%- include ("./partials/links") %>
         <link rel="stylesheet" href="/css/membership.css">
         <link rel="stylesheet" href="/css/index.css">
     <title>MEMBERSHIPS</title>
@@ -17,43 +13,7 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <!-- <img src="/imgs/logo.png" alt="logo" class="header-menu"> esto tendria que ser el icono hamburguesa-->
-            <div class="header-menu">icono-hamburguesa</div>
-
-            <div class="navbar-left">
-                <img src="/imgs/logo.png" alt="logo" class="header-logo">
-
-                <ul>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/">Login</a>
-                    </li>
-                    <li>
-                        <a href="/">SignIn</a>
-                    </li>
-                    <li>
-                        <a href="/">Memberships</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="navbar-right">
-                <ul>
-                    <li class="navbar-shopping-cart">
-                        <!-- <img src="./icons/icon_shopping_cart.svg" alt="shopping cart"> -->
-                        <!-- ESTO TIENE QUE SER EL ICONO DE SHOPPINGCART -->
-                        <p>shop</p>
-                        <div>1</div>
-                        <!-- <div>2</div> esto es el numero del shopping cart-->
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <%- include ("./partials/header") %>
 
    
         <h2 class="sect2-title">MEMBERSHIPS</h2>
@@ -104,12 +64,7 @@
             </div>
         </div>
 
-        <footer>
-            <a class="footerwhatsapp" href="https://www.whatsapp.com/"><i class="fa-brands fa-whatsapp fa-3x"></i></a>
-            <a class="footerface" href="https://www.facebook.com/"><i class="fa-brands fa-facebook fa-3x"></i></a>
-            <a class="footerinsta" href="https://www.instagram.com/"><i class="fa-brands fa-instagram fa-3x"></i></a>
-            <a class="footertwiter" href="https://twitter.com/"><i class="fa-brands fa-twitter fa-3x"></i></a>
-        </footer>
+        <%- include ("./partials/footer") %>
 
 </body>
 
