@@ -25,3 +25,12 @@ app.use('/change-password', mainRouter);
 app.use("/carrito", mainRouter);
 
 app.use("/memberships", membershipsRouter);
+
+app.use ("/lab",membershipsRouter)
+
+app.use ("/desk",membershipsRouter)
+
+app.use ("/office",membershipsRouter)
+
+app.use ("/flex",membershipsRouter)
+
