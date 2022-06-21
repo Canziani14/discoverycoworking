@@ -16,15 +16,6 @@ router.get ("/changepassword", mainController.changepassword);
 router.get ("/carrito", mainController.carrito);
 
 
-// router.get ("/membership/:name", mainController.membershipDinamic);
-
-// router.get ("/lab", mainController.lab);
-
-// router.get ("/flex", mainController.flex);
-
-// router.get ("/desk", mainController.desk);
-
-// router.get ("/office", mainController.office);
 
 module.exports = router;
 
