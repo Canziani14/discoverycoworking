@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/membership.css">
+    <link rel="stylesheet" href="/css/index.css">
+        <%- include ("../partials/links") %>
+
+    
+    <title>LABS</title>
+</head>
+
+<body>
+    <%- include ("../partials/header") %>
+
+
+    <main>
+        <h1 class="main-title">Membership LAB</h1>
+        <h2><%= membership.nombre %></h2>
+        <h3><%= membership.precio %></h3>
+        <div class="container">
+            <div class="container-img">
+            <img src="/imgs/imagen1.jpg" alt=" ">
+
+
+            </div>
+
+        <div class="container-detalle2">
+            <h2>Focused 100% on entrepreneurs and technology startups.</h2>
+
+        </div>
+
+
+
+
+        <div class="container-detalle">
+            <h2>Included Services</h2>
+            
+                <p>24x7 access</p>
+                <p>Break with coffee, infusions, cookies and fruit free of charge</p>
+                <p>Use of all shared coworking spaces, including living room, kitchen, ping pong and garden</p>
+                <p>Access to innovative and inspiring events.</p>
+                <p>Terrace and internal garden</p>
+        
+            <button class="btn">I want to be a member</button>
+        </div>
+        </div>
+    </main>
+    <%- include ("../partials/footer") %>
+
+
+
+
+</html>

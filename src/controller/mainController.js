@@ -4,22 +4,22 @@ const path = require ("path")
 
 const mainController = {
     home: function (req,res) {
-        res.render("index")
+        res.render (path.join(__dirname, "../views/users/index"))
     },
     login: function (req, res) {
-        res.render("login")
+        res.render (path.join(__dirname, "../views/users/login"))
     },
     signin: function (req, res) {
-        res.render("signin")
+        res.render (path.join(__dirname, "../views/users/signin"))
     },
     editaccount: function (req, res) { 
-        res.render("edit-account")
+        res.render (path.join(__dirname, "../views/users/edit-account"))
     },
     changepassword: function (req, res) {
-        res.render("change-password")
+        res.render (path.join(__dirname, "../views/users/change-password"))
     },
     carrito: function(req,res){
-        res.render("carrito")
+        res.render (path.join(__dirname, "../views/users/carrito"))
     },
 
 };

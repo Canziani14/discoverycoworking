@@ -5,7 +5,7 @@ const membershipsController = require ("../controller/membershipsController");
 router.get('/', membershipsController.home);
 
 // Ruta dinamica
-router.get('/:idMembership', membershipsController.dinamic);
+//router.get('/:idMembership', membershipsController.dinamic);
 
 router.get('/lab', membershipsController.lab);
 

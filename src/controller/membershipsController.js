@@ -29,7 +29,7 @@ const membershipsController = {
     })
   },
   home: function (req, res) {
-    res.render("memberships");
+    res.render (path.join(__dirname, "../views/products/memberships"));
   },
   lab: function (req, res) {
     res.render("lab",{
@@ -37,14 +37,15 @@ const membershipsController = {
     });
   },
   flex: function (req, res) {
-    res.render("flex");
+    res.render (path.join(__dirname, "../views/products/flex"));
   },
   office: function (req, res) {
-    res.render("office");
+    res.render (path.join(__dirname, "../views/products/office"));
   },
   desk: function (req, res) {
-    res.render("desk");
+    res.render (path.join(__dirname, "../views/products/desk"));
   },
 };
 
 module.exports = membershipsController;
+

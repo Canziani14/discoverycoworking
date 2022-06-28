@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/carrito.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <!--links-->
+    <%- include ("../partials/links") %>
+
+        <title>CARRITO</title>
+</head>
+
+<body>
+    <!--header-->
+    <%- include ("../partials/header") %>
+
+
+
+        <h1 class="main-title">BUY DETAILS</h1>
+        <br>
+
+        <main class="carrito-container">
+
+            <div><img class="carrito-img" src="/imgs/imagen1.jpg" alt=""></div>
+
+            <div>
+                <h3>MEMBERSHIP OFFICE</h3>
+                <p>Your private and equipped office for teams of 4 to 50 people.</p>
+                <input type="button" value="DELETE">
+                <input type="button" value="CHANGE MEMBERSHIP">
+            </div>
+            <div>
+                <h2>PRICE</h2>
+                <h3>750 USD</h3>
+            </div>
+
+        </main>
+
+        <section class="section-total">
+            <h2>TOTAL</h2>
+            <input type="button" value="BUY">
+        </section>
+        
+        <!--footer-->
+        <%- include ("../partials/footer") %>
+
+</body>
+
+</html>

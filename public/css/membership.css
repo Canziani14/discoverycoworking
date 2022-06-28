@@ -14,7 +14,6 @@ body {
 }
 
 header {
-    /* position: fixed; */
     width: 100%;
     border-bottom: 5px var(--color5) solid;
     background-color: var(--color3);
@@ -51,10 +50,10 @@ header img {
     text-decoration: underline 3px var(--color4);
 }
 
+
 .container {
     display: flex;
     flex-direction: column;
-
     width: 100%;
     height: 100%;
 }
@@ -221,3 +220,5 @@ footer {
     right: 15px;
     bottom: 35px
 }
+
+
