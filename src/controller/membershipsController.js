@@ -32,7 +32,7 @@ const membershipsController = {
     res.render (path.join(__dirname, "../views/products/memberships"));
   },
   lab: function (req, res) {
-    res.render("lab",{
+    res.render(path.join(__dirname, "../views/products/lab"),{
       membership: memberships[0]
     });
   },
