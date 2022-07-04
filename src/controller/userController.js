@@ -35,10 +35,10 @@ const userController = {
         res.render (path.join(__dirname, "../views/users/signin"))
     },
     editaccount: function (req, res) { 
-        res.render (path.join(__dirname, "../views/users/edit-account"))
+        res.render (path.join(__dirname, "../views/users/editaccount"))
     },
     changepassword: function (req, res) {
-        res.render (path.join(__dirname, "../views/users/change-password"))
+        res.render (path.join(__dirname, "../views/users/changepassword"))
     },
     carrito: function(req,res){
         res.render (path.join(__dirname, "../views/users/carrito"))

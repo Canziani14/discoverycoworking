@@ -98,3 +98,26 @@
  Se ingresó en la ruta: /login.
  Se ingresó en la ruta: /.
  Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /login.
+ Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /memberships.
+ Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /memberships.
+ Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /memberships.
+ Se ingresó en la ruta: /memberships/office.
+ Se ingresó en la ruta: /memberships/lab.
+ Se ingresó en la ruta: /memberships/desktop.
+ Se ingresó en la ruta: /memberships.
+ Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /login.
+ Se ingresó en la ruta: /login.
+ Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /signin.
+ Se ingresó en la ruta: /login.
+ Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /memberships.
+ Se ingresó en la ruta: /memberships/flex.
+ Se ingresó en la ruta: /memberships.
+ Se ingresó en la ruta: /.

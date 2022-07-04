@@ -25,17 +25,12 @@ app.listen(process.env.PORT || 3010, () => {
 const mainRouter = require ("./routes/mainRouter");
 const membershipsRouter = require ('./routes/membershipsRouter');
 const userRouter = require ('./routes/userRouter');
-app.use('/', mainRouter);
 
-app.use("/memberships", membershipsRouter);
 
-app.use('/login', userRouter);
+app.use(mainRouter);
 
-// app.use('/signin', userRouter);
+app.use(membershipsRouter);
 
-app.use('/edit-account', mainRouter);
+app.use(userRouter);
 
-app.use('/change-password', mainRouter);
-
-app.use("/carrito", mainRouter);
 
