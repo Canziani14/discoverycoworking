@@ -507,3 +507,11 @@
  Se ingresó en la ruta: /memberships/css/all.css.
  Se ingresó en la ruta: /.
  Se ingresó en la ruta: /memberships.
+ Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /login.
+ Se ingresó en la ruta: /signin.
+ Se ingresó en la ruta: /editaccount.
+ Se ingresó en la ruta: /changepassword.
+ Se ingresó en la ruta: /carrito.
+ Se ingresó en la ruta: /imgs/imagen1.jpg.
+ Se ingresó en la ruta: /.

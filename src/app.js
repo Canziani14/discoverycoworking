@@ -12,8 +12,7 @@ app.set('view engine','ejs');
 app.use(express.static(__dirname + '../../public'));
 app.use(consolelogMiddleware);
 app.use(methodOverride('_method'));
-app.use(express.urlencoded({ extended: false})); //para procesar formularios
-
+app.use(express.urlencoded({ extended: false})); 
 
 // SERVIDOR
 app.listen(process.env.PORT || 3010, () => {
@@ -25,12 +24,13 @@ app.listen(process.env.PORT || 3010, () => {
 const mainRouter = require ("./routes/mainRouter");
 const membershipsRouter = require ('./routes/membershipsRouter');
 const userRouter = require ('./routes/userRouter');
+const adminRouter = require ('./routes/adminRouter')
 
 
 app.use(mainRouter);
-
 app.use(membershipsRouter);
-
 app.use(userRouter);
+app.use(adminRouter);
+
 
 
