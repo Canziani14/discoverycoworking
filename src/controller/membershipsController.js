@@ -1,51 +1,24 @@
 const path = require("path");
-const memberships = [
-  {
-    id: 1,
-    nombre: "Lab",
-    precio: 150,
-  },
-  {
-    id:2,
-    nombre: "Flex",
-    precio: 300
-  },
-  {
-    id:3,
-    nombre: "Office",
-    precio: 750
-  },
-  {
-    id:4,
-    nombre: "Desk",
-    precio: 450
-  }
-];
+const fs = require('fs');
+
+
+let membershipsDelArchivoJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','memberships.json')))
+
+
 const membershipsController = {
   dinamic: function(req,res){
-    let idMembership = req.params.idMembership;
-    res.render("membershipDinamic",{
-      membership: memberships[idMembership]
+    let nameMembership = req.params.nameMembership;
+    console.log(nameMembership)
+    const membershipIndex = membershipsDelArchivoJson.findIndex(membership=>
+      membership.name === nameMembership)
+
+    res.render(path.join(__dirname, "../views/products/membershipdinamic"),{
+      membership: membershipsDelArchivoJson[membershipIndex]
     })
   },
   home: function (req, res) {
-    res.render (path.join(__dirname, "../views/products/memberships"));
-  },
-  lab: function (req, res) {
-    res.render(path.join(__dirname, "../views/products/lab"),{
-      membership: memberships[0]
-    });
-  },
-  flex: function (req, res) {
-    res.render (path.join(__dirname, "../views/products/flex"));
-  },
-  office: function (req, res) {
-    res.render (path.join(__dirname, "../views/products/office"));
-  },
-  desk: function (req, res) {
-    res.render (path.join(__dirname, "../views/products/desk"));
-  },
+    res.render(path.join(__dirname, "../views/products/memberships"));
+  }
 };
 
 module.exports = membershipsController;
-

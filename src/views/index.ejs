@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONTS -->
+    <%- include ("./partials/links") %>
+    <link rel="stylesheet" href="/css/index.css" />
+    <title>HOME</title>
+  </head>
+  <body>
+
+    <%- include ("./partials/header") %>
+
+    <main>
+      <section id="section-1">
+        <div class="video-wrapper">
+          <video
+            src="../../../imgs/videoprincipal.mp4"
+            autoplay="true"
+            muted="true"
+            loop="true"
+            poster=""
+          ></video>
+          <div id="text1">
+            <h2>Welcome and discover a new way of working with us</h2>
+          </div>
+          <div id="text2">
+            <h2>Love the way you work</h2>
+            <h3>
+              We help companies and people to reconvert and personalize their
+              work spaces, giving them tools and services to develop in the best
+              ways.
+            </h3>
+          </div>
+        </div>
+      </section>
+
+      <section id="section-products">
+       <a href="http://localhost:3010/memberships"> <h2 class="sect2-title">MEMBERSHIPS</h2> </a>
+        <div class="products-container">
+
+
+
+            <% memberships.forEach(function(membership){ %>
+             
+              <div class="product-card">
+                <img class="imgmember" src="../../../imgs/<%= membership.img%>" />
+                <div class="product-info">
+                  <p class="product-precio"> <%= membership.price %></p>
+                  <p class="product-name"> <%= membership.name %></p>
+                  <a href="http://localhost:3010/memberships/<%= membership.name %>"
+                    ><button class="btn">MORE DETAILS</button></a>
+                </div>
+              </div>
+
+            <% }); %>
+
+          </div>
+
+
+         
+      </section>
+     
+    </main>
+    <%- include ("./partials/footer") %>
+
+  </body>
+</html>

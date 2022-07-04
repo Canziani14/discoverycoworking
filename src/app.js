@@ -1,16 +1,19 @@
 const express = require('express');
 const app = express();
-const mainRouter = require ("./routes/mainRouter");
-const membershipsRouter = require ('./routes/membershipsRouter')
+const methodOverride = require('method-override');
+
+
+const consolelogMiddleware = require('./middlewares/consolelogMiddleware')
 
 // EJS
 app.set('view engine','ejs');
 
-// CARPETA PUBLIC, deje el app.js y el views afuera del src porque no me cargaba el css ( me decía error MIME TYPE)
+// MIDDLEWARES
 app.use(express.static(__dirname + '../../public'));
+app.use(consolelogMiddleware);
+app.use(methodOverride('_method'));
+app.use(express.urlencoded({ extended: false})); //para procesar formularios
 
-// PROCESAR FORMULARIOS
-app.use(express.urlencoded({ extended: false}));
 
 // SERVIDOR
 app.listen(process.env.PORT || 3010, () => {
@@ -19,11 +22,16 @@ app.listen(process.env.PORT || 3010, () => {
 
 
 // RUTAS
+const mainRouter = require ("./routes/mainRouter");
+const membershipsRouter = require ('./routes/membershipsRouter');
+const userRouter = require ('./routes/userRouter');
 app.use('/', mainRouter);
 
-app.use('/login', mainRouter);
+app.use("/memberships", membershipsRouter);
 
-app.use('/signin', mainRouter);
+app.use('/login', userRouter);
+
+// app.use('/signin', userRouter);
 
 app.use('/edit-account', mainRouter);
 
@@ -31,4 +39,3 @@ app.use('/change-password', mainRouter);
 
 app.use("/carrito", mainRouter);
 
-app.use("/memberships", membershipsRouter);

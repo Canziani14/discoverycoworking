@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/membership.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <%- include ("../partials/links") %>
+
+
+        <title>
+            <%= membership.nombre %>
+        </title>
+</head>
+
+<body>
+    <%- include ("../partials/header") %>
+
+
+        <main>
+            <h1 class="main-title">
+                <%= membership.name.toUpperCase() %>
+            </h1>
+            <h3>
+                <%= membership.price %>
+            </h3>
+            <div class="container">
+                <div class="container-img">
+                    <img src="/imgs/<%= membership.img %>" alt=" ">
+                </div>
+
+
+
+
+                <div class="container-detalle">
+                    <h2>Included Services</h2>
+
+                    <% for (let i=0; i <=membership.services.length; i++) { %>
+                        <p>
+                            <%= membership.services[i]%>
+                        </p>
+                        <% } %>
+
+
+                            <button class="btn">I want to be a member</button>
+                </div>
+            </div>
+
+            <div class="container-detalle2">
+                <h2>
+                    <%= membership.details %>
+                </h2>
+
+            </div>
+            <div class="container-detalle3">
+                <h2>
+                    <%= membership.price %>
+                </h2>
+
+            </div>
+        </main>
+        <%- include ("../partials/footer") %>
+
+
+
+
+</html>
