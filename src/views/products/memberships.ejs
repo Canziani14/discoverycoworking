@@ -2,70 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%- include ("../partials/links") %>
-        <link rel="stylesheet" href="/css/membership.css">
-       
-    <title>MEMBERSHIPS</title>
+        <link rel="stylesheet" href="/css/membership.css" />
 
+        <title>MEMBERSHIPS</title>
 </head>
 
 <body>
     <%- include ("../partials/header") %>
 
-   
-        <h2 class="sect2-title">MEMBERSHIPS</h2>
-        <div class="products-container">
-            <div class="product-card">
-                <img class="imgmember" src="/imgs/imagen1.jpg">
-                <div class="product-info">
+        <main>
+            <h1>Memberships</h1>
+            <br>
+            <br>
+            <section>
 
-                    <p class="product-precio">$150,00</p>
-                    <p class="product-name">LAB</p>
-                    <a href="http://localhost:3010/memberships/lab"><button class="btn">MORE DETAILS</button></a>
+                <div class="products-container">
+                <% memberships.forEach(function(membership){ %>
+                        <div class="product-card">
+                            <img class="imgmember" src="/imgs/<%= membership.img %>" />
+                            <div class="product-info">
+                                <p class="product-precio">
+                                    <%= membership.price %>
+                                </p>
+                                <p class="product-name">
+                                    <%= membership.name %>
+                                </p>
+                                <a href="http://localhost:3010/memberships/<%= membership.name %>"><button
+                                        class="btn">MORE DETAILS</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
 
-                </div>
-            </div>
+            </section>
 
-            <div class="product-card">
-                <img class="imgmember" src="/imgs/imagen2.jpg">
-                <div class="product-info">
-
-                    <p class="product-precio">$300,00</p>
-                    <p class="product-name">FLEX</p>
-                    <a href="http://localhost:3010/memberships/flex"><button class="btn">MORE DETAILS</button></a>
-
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img class="imgmember" src="/imgs/imagen3.jpg">
-
-                <div class="product-info">
-
-                    <p class="product-precio">$450,00</p>
-                    <p class="product-name">DESKTOP</p>
-                    <a href="http://localhost:3010/memberships/desk"><button class="btn">MORE DETAILS</button></a>
-
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img class="imgmember" src="/imgs/imagen4.jpg">
-                <div class="product-info">
-
-                    <p class="product-precio">$750,00</p>
-                    <p class="product-name">OFFICE</p>
-                    <a href="http://localhost:3010/memberships/office"><button class="btn">MORE DETAILS</button></a>
-
-                </div>
-            </div>
-        </div>
-
+        </main>
         <%- include ("../partials/footer") %>
-
 </body>
 
 </html>

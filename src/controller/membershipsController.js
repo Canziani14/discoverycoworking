@@ -17,7 +17,9 @@ const membershipsController = {
     })
   },
   home: function (req, res) {
-    res.render(path.join(__dirname, "../views/products/memberships"));
+    res.render(path.join(__dirname, "../views/products/memberships"),{
+      memberships: membershipsDelArchivoJson
+    });
   }
 };
 

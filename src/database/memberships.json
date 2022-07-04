@@ -10,7 +10,7 @@
       ],
       "details": "Focused 100% on entrepreneurs and technology startups.",
       "price": "USD 150",
-      "img":"imagen1.jpg"
+      "img":"lab.jpg"
   },
 
   {
@@ -25,7 +25,7 @@
       ],
       "details": "Shared space for mobile professionals.",
       "price": "USD 300",
-      "img": "imagen2.jpg"
+      "img": "flex.jpg"
   },
 
   {
@@ -40,7 +40,7 @@
       ],
       "details": "You always have your fixed desk waiting for you.",
       "price": "USD 500",
-      "img": "imagen5.jpg"
+      "img": "desktop.jpg"
   },
 
   {
@@ -56,7 +56,7 @@
       ],
       "details": "Your private and equipped office for teams of 4 to 50 people.",
       "price": "USD 750",
-      "img": "imagen4.jpg"
+      "img": "office.jpg"
       
   }
 ]
