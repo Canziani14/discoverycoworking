@@ -8,7 +8,7 @@ let membershipsDelArchivoJson = JSON.parse(fs.readFileSync(path.resolve(__dirnam
 const membershipsController = {
   dinamic: function(req,res){
     let nameMembership = req.params.nameMembership;
-    console.log(nameMembership)
+    console.log("Un usuario ingreso a " + nameMembership)
     const membershipIndex = membershipsDelArchivoJson.findIndex(membership=>
       membership.name === nameMembership)
 
