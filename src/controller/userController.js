@@ -43,6 +43,10 @@ const userController = {
     carrito: function(req,res){
         res.render (path.join(__dirname, "../views/users/carrito"))
     },
+    contactus: function(req,res){
+        res.render (path.join(__dirname, "../views/users/contactus"))
+    },
+
 
 };
 

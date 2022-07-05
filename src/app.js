@@ -30,7 +30,7 @@ const adminRouter = require ('./routes/adminRouter')
 app.use(mainRouter);
 app.use(membershipsRouter);
 app.use(userRouter);
-app.use(adminRouter);
+//app.use(adminRouter);
 
 
 

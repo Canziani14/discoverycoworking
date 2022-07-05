@@ -14,4 +14,6 @@ router.get("/changepassword", userController.changepassword);
 
 router.get("/carrito", userController.carrito);
 
+router.get ("/contactus", userController.contactus);
+
 module.exports = router;
