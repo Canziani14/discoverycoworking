@@ -15,28 +15,6 @@
   --lg: 18px;
 }
 
-body {
-  background-color: #4cb5ae56;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-header {
-  width: 100%;
-  height: 140px;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
-
-
-
-section {
-  width: 95%;
-  margin: auto;
-  min-height: fit-content;
-}
 
 /* SECTION-1 */
 #section-1 {
@@ -239,70 +217,5 @@ content: '';
 }
 
 
-/* SECTION 3 */
-/*SECTION3*/
 
-.comentarios {
-  margin: auto;
-  background-color: rgba(255, 255, 255, 0.329);
-  width: 400px;
-  padding: 30px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.slider {
-  position: relative;
-  width: 400px;
-  height: 300px;
-}
-
-.slider li {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  opacity: 0;
-  width: inherit;
-  height: inherit;
-  transition: opacity 0.5s;
-  background: rgba(255, 255, 255, 0.99);
-}
-
-.slider li img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.slider li:first-child {
-  opacity: 1;
-  /*va a mostrar primer <li>*/
-}
-
-.slider li:target {
-  opacity: 1;
-  /*Mostramos el <li> del enlace que pulsemos*/
-}
-
-.slider-num {
-  text-align: center;
-  margin: 20px;
-}
-
-.slider-num li {
-  display: inline-block;
-  text-align: center;
-}
-
-.slider-num li a {
-  display: inline-block;
-  color: #4cb5ae;
-  text-decoration: none;
-  background-color: #4cb5ae;
-  padding: 10px;
-  width: 10px;
-  height: 10px;
-  font-size: 10px;
-  border-radius: 100%;
-}
 
