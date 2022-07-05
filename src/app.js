@@ -9,7 +9,7 @@ const consolelogMiddleware = require('./middlewares/consolelogMiddleware')
 app.set('view engine','ejs');
 
 // MIDDLEWARES
-app.use(express.static(__dirname + '../../public'));
+app.use(express.static(__dirname + "../../public"));
 app.use(consolelogMiddleware);
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false})); 
@@ -30,7 +30,7 @@ const adminRouter = require ('./routes/adminRouter')
 app.use(mainRouter);
 app.use(membershipsRouter);
 app.use(userRouter);
-// app.use(adminRouter);
+//app.use(adminRouter);
 
 
 
