@@ -22,15 +22,8 @@ const membershipsController = {
     });
   },
   carrito: function (req, res) {
-    
-    console.log("Un usuario ingreso a carrito para la membresia" + nameMembership)
-    const membershipIndex = membershipsDelArchivoJson.findIndex(membership =>
-        membership.name === nameMembership)
-
-    res.render(path.join(__dirname, "../views/products/carrito"), {
-        membership: membershipsDelArchivoJson[membershipIndex]
-    })
-},
+    res.render(path.join(__dirname, "../views/products/carrito"))
+  },
 };
 
 module.exports = membershipsController;

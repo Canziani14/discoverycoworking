@@ -1,19 +1,36 @@
 /* FOOTER*/
 footer {
+  background-color: #3d8ebde1;
     margin-top: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
+  .items{
+    color: blue;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    padding-bottom: 30px;
+  }
+
+
   
   footer i {
     margin: 0px 20px;
+  }
+
+  .icons-redes {
+    display: flex;
   }
   
   .footerwhatsapp {
     position: fixed;
     right: 15px;
-    bottom: 20px;
+    bottom: 70px;
     z-index: 3;
     background-color: #25d366;
     color: #fff;
@@ -43,3 +60,6 @@ footer {
     color: #285aeb;
   }
   
+  #github{
+    color: rgba(3, 3, 3, 0.171)
+  }
