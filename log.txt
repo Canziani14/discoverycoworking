@@ -679,3 +679,30 @@
  Se ingresó en la ruta: /css/all.css.
  Se ingresó en la ruta: /contactus.
  Se ingresó en la ruta: /css/all.css.
+ Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /favicon.ico.
+ Se ingresó en la ruta: /contactus.
+ Se ingresó en la ruta: /carrito.
+ Se ingresó en la ruta: /imgs/imagen1.jpg.
+ Se ingresó en la ruta: /memberships.
+ Se ingresó en la ruta: /carrito.
+ Se ingresó en la ruta: /imgs/imagen1.jpg.
+ Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /favicon.ico.
+ Se ingresó en la ruta: /contactus.
+ Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /signin.
+ Se ingresó en la ruta: /.
+ Se ingresó en la ruta: /carrito.
+ Se ingresó en la ruta: /imgs/imagen1.jpg.
+ Se ingresó en la ruta: /carrito.
+ Se ingresó en la ruta: /imgs/imagen1.jpg.
+ Se ingresó en la ruta: /carrito.
+ Se ingresó en la ruta: /carrito.
+ Se ingresó en la ruta: /carrito.
+ Se ingresó en la ruta: /memberships.
+ Se ingresó en la ruta: /memberships/lab.
+ Se ingresó en la ruta: /memberships.
+ Se ingresó en la ruta: /memberships/flex.
+ Se ingresó en la ruta: /memberships/flex.
+ Se ingresó en la ruta: /memberships/flex.
