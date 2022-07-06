@@ -1,15 +1,19 @@
 /* FOOTER*/
 footer {
-  background-color: #3d8ebde1;
+    background-color: #57bd9e ;
+    padding-top: 15px;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+  .imgfondo{
+    width: 100%;
+  }
 
   .items{
-    color: blue;
+    
     width: 80%;
     display: flex;
     justify-content: space-between;
@@ -17,6 +21,11 @@ footer {
     padding-bottom: 30px;
   }
 
+  .abboutus{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
 
   
   footer i {
