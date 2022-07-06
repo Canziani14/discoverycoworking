@@ -2,13 +2,15 @@ const path = require("path");
 const fs = require("fs");
 const { validationResult } = require("express-validator");
 
+let membershipsDelArchivoJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','memberships.json')))
+
 let users = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "..", "database", "users.json"))
+    fs.readFileSync(path.resolve(__dirname, "..", "database", "users.json"))
 );
 
 const userController = {
     login: function (req, res) {
-        res.render (path.join(__dirname, "../views/users/login"))
+        res.render(path.join(__dirname, "../views/users/login"))
     },
     // loginPost: (req,res) =>{
     //     const errors = validationResult(req);
@@ -24,7 +26,7 @@ const userController = {
     //         res.cookie('email',usuarioLogueado.email,{maxAge: 1000 * 60 * 60 * 24})
     //       }
     //       return res.redirect('/');   //Aquí ustedes mandan al usuario para donde quieran (Perfil- home - a donde deseen)
-  
+
     //     }else{
     //       //Devolver a la vista los errores
     //       //return res.send(errors.mapped());
@@ -32,19 +34,16 @@ const userController = {
     //     }
     //   },
     signin: function (req, res) {
-        res.render (path.join(__dirname, "../views/users/signin"))
+        res.render(path.join(__dirname, "../views/users/signin"))
     },
-    editaccount: function (req, res) { 
-        res.render (path.join(__dirname, "../views/users/editaccount"))
+    editaccount: function (req, res) {
+        res.render(path.join(__dirname, "../views/users/editaccount"))
     },
     changepassword: function (req, res) {
-        res.render (path.join(__dirname, "../views/users/changepassword"))
+        res.render(path.join(__dirname, "../views/users/changepassword"))
     },
-    carrito: function(req,res){
-        res.render (path.join(__dirname, "../views/users/carrito"))
-    },
-    contactus: function(req,res){
-        res.render (path.join(__dirname, "../views/users/contactus"))
+    contactus: function (req, res) {
+        res.render(path.join(__dirname, "../views/users/contactus"))
     },
 
 };

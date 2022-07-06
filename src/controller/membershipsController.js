@@ -7,7 +7,7 @@ let membershipsDelArchivoJson = JSON.parse(fs.readFileSync(path.resolve(__dirnam
 
 const membershipsController = {
   dinamic: function(req,res){
-    let nameMembership = req.params.nameMembership;
+    var nameMembership = req.params.nameMembership;
     console.log("Un usuario ingreso a " + nameMembership)
     const membershipIndex = membershipsDelArchivoJson.findIndex(membership=>
       membership.name === nameMembership)
@@ -20,7 +20,17 @@ const membershipsController = {
     res.render(path.join(__dirname, "../views/products/memberships"),{
       memberships: membershipsDelArchivoJson
     });
-  }
+  },
+  carrito: function (req, res) {
+    
+    console.log("Un usuario ingreso a carrito para la membresia" + nameMembership)
+    const membershipIndex = membershipsDelArchivoJson.findIndex(membership =>
+        membership.name === nameMembership)
+
+    res.render(path.join(__dirname, "../views/products/carrito"), {
+        membership: membershipsDelArchivoJson[membershipIndex]
+    })
+},
 };
 
 module.exports = membershipsController;
