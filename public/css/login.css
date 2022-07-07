@@ -10,7 +10,7 @@
     --lg:18px;
 }
 body{
-    background-color: #c981bfcb;
+    background-color: #57bd9e;
     font-family: 'Quicksand,sans-eirf';
     margin: 0;
     padding: 0;
@@ -23,8 +23,9 @@ body{
     place-items: center;
 }
 .form-container{
-    -webkit-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF;
-    box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF;
+    border: 3px solid #1aab8a;
+    -webkit-box-shadow: 5px 5px 0px 0px #3d8ebde1, 10px 10px 0px 0px #009d71, 15px 15px 0px 0px #A1D8FF;
+    box-shadow: 5px 5px 0px 0px #3d8ebde1, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #009d71;
     background-color: white ;
     border-radius:10px;
     display:grid;
@@ -39,6 +40,21 @@ body{
     justify-self: center;
     /* display:none; */
 }
+.title{
+    font-size: var(--lg);
+    font-weight: bold;
+    margin-bottom:12px;
+    text-align: center;
+    color: var(--color5);
+}
+.subtitle{
+    color:var(--color5);
+    font-size: var(--md);
+    font-weight:300;
+    margin-top:0;
+    margin-bottom:32px;
+    text-align:center;
+}
 
 .form{
     display:flex;
@@ -51,21 +67,22 @@ body{
     
 }
 .input{
-    background-color: var(--color1);
-    border:none;
+    background-color: #A1D8FF;
+    border:1px solid #1aab8a;
     border-radius:8px;
     height:30px;
     font-size: var(--md);
     padding:6px;
     margin-bottom: 12px;
+    color:black;
 }
 .input-email{
     margin-bottom: 22px;
 }
 .primary-button{
-    background-color: white;
+    background-color: #3d8ebde1;
     border-radius:8px;
-    border: 3px solid var(--color5);
+    border: 3px solid #009d71;
     color: black;
     width:100%;
     cursor:pointer;
@@ -74,7 +91,7 @@ body{
     height:50px;
 }
 .primary-button:hover{
-   background-color: var(--color5);
+   background-color:#009d71;
 }
 .login-button{
     margin-top:14px;
@@ -88,9 +105,9 @@ body{
    margin-bottom:52px;
 }
 .secondary-button{
-    background-color: white;
+    background-color: #3d8ebde1;
     border-radius:8px;
-    border: 3px solid var(--color5);
+    border: 3px solid #009d71;
     color: black;
     width:100%;
     cursor:pointer;
@@ -99,7 +116,7 @@ body{
     height:50px;
 }
 .secondary-button:hover{
-    background-color: var(--color4);
+    background-color: #009d71;
 }
 @media (max-width: 640px){
 .secondary-button {
