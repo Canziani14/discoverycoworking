@@ -1,4 +1,4 @@
-const fs = require("fs");
+/*const fs = require("fs");
 
 function consolelogMiddleware(req, res, next) {
   fs.appendFileSync(
@@ -9,3 +9,4 @@ function consolelogMiddleware(req, res, next) {
 }
 
 module.exports = consolelogMiddleware;
+*/

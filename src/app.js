@@ -10,7 +10,7 @@ app.set('view engine','ejs');
 
 // MIDDLEWARES
 app.use(express.static(__dirname + "../../public"));
-app.use(consolelogMiddleware);
+//app.use(consolelogMiddleware);
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false})); 
 
