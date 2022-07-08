@@ -1,7 +1,13 @@
-const path = require('path');
+const path = require("path");
+const fs = require("fs");
 
-const fs = require('fs');
 
-module.exports= {
+
+let users = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, "..", "database", "users.json"))
+);
+
+
+module.exports = {
     
-}
+};

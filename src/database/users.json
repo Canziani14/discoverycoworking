@@ -5,7 +5,8 @@
       "avatar": "foto-1614819222033.png",
       "email": "cedavilu@gmail.com",
      "password": "123",
-      "role": 9
+      "role": 9,
+      "membershipsElegidas" : []
     },
     {
       "nombre": "Indira",
