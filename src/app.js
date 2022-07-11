@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false}));
 
 // SERVIDOR
 app.listen(process.env.PORT || 3010, () => {
-  console.log("Servidor corriendo!");
+  console.log(`Servidor corriendo! en el puerto http://localhost:3010/` );
 });
 
 

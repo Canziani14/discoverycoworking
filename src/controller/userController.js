@@ -1,51 +1,51 @@
 const path = require("path");
 const fs = require("fs");
+
 const { validationResult } = require("express-validator");
 
-let membershipsDelArchivoJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','memberships.json')))
-
-let users = JSON.parse(
-    fs.readFileSync(path.resolve(__dirname, "..", "database", "users.json"))
-);
-
 const userController = {
-    login: function (req, res) {
-        res.render(path.join(__dirname, "../views/users/login"))
-    },
-    // loginPost: (req,res) =>{
-    //     const errors = validationResult(req);
-    //     //return res.send(errors.mapped());
-    //     if(errors.isEmpty()){
-    //       let usuarioLogueado = users.find(usuario => usuario.email == req.body.email)
-    //       //return res.send(usuarioLogueado);
-    //       //Como podemos modificar nuestros req.body
-    //       delete usuarioLogueado.password;
-    //       req.session.usuario = usuarioLogueado;  //Guardar del lado del servidor
-    //       //Aquí voy a guardar las cookies del usuario que se loguea
-    //       if(req.body.recordarme){
-    //         res.cookie('email',usuarioLogueado.email,{maxAge: 1000 * 60 * 60 * 24})
-    //       }
-    //       return res.redirect('/');   //Aquí ustedes mandan al usuario para donde quieran (Perfil- home - a donde deseen)
+  login: function (req, res) {
+    res.render(path.join(__dirname, "../views/users/login"));
+  },
+  signin: function (req, res) {
+    res.render(path.join(__dirname, "../views/users/signin"));
+  },
+  create: (req, res) => {
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      let user = {
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        work: req.body.work,
+        role: 1,
+      };
+      let archivoUsers = fs.readFileSync(path.resolve(__dirname, '../database/users.json'), {
+        encoding: 'utf-8'
+      });
+      let users;
+      if (archivoUsers == "") {
+        users = [];
+      } else {
+        users = JSON.parse(archivoUsers);
+      };
+      
+      users.push(user);
+      usersJSON = JSON.stringify(users, null, 2);
+      fs.writeFileSync(path.resolve(__dirname, '../database/users.json'), usersJSON);
+      res.redirect('/login');
 
-    //     }else{
-    //       //Devolver a la vista los errores
-    //       //return res.send(errors.mapped());
-    //       res.render(path.resolve(__dirname, '../views/usuarios/login'),{errors:errors.mapped(),old:req.body});        
-    //     }
-    //   },
-    signin: function (req, res) {
-        res.render(path.join(__dirname, "../views/users/signin"))
-    },
-    editaccount: function (req, res) {
-        res.render(path.join(__dirname, "../views/users/editaccount"))
-    },
-    changepassword: function (req, res) {
-        res.render(path.join(__dirname, "../views/users/changepassword"))
-    },
-    contactus: function (req, res) {
-        res.render(path.join(__dirname, "../views/users/contactus"))
-    },
-
+    }
+  },
+  editaccount: function (req, res) {
+    res.render(path.join(__dirname, "../views/users/editaccount"));
+  },
+  changepassword: function (req, res) {
+    res.render(path.join(__dirname, "../views/users/changepassword"));
+  },
+  contactus: function (req, res) {
+    res.render(path.join(__dirname, "../views/users/contactus"));
+  },
 };
 
 module.exports = userController;

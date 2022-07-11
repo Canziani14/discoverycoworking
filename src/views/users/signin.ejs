@@ -1,48 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- FONTS-->
-    
 
-    <link rel="stylesheet" href="/css/login.css">
-    <title>Sing In</title>
-</head>
+    <link rel="stylesheet" href="/css/login.css" />
+    <title>Sign In</title>
+  </head>
 
-<body>
-
-    
+  <body>
     <div class="login">
-        <div class="form-container">
-            <a href="http://localhost:3010/"><img src="../imgs/logo.png" alt="logo" class="logo"></a>
+      <div class="form-container">
+        <a href="http://localhost:3010/"
+          ><img src="../imgs/logo.png" alt="logo" class="logo"
+        /></a>
 
-            <h1 class="title">Sign In</h1>
-            <p class="subtitle">Make an account on Discovery Coworking</p>
+        <h1 class="title">Sign In</h1>
+        <p class="subtitle">Make an account on Discovery Coworking</p>
 
-            <form action="/" class="form" method="POST" enctype="multipart/form-data">
-                <label for="name" class="label">Name</label>
-                <input type="text" name="name" id="name" placeholder="Enter your name" class="input input-name">
-                <label for="email" class="label">Email address</label>
-                <input type="email" name="email" id="email" placeholder="Enter your email adress" required
-                    class="input input-email">
+        <form
+          action="/signin"
+          class="form"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <label for="name" class="label">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter your name"
+            class="input input-name"
+          />
 
-                <label for="password" class="label">Password</label>
-                <input type="password" name="password" id="new-password" placeholder="Password"
-                    class="input input-password">
+          <label for="email" class="label">Email address</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email adress"
+            required
+            class="input input-email"
+          />
 
-                <label for="work" class="label">Work</label>
-                <input type="text" name="work" id="work" placeholder="work" class="input input-work">
+          <label for="password" class="label">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            class="input input-password"
+          />
 
+          <label for="confirm_password" class="label">Confirm password</label>
+          <input
+            type="password"
+            id="confirm_password"
+            name="confirm_password"
+            placeholder="Confirm password"
+            class="input input-password"
+          />
 
-                <input type="submit" value="Edit" class="primary-button login-button">
-            </form>
-        </div>
+          <label for="work" class="label">Work</label>
+          <input
+            type="text"
+            name="work"
+            id="work"
+            placeholder="work"
+            class="input input-work"
+          />
+
+          <button
+            type="submit"
+            value="Sign in"
+            class="primary-button login-button"
+          >Sign in</button>
+        </form>
+      </div>
     </div>
     <%- include ("../partials/footer") %>
-    
-</body>
-
+  </body>
 </html>
