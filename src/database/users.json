@@ -12,5 +12,12 @@
     "password": "123",
     "role": 1,
     "work": "no"
+  },
+  {
+    "name": "Javi",
+    "email": "javi@javi.com",
+    "password": "javi",
+    "work": "javi",
+    "role": 1
   }
 ]
