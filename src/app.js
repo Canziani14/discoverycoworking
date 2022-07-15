@@ -3,7 +3,13 @@ const app = express();
 const methodOverride = require('method-override');
 
 
-const consolelogMiddleware = require('./middlewares/consolelogMiddleware')
+// const consolelogMiddleware = require('./middlewares/consolelogMiddleware')
+
+//SESSION
+const session = require('express-session');
+app.use(session({
+  secret: "mensaje secreto"
+}))
 
 // EJS
 app.set('view engine','ejs');
@@ -24,13 +30,13 @@ app.listen(process.env.PORT || 3010, () => {
 const mainRouter = require ("./routes/mainRouter");
 const membershipsRouter = require ('./routes/membershipsRouter');
 const userRouter = require ('./routes/userRouter');
-const adminRouter = require ('./routes/adminRouter')
+const adminRouter = require ('./routes/adminRouter');
 
 
 app.use(mainRouter);
 app.use(membershipsRouter);
 app.use(userRouter);
-//app.use(adminRouter);
+app.use(adminRouter);
 
 
 

@@ -19,5 +19,19 @@
     "password": "javi",
     "work": "javi",
     "role": 1
+  },
+  {
+    "name": "pepe",
+    "email": "pepe@pepe.com",
+    "password": "12345678",
+    "work": "asd",
+    "role": 1
+  },
+  {
+    "name": "j",
+    "email": "j@j.con",
+    "password": "12345678",
+    "work": "no",
+    "role": 1
   }
 ]

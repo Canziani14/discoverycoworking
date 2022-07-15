@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- FONTS -->
     <%- include ("../partials/links") %>
-        <link rel="stylesheet" href="/css/login.css">
-        <title>Login</title>
-</head>
+    <link rel="stylesheet" href="/css/login.css" />
+    <title>Login</title>
+  </head>
 
-<body>
-
+  <body>
     <div class="login">
-        <div class="form-container">
-            <a href="http://localhost:3010/"> <img src="../imgs/logo.png" alt="logo" class="logo"></a>
+      <div class="form-container">
+        <a href="http://localhost:3010/">
+          <img src="../imgs/logo.png" alt="logo" class="logo"
+        /></a>
 
-            <form action="/login" method="post" class="form">
-                <label for="email" class="label">Email</label>
-                <input type="email" name="email" id="email" placeholder="Enter your email adress" required
-                    value="<%= typeof old != 'undefined' ? old.email : '' %>" class="input input-email">
-                <% if(typeof(errors) !='undefined' && errors.email){%>
-                    <span class="text-danger">
-                        <%= errors.email.msg %>
-                    </span>
-                    <%}%>
+        <form action="/login" method="POST" class="form">
+          <% if(typeof errors != 'undefined'){ %>
+          <p style="color: red">ERROR</p>
+          <ul>
+            <% for (let i=0; i < errors.length; i++){ %>
+            <li><%= errors[i].msg %></li>
+            <%} %>
+          </ul>
+          <%}%>
+          <label for="email" class="label">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email adress"
+            required
+            value="<%= typeof old != 'undefined' ? old.email : '' %>"
+            class="input input-email"
+          />
 
-                        <label for="password" class="label">Password</label>
-                        <input type="password" name="password" id="new-password" placeholder="Password"
-                            class="input input-password" required>
-                        <% if(typeof(errors) !='undefined' && errors.password){%>
-                            <span class="text-danger">
-                                <%= errors.password.msg %>
-                            </span>
-                            <%}%>
+          <label for="password" class="label">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="new-password"
+            placeholder="Password"
+            class="input input-password"
+            required
+          />
 
-                                <input type="submit" value="Ingresar" class="primary-button login-button">
+          <input
+            type="submit"
+            value="Ingresar"
+            class="primary-button login-button"
+          />
 
-                                <a href="/">Forgot your password?</a>
-            </form>
+          <a href="/">Forgot your password?</a>
+        </form>
 
-            <button class="secondary-button signup-button">Sign up</button>
-        </div>
+        <button class="secondary-button signup-button">Sign up</button>
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>
