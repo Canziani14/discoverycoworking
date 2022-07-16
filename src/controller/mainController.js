@@ -7,9 +7,7 @@ let memberships = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','databa
 
 const mainController = {
     home: function (req,res) {
-        res.render (path.join(__dirname, "../views/index"),{
-            memberships
-        })
+        res.render ("index",{memberships})
     }
 };
 

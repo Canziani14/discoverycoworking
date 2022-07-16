@@ -30,9 +30,7 @@ const membershipsController = {
 // //metodo post haga la membership y todo el despelote
 //   },
   home: function (req, res) {
-    res.render(path.join(__dirname, "../views/products/memberships"), {
-      memberships: membershipsDelArchivoJson,
-    });
+    res.render("products/memberships", {memberships: membershipsDelArchivoJson});
   },
   carrito: function (req, res) {
     res.render(path.join(__dirname, "../views/products/carrito"));

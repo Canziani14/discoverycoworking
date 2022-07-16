@@ -1,15 +1,22 @@
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
+const path = require ("path");
+// RUTAS
+const mainRouter = require ("./routes/mainRouter");
+const membershipsRouter = require ('./routes/membershipsRouter');
+const userRouter = require ('./routes/userRouter');
+const adminRouter = require ('./routes/adminRouter')
 
 
 const consolelogMiddleware = require('./middlewares/consolelogMiddleware')
 
 // EJS
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine','ejs');
 
 // MIDDLEWARES
-app.use(express.static(__dirname + "../../public"));
+app.use(express.static(path.resolve(__dirname, ".." ,"public")))
 //app.use(consolelogMiddleware);
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false})); 
@@ -19,12 +26,6 @@ app.listen(process.env.PORT || 3010, () => {
   console.log(`Servidor corriendo! en el puerto http://localhost:3010/` );
 });
 
-
-// RUTAS
-const mainRouter = require ("./routes/mainRouter");
-const membershipsRouter = require ('./routes/membershipsRouter');
-const userRouter = require ('./routes/userRouter');
-const adminRouter = require ('./routes/adminRouter')
 
 
 app.use(mainRouter);
