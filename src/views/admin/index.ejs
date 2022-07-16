@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONTS -->
+    <%- include ("../partials/links") %>
+    <link rel="stylesheet" href="css/index.css" />
+    <title>HOME</title>
+    <style>
+      body {
+  font-family: 'lato', sans-serif;
+}
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h2 {
+  font-size: 26px;
+  margin: 20px 0;
+  text-align: center;
+  
+}
+
+
+.responsive-table li {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+.table-header {
+    background-color: #95A5A6;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .table-row {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+  }
+  .col-1 {
+    flex-basis: 20%;
+  }
+  .col-2 {
+    flex-basis: 20%;
+  }
+  .col-3 {
+    flex-basis: 20%;
+  }
+  .col-4 {
+    flex-basis: 20%;
+  }
+  .col-5 {
+    flex-basis: 20%;
+  }
+  
+  @media all and (max-width: 767px) {
+    .table-header {
+      display: none;
+    }
+    .table-row{
+      
+    }
+    li {
+      display: block;
+    }
+    .col {
+      
+      flex-basis: 100%;
+      
+    }
+    .col {
+      display: flex;
+      padding: 10px 0;
+    }
+      .col:before {
+        color: #6C7A89;
+        padding-right: 10px;
+        content: attr(data-label);
+        flex-basis: 50%;
+        text-align: right;
+      }
+    }
+  
+
+    </style>
+  </head>
+  <body>
+
+    <%- include ("../partials/header") %>
+
+    <main>
+      <div class="container">
+        <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2>
+        <ul class="responsive-table">
+          <li class="table-header">
+            <div class="col col-1">ID</div>
+            <div class="col col-2"> Memberships</div>
+            <div class="col col-3">$$</div>
+            <div class="col col-4">Details</div>
+            <div class="col col-5"> BOTONES</div>
+          </li>
+
+          <% for(let i=0; i< memberships.length; i++){ %>
+            <li class="table-row">
+              <div class="col col-1" data-label="Job Id"><%= memberships[i].id %></div>
+              <div class="col col-2" data-label="Customer Name"><%= memberships[i].name %></div>
+              <div class="col col-3" data-label="Amount"><%= memberships[i].price %></div>
+              <div class="col col-4" data-label="Payment Status"><%= memberships[i].details %></div>
+              <div class="col col-5">BOTONES</div>
+            </li>
+          <%}%>
+         
+        </ul>
+      </div>
+     
+    </main>
+    <%- include ("../partials/footer") %>
+
+  </body>
+</html>

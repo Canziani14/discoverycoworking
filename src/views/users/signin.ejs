@@ -19,6 +19,17 @@
 
         <h1 class="title">Sign In</h1>
         <p class="subtitle">Make an account on Discovery Coworking</p>
+        
+        <% if(typeof errors != 'undefined'){ %>
+          <p style="color:red">ERROR</p>
+          <ul>
+            <% for (let i=0; i < errors.length; i++){ %>
+              <li>
+                <%= errors[i].msg %>
+              </li>
+              <%} %>
+          </ul>
+        <%}%>
 
         <form
           action="/signin"

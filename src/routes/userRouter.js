@@ -19,6 +19,8 @@ const validateRegister = [
   //Aquí valido el Password
   body("password")
     .notEmpty()
+    .bail()
+    .isLength({ min : 6})
     .withMessage("La contraseña debe tener un mínimo de 6 caractéres"),
 
   //Aquí valido la confimación del password dispuesto por el usuario
@@ -55,9 +57,23 @@ const validateRegister = [
 //     ),
 ];
 
+const validateLogin = [
+  body("email")
+    .notEmpty()
+    .withMessage("El campo nombre no puede estar vacío").bail()
+    .isEmail()
+    .withMessage("Agregar un email válido"),
+
+    body("password")
+    .notEmpty()
+    .bail()
+    .isLength({ min : 8})
+    .withMessage("La contraseña debe tener un mínimo de 8 caractéres"),
+]
+
 router.get("/login", userController.login);
 
-// router.post('/login', userController.loginPost);
+router.post('/login', validateLogin ,userController.processLogin);
 
 router.get("/signin", userController.signin);
 
