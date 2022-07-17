@@ -7,9 +7,18 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-size: auto;
+    
   }
-  .imgfondo{
-    width: 100%;
+  
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    width: 200px;
   }
 
   .items{
@@ -18,7 +27,7 @@ footer {
     display: flex;
     justify-content: space-between;
     color: red;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
   }
 
   .abboutus{
@@ -39,7 +48,7 @@ footer {
   .footerwhatsapp {
     position: fixed;
     right: 15px;
-    bottom: 70px;
+    bottom: 140px;
     z-index: 3;
     background-color: #25d366;
     color: #fff;
