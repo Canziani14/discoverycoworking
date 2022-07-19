@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
 const path = require ("path");
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const rememberMiddleware = require('./middlewares/rememberMiddleware')
 // RUTAS
 const mainRouter = require ("./routes/mainRouter");
 const membershipsRouter = require ('./routes/membershipsRouter');
@@ -12,10 +15,12 @@ const adminRouter = require ('./routes/adminRouter')
 // const consolelogMiddleware = require('./middlewares/consolelogMiddleware')
 
 //SESSION
-//const session = require('express-session');
-/*app.use(session({
+app.use(session({
   secret: "mensaje secreto"
-}))*/
+}))
+//COOKIES
+app.use(cookieParser());
+
 
 // EJS
 app.set('views', path.join(__dirname, 'views'));
@@ -25,7 +30,8 @@ app.set('view engine','ejs');
 app.use(express.static(path.resolve(__dirname, ".." ,"public")))
 //app.use(consolelogMiddleware);
 app.use(methodOverride('_method'));
-app.use(express.urlencoded({ extended: false})); 
+app.use(express.urlencoded({ extended: false}));
+app.use(rememberMiddleware) 
 
 // SERVIDOR
 app.listen(process.env.PORT || 3010, () => {

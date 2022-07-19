@@ -33,7 +33,6 @@
             id="email"
             placeholder="Enter your email adress"
             required
-            value="<%= typeof old != 'undefined' ? old.email : '' %>"
             class="input input-email"
           />
 
@@ -46,6 +45,15 @@
             class="input input-password"
             required
           />
+          <div>
+
+            <label for="recordame">Remember me</label>
+            <input
+            type="checkbox"
+            name="recordame"
+            
+            />
+          </div>
 
           <input
             type="submit"

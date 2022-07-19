@@ -21,12 +21,6 @@
     "role": 1
   },
   {
-<<<<<<< HEAD
-    "name": "Matias Canziani",
-    "email": "mcanziani12@gmail.com",
-    "password": "1234",
-    "work": "1",
-=======
     "name": "pepe",
     "email": "pepe@pepe.com",
     "password": "12345678",
@@ -38,7 +32,13 @@
     "email": "j@j.con",
     "password": "12345678",
     "work": "no",
->>>>>>> 3761c002ccabf293a4e5fd1f2e03b58cdc79564c
+    "role": 1
+  },
+  {
+    "name": "Martin",
+    "email": "martin@palermo.com",
+    "password": "martinpaler",
+    "work": "goleador",
     "role": 1
   }
 ]
