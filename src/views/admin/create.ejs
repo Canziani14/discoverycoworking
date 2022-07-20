@@ -11,38 +11,67 @@
     <title>HOME</title>
   </head>
   <body>
-
     <%- include ("../partials/header") %>
 
-    <section >
-    <h2>CREAR UNA MEMBERSHIP</h2>
-      <form action="/admin/create" method="POST" enctype="multipart/form-data" id="create" >
+    <section>
+      <h2>Create membership</h2>
+      <form
+        action="/admin/create"
+        method="POST"
+        enctype="multipart/form-data"
+        id="create"
+      >
         <div class="form-group">
-          <input type="text" class="form-control" name="name" placeholder="Name" required="required" value="">
-        </div>	
-        <div class="form-group">
-          <input type="text" class="form-control" name="details" placeholder="Details" required="required" value="">
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            placeholder="Name"
+            required="required"
+            value=""
+          />
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" name="services" placeholder="Services" required="required" value="">
+          <input
+            type="text"
+            class="form-control"
+            name="details"
+            placeholder="Details"
+            required="required"
+            value=""
+          />
         </div>
         <div class="form-group">
-          <input type="number" class="form-control" name="price" placeholder="Price $$" required="required" value="">
+          <input
+            type="text"
+            class="form-control"
+            name="services"
+            placeholder="Services"
+            required="required"
+            value=""
+          />
         </div>
-        
+        <div class="form-group">
+          <input
+            type="number"
+            class="form-control"
+            name="price"
+            placeholder="Price $$"
+            required="required"
+            value=""
+          />
+        </div>
+
         <!--Aquí solicito la imagen-->
         <div class="custom-file">
-          <input type="file" name="img" >
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn btn-info">Guardar</button>
-            <a href="/admin" class="btn btn-danger">Volver</a>
+          <input type="file" name="imgMembership" />
         </div>
-        
+        <div class="form-group">
+          <button type="submit" class="btn btn btn-info">Guardar</button>
+          <a href="/admin" class="btn btn-danger">Volver</a>
+        </div>
       </form>
-    
     </section>
     <%- include ("../partials/footer") %>
-    
   </body>
 </html>
