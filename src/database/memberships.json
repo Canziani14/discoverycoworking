@@ -58,5 +58,12 @@
     "details": "Your private and equipped office for teams of 4 to 50 people.",
     "price": "USD 750",
     "img": "office.jpg"
+  },
+  {
+    "id": "41",
+    "name": "newMembership",
+    "services": "MUCHOS",
+    "details": "nueva membership",
+    "price": "123"
   }
 ]

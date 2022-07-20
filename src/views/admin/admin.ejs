@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- FONTS -->
     <%- include ("../partials/links") %>
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/admin.css">
     <title>HOME</title>
   </head>
   <body>
@@ -16,15 +16,15 @@
 
     <main>
       <div class="container">
-        <h2>Administrate <small>Memberships</small></h2>
+        <h2>Administrate Memberships</h2>
         
-      </article>
         <ul class="responsive-table">
           <li class="table-header">
             <div class="col col-1">ID</div>
-            <div class="col col-2"> Memberships</div>
+            <div class="col col-2"> NAME</div>
             <div class="col col-3">$$</div>
-            <div class="col col-4">Details</div>
+            <div class="col col-4">DETAILS</div>
+            <div class="col col-5">SERVICES </div>
             <div class="col col-5"> </div>
             <div class="col col-5"> </div>
             <div class="col col-5 create"><a href="/admin/create">
@@ -32,14 +32,15 @@
             </a> </div>
           </li>
 
-          <% for(let i=0; i< memberships.length; i++){ %>
+          <% memberships.forEach(membership => { %>
             <li class="table-row">
-              <div class="col col-1" data-label="Job Id"><%= memberships[i].id %></div>
-              <div class="col col-2" data-label="Customer Name"><%= memberships[i].name %></div>
-              <div class="col col-3" data-label="Amount"><%= memberships[i].price %></div>
-              <div class="col col-4" data-label="Payment Status"><%= memberships[i].details %></div>
+              <div class="col col-1" data-label="Job Id"><%= membership.id %></div>
+              <div class="col col-2" data-label="Customer Name"><%= membership.name %></div>
+              <div class="col col-3" data-label="Amount"><%= membership.price %></div>
+              <div class="col col-4" data-label="Payment Status"><%= membership.details %></div>
+              <div class="col col-4 col-service" data-label="Payment Status"><%= membership.services %></div>
               <div class="col col-5">
-              <a href="">
+              <a href="/admin/detail/<%= membership.name %>">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M12 16q1.875 0 3.188-1.312Q16.5 13.375 16.5 11.5q0-1.875-1.312-3.188Q13.875 7 12 7q-1.875 0-3.188 1.312Q7.5 9.625 7.5 11.5q0 1.875 1.312 3.188Q10.125 16 12 16Zm0-1.8q-1.125 0-1.912-.788Q9.3 12.625 9.3 11.5t.788-1.913Q10.875 8.8 12 8.8t1.913.787q.787.788.787 1.913t-.787 1.912q-.788.788-1.913.788Zm0 4.8q-3.65 0-6.65-2.038-3-2.037-4.35-5.462 1.35-3.425 4.35-5.463Q8.35 4 12 4q3.65 0 6.65 2.037 3 2.038 4.35 5.463-1.35 3.425-4.35 5.462Q15.65 19 12 19Z"/></svg>
               </a>
             </div>
@@ -54,7 +55,7 @@
                 </a>
               </div>
             </li>
-          <%}%>
+          <%})%>
          
         </ul>
       </div>

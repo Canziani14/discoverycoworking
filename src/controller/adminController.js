@@ -36,4 +36,16 @@ module.exports = {
     );
     res.redirect("/admin");
   },
+  show: (req, res) => {
+    let memberships = JSON.parse(
+      fs.readFileSync(path.resolve(__dirname, "../database/memberships.json"))
+    );
+    let nameMembership = req.params.nameMembership;
+    const membershipIndex = memberships.findIndex(membership=> membership.name === nameMembership)
+
+
+    res.render(path.resolve(__dirname,'../views/admin/detail'), {
+      membership: memberships[membershipIndex],
+    })
+  },
 };
