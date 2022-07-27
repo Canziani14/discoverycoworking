@@ -7,7 +7,7 @@ let memberships = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','databa
 
 const userController = {
   login: function (req, res) {
-    res.render(path.join(__dirname, "../views/users/login"));
+    res.render("./users/login");
   },
   processLogin: function (req, res) {
     let errors = validationResult(req);
@@ -35,9 +35,9 @@ const userController = {
         }
       }
       if (userLogged == undefined) {
-        return res.render(path.join(__dirname, "../views/users/login"), {
+        return res.render("./users/login"), {
           errors: [{ msg: "Credenciales invalidas" }],
-        });
+        };
       }
       console.log("USERLOGGED: ", userLogged);
 
@@ -53,13 +53,13 @@ const userController = {
       res.redirect('/');
     } else {
       // si hay errores
-      return res.render(path.join(__dirname, "../views/users/login"), {
+      return res.render("./users/login"), {
         errors: errors.errors,
-      });
+      };
     }
   },
   signin: function (req, res) {
-    res.render(path.join(__dirname, "../views/users/signin"));
+    res.render("./users/signin");
   },
   create: (req, res) => {
     let errors = validationResult(req);
@@ -92,19 +92,19 @@ const userController = {
       );
       res.redirect("/login");
     } else {
-      return res.render(path.join(__dirname, "../views/users/signin"), {
+      return res.render("./users/signin"), {
         errors: errors.errors,
-      });
+      };
     }
   },
   editaccount: function (req, res) {
-    res.render(path.join(__dirname, "../views/users/editaccount"));
+    res.render("./users/editaccount");
   },
   changepassword: function (req, res) {
-    res.render(path.join(__dirname, "../views/users/changepassword"));
+    res.render("./users/changepassword");
   },
   contactus: function (req, res) {
-    res.render(path.join(__dirname, "../views/users/contactus"));
+    res.render("./users/contactus");
   },
 };
 

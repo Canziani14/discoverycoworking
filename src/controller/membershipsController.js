@@ -5,7 +5,7 @@ const membershipsController = {
   dinamic: function (req, res) {
     let membershipsDelArchivoJson = JSON.parse(
       fs.readFileSync(
-        path.resolve(__dirname, "..", "database", "memberships.json")
+        path.resolve(__dirname, "../database/memberships.json")
       )
     );
     let nameMembership = req.params.nameMembership;
@@ -14,27 +14,27 @@ const membershipsController = {
       (membership) => membership.name === nameMembership
     );
 
-    res.render(path.join(__dirname, "../views/products/membershipdinamic"), {
+    res.render("./products/membershipdinamic"), {
       membership: membershipsDelArchivoJson[membershipIndex],
-    });
+    };
   },
   getAllProducts: () => {
     return membershipsDelArchivoJson;
   },
   createMembership: (req, res) => {
     //devuelva la vista
-    res.render(path.join(__dirname, "../views/products/create"));
+    res.render("./products/create");
   },
   //   createMembership: ()=>{
   // //metodo post haga la membership y todo el despelote
   //   },
   home: function (req, res) {
-    res.render("products/memberships", {
-      memberships: membershipsDelArchivoJson,
+    res.render("./products/memberships", {
+      memberships: this.membershipsDelArchivoJson,
     });
   },
   carrito: function (req, res) {
-    res.render(path.join(__dirname, "../views/products/carrito"));
+    res.render("./products/carrito");
   },
 };
 

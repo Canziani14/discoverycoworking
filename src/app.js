@@ -16,7 +16,9 @@ const adminRouter = require ('./routes/adminRouter')
 
 //SESSION
 app.use(session({
-  secret: "mensaje secreto"
+  secret: "mensaje secreto",
+  resave: false,
+  saveUninitialized: false
 }))
 //COOKIES
 app.use(cookieParser());
