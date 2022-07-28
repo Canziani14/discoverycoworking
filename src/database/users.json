@@ -40,5 +40,21 @@
     "password": "martinpaler",
     "work": "goleador",
     "role": 1
+  },
+  {
+    "name": "pp",
+    "email": "p@p.com",
+    "password": "123456",
+    "work": "No",
+    "role": 1,
+    "img": "https://ui-avatars.com/api/?name=pp"
+  },
+  {
+    "name": "Creado",
+    "email": "cread@o.com",
+    "password": "12345678",
+    "work": "qq",
+    "role": 1,
+    "img": "https://ui-avatars.com/api/?name=Creado"
   }
 ]

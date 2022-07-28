@@ -19,7 +19,7 @@ router.get("/admin", adminController.index);
 router.get("/admin/create", adminController.create);
 router.post("/admin/create", upload.single("imgMembership"), adminController.save);
 router.get("/admin/detail/:nameMembership", adminController.show);
-// router.get('/administrar/detail/:id', controllersAdmin.show);
-// router.get('/administrar/edit/:id', controllersAdmin.edit);
+router.get('/admin/edit/:nameMembership', adminController.edit);
+router.put('/admin/edit/:nameMembership',  upload.single("imgMembership"), adminController.update);
 
 module.exports = router;

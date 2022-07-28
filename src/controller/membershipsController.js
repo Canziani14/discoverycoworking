@@ -29,8 +29,12 @@ const membershipsController = {
   // //metodo post haga la membership y todo el despelote
   //   },
   home: function (req, res) {
+    let membershipsDelArchivoJson = JSON.parse(
+      fs.readFileSync(
+        path.resolve(__dirname, "../database/memberships.json")
+      ))
     res.render("./products/memberships", {
-      memberships: this.membershipsDelArchivoJson,
+      memberships: membershipsDelArchivoJson,
     });
   },
   carrito: function (req, res) {

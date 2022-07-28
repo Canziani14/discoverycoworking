@@ -13,9 +13,7 @@
   <body>
     <div class="login">
       <div class="form-container">
-        <a href="/">
-          <img src="../imgs/logo.png" alt="logo" class="logo"
-        /></a>
+        <a href="/"> <img src="../imgs/logo.png" alt="logo" class="logo" /></a>
 
         <form action="/login" method="POST" class="form">
           <% if(typeof errors != 'undefined'){ %>
@@ -34,6 +32,7 @@
             placeholder="Enter your email adress"
             required
             class="input input-email"
+            value="<%= typeof old != 'undefined' ? old.email : '' %>"
           />
 
           <label for="password" class="label">Password</label>
@@ -46,13 +45,10 @@
             required
           />
           <div>
-
-            <label for="recordame">Remember me</label>
-            <input
-            type="checkbox"
-            name="recordame"
-            
-            />
+            <input type="checkbox" name="recordarme" /><label
+              class="checkbox-inline">
+              Recordarme</label
+            >
           </div>
 
           <input

@@ -1,16 +1,10 @@
 [
   {
-    "id": "1",
     "name": "lab",
-    "services": [
-      "24x7 access",
-      "Break with coffee, infusions, cookies and fruit free of charge",
-      "Use of all shared coworking spaces, including living room, kitchen, ping pong and garden",
-      "Access to innovative and inspiring events.",
-      "Terrace and internal garden"
-    ],
     "details": "Focused 100% on entrepreneurs and technology startups.",
-    "price": "USD 150",
+    "services": "CHAU",
+    "price": "11",
+    "oldImagen": "lab.jpg",
     "img": "lab.jpg"
   },
   {
@@ -60,10 +54,10 @@
     "img": "office.jpg"
   },
   {
-    "id": "41",
-    "name": "newMembership",
-    "services": "MUCHOS",
-    "details": "nueva membership",
+    "id": "8e0db285-7f37-4ebd-9ba9-ba4c14f9846d",
+    "name": "PEdro",
+    "services": "papa",
+    "details": "papa",
     "price": "123"
   }
 ]
