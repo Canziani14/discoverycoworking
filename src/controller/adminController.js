@@ -1,46 +1,56 @@
 const path = require("path");
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid"); //genera ids automaticos
+const { validationResult } = require("express-validator");
 
-
+const membershipsFilePath = path.join(__dirname,'../database/memberships.json');
+const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 
 module.exports = {
   index: (req, res) => {
-    let memberships = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../database/memberships.json"))
-    );
+    
     res.render(path.join(__dirname, "../views/admin/admin"), {
       memberships: memberships,
+      title: "Admin",
+      styles: 'admin.css',
+      user: req.session.userLoged,
   });
   },
   create: (req, res) => {
-    res.render(path.resolve(__dirname, "../views/admin/create"));
+    res.render(path.join(__dirname, "../views/admin/create"), {
+      title: "Admin",
+      styles: 'admin.css',
+      user: req.session.userLoged,
+
+  });
   },
-  save: (req, res) => {
-    let memberships = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../database/memberships.json"))
-    );
-    let ultimaMembership = memberships.pop();
-    memberships.push(ultimaMembership);
+  createProcess: (req, res) => {
+  const errors = validationResult(req);
 
-    const id = uuidv4()
+  if(!errors.isEmpty()){
+    return res.render("admin/create", {
+      errors: errors.mapped(),
+      old: req.body,
+      styles: "admin.css",
+      title: "Crear Membership",
+      user: req.session.userLoged,
+    });
+  }
+  else{
+    //generamos un id
+    const id = uuidv4();
+    //capturamos lo que llega del formulario
+    const newMembership = req.body;
+    //le asignamos el id al producto
+    newMembership.id = id;
+    // le asignamos el array de imagenes
+    newMembership.img = req.files;
 
-    let nuevaMembership = {
-      id: id,
-      name: req.body.name,
-      services: req.body.services,
-      details: req.body.details,
-      price: req.body.price,
-      img: req.body.imgMembership,
-    };
-    console.log(id)
-    memberships.push(nuevaMembership);
-    let nuevaMembershipAGuardar = JSON.stringify(memberships, null, 2);
-    fs.writeFileSync(
-      path.resolve(__dirname, "../database/memberships.json"),
-      nuevaMembershipAGuardar
-    );
-    res.redirect("/admin");
+    memberships.push(newMembership);
+   
+    fs.writeFileSync(membershipsFilePath, JSON.stringify(memberships, null, " "));
+    res.redirect('/admin')
+  }
   },
   show: (req, res) => {
     let memberships = JSON.parse(

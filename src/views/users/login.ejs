@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- FONTS -->
-    <%- include ("../partials/links") %>
-    <link rel="stylesheet" href="/css/login.css" />
-    <title>Login</title>
+    <%- include('../partials/head') %>
   </head>
 
   <body>
@@ -16,14 +10,7 @@
         <a href="/"> <img src="../imgs/logo.png" alt="logo" class="logo" /></a>
 
         <form action="/login" method="POST" class="form">
-          <% if(typeof errors != 'undefined'){ %>
-          <p style="color: red">ERROR</p>
-          <ul>
-            <% for (let i=0; i < errors.length; i++){ %>
-            <li><%= errors[i].msg %></li>
-            <%} %>
-          </ul>
-          <%}%>
+         
           <label for="email" class="label">Email</label>
           <input
             type="email"
@@ -34,6 +21,9 @@
             class="input input-email"
             value="<%= typeof old != 'undefined' ? old.email : '' %>"
           />
+          <% if (locals.errors && locals.errors.email) { %>
+            <span class="error-msg"><%= locals.errors.email.msg %></span>
+            <% } %>
 
           <label for="password" class="label">Password</label>
           <input
@@ -44,10 +34,15 @@
             class="input input-password"
             required
           />
+          <% if (locals.errors && locals.errors.password) { %>
+            <span class="error-msg"><%= locals.errors.password.msg %></span>
+            <% } %> <% if(locals.error) { %>
+            <span class="error-msg"><%= locals.error %></span>
+            <% } %>
           <div>
-            <input type="checkbox" name="recordarme" /><label
+            <input type="checkbox" name="remember_me" id="remember_me" /><label
               class="checkbox-inline">
-              Recordarme</label
+              Remember me</label
             >
           </div>
 
