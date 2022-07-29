@@ -1,101 +1,89 @@
 const path = require("path");
 const fs = require("fs");
-// const bcrypt = require("bcrypt");
-
+const bcrypt = require("bcryptjs");
+const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
-let memberships = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','memberships.json')))
+
+const membershipsFilePath = path.join(__dirname,'../database/memberships.json');
+const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
+
+const usersFilePath = path.join(__dirname, "../database/users.json");
+const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 const userController = {
   login: function (req, res) {
-    res.render("./users/login");
+    res.render("users/login", {
+      title: "Login",
+      styles: "login.css",
+    });
   },
   processLogin: function (req, res) {
-    let errors = validationResult(req);
-    //si no hay errores
-    if (errors.isEmpty()) {
-      let archivoUsers = fs.readFileSync(path.resolve(__dirname, "../database/users.json"),{encoding: "utf-8",});
+    const errors = validationResult(req);
 
-      let users;
-      if (archivoUsers == "") {
-        users = [];
-      } else {
-        users = JSON.parse(archivoUsers);
-      }
-      console.log("USUARIOS: ", users);
-      
-      let userLogged;
-      for (let i = 0; users.length; i++) {
-        if (users[i].email == req.body.email) {
-          // if (bcrypt.compareSync(req.body.password, users[i].password))
-          if(req.body.password == users[i].password)
-           {
-            userLogged = users[i];
-            break;
-          }
-        }
-      }
-      if (userLogged == undefined) {
-        return res.render("./users/login"), {
-          errors: [{ msg: "Credenciales invalidas" }],
-        };
-      }
-      console.log("USERLOGGED: ", userLogged);
-
-      req.session.userLogged = userLogged;
-      
-      if(req.body.recordame =! undefined){
-        res.cookie('recordame', userLogged.email, {
-          maxAge: 600000
-        })
-      }
-      console.log(req.cookies.recordame)
-
-      res.redirect('/');
+    if (!errors.isEmpty()) {
+      return res.render("users/login", {
+        errors: errors.mapped(),
+        title: "Login",
+        styles: "login.css",
+      });
     } else {
-      // si hay errores
-      return res.render("./users/login"), {
-        errors: errors.errors,
-      };
+      const userFound = users.find((user) => {
+        if (bcrypt.compareSync(req.body.password, user.password))
+          return user.userEmail === req.body.email;
+      });
+
+      if (userFound == undefined) {
+        res.render("users/login", {
+          error: "credenciales invalidas",
+          title: "Login",
+          styles: "login.css",
+        });
+      }
+
+      req.session.userLoged = userFound;
+
+      if (req.body.remember_me != undefined) {
+        //chequear el timepo de la cookie
+        res.cookie(
+          "recordame",
+          userFound.id
+          // { maxAge: 60000 }
+        );
+      }
+      res.redirect("/");
     }
   },
   signin: function (req, res) {
-    res.render("./users/signin");
-  },
-  create: (req, res) => {
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
-      let user = {
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        work: req.body.work,
-        role: 1,
-      };
-      let archivoUsers = fs.readFileSync(
-        path.resolve(__dirname, "../database/users.json"),
-        {
-          encoding: "utf-8",
-        }
-      );
-      let users;
-      if (archivoUsers == "") {
-        users = [];
-      } else {
-        users = JSON.parse(archivoUsers);
-      }
-
-      users.push(user);
-      usersJSON = JSON.stringify(users, null, 2);
-      fs.writeFileSync(
-        path.resolve(__dirname, "../database/users.json"),
-        usersJSON
-      );
-      res.redirect("/login");
+    res.render("users/signin", {
+      title: "Signin",
+      styles: "login.css",
+    });  },
+  processRegister: (req, res) => {
+    const errors = validationResult(req);
+   
+    if (!errors.isEmpty()) {
+      return res.render("users/signin", {
+        errors: errors.mapped(),
+        old: req.body,
+        title: "Signin",
+        styles: "login.css",
+      });
     } else {
-      return res.render("./users/signin"), {
-        errors: errors.errors,
-      };
+      newUser = req.body;
+      newUser.password = bcrypt.hashSync(newUser.password, 10);
+      newUser.id = uuidv4();
+      newUser.avatar = req.file;
+      newUser.isAdmin = false;
+
+      users.push(newUser);
+      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
+      res.redirect("/login");
     }
+  },
+  processLogout: (req, res) => {
+    res.clearCookie("recordame");
+    req.session.destroy();
+    res.redirect("/");
   },
   editaccount: function (req, res) {
     res.render("./users/editaccount");

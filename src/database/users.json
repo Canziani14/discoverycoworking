@@ -1,60 +1,115 @@
 [
-  {
-    "name": "Daniel",
-    "email": "cedavilu@gmail.com",
-    "password": "123",
-    "role": 9,
-    "work": "no"
+ {
+  "userName": "Usuario",
+  "userLastName": "Administrador",
+  "userEmail": "admin@admin.com",
+  "password": "$2a$10$t97ope1mI/FestUpxAV0ZedL5gXSHKYaLpubQMft/8qQZ/cZpygai",
+  "id": "bb14cdd4-4219-4e68-aa95-81f8ef3da130",
+  "avatar": {
+   "fieldname": "avatar",
+   "originalname": "anonymus.png",
+   "encoding": "7bit",
+   "mimetype": "image/png",
+   "destination": "/Users/rodrigoponce/Documents/DH/express-full-dh/public/img/users",
+   "filename": "avatar-1658617998555.png",
+   "path": "/Users/rodrigoponce/Documents/DH/express-full-dh/public/img/users/avatar-1658617998555.png",
+   "size": 12655
   },
-  {
-    "nombre": "Indira",
-    "email": "indira@gmail.com",
-    "password": "123",
-    "role": 1,
-    "work": "no"
+  "isAdmin": true
+ },
+ {
+  "userName": "Javier",
+  "userLastName": "Amarilla",
+  "userEmail": "javi@javi.com",
+  "password": "$2a$10$RmW9cLV4jraLMPyOjQboLO0jSDgxWAXcTeSNcqqXseUGaE/gCCVju",
+  "work": "12345678",
+  "id": "75e70490-ec31-4f26-84e1-e549c80862f6",
+  "avatar": {
+   "fieldname": "avatar",
+   "originalname": "homeroCiego.jpg",
+   "encoding": "7bit",
+   "mimetype": "image/jpeg",
+   "destination": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users",
+   "filename": "avatar-1659104763324.jpg",
+   "path": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users/avatar-1659104763324.jpg",
+   "size": 30190
   },
-  {
-    "name": "Javi",
-    "email": "javi@javi.com",
-    "password": "javi",
-    "work": "javi",
-    "role": 1
+  "isAdmin": true
+ },
+ {
+  "userName": "Matias",
+  "userLastName": "Canziani",
+  "userEmail": "mati@canziani.com",
+  "password": "$2a$10$x.8OskYNzaLDvvskpUcHj.xZjm6G8.p2S2PDTrBb5c9nguc391hl.",
+  "work": "12345678",
+  "id": "7e979e17-66ec-4331-94d3-e5e4fec7968e",
+  "avatar": {
+   "fieldname": "avatar",
+   "originalname": "unnamed.jpg",
+   "encoding": "7bit",
+   "mimetype": "image/jpeg",
+   "destination": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users",
+   "filename": "avatar-1659104874335.jpg",
+   "path": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users/avatar-1659104874335.jpg",
+   "size": 12227
   },
-  {
-    "name": "pepe",
-    "email": "pepe@pepe.com",
-    "password": "12345678",
-    "work": "asd",
-    "role": 1
+  "isAdmin": false
+ },
+ {
+  "userName": "Jorge",
+  "userLastName": "tata",
+  "userEmail": "tata@jorge.com",
+  "password": "$2a$10$fm/IT/j5f06Hvezsewm3y.zRa.gbH8RQaDcIc1oeoVW1nmpfQoCjq",
+  "work": "no",
+  "id": "08c3f0f5-6971-43a2-9907-0e582b405f12",
+  "avatar": {
+   "fieldname": "avatar",
+   "originalname": "unnamed.jpg",
+   "encoding": "7bit",
+   "mimetype": "image/jpeg",
+   "destination": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users",
+   "filename": "avatar-1659105359543.jpg",
+   "path": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users/avatar-1659105359543.jpg",
+   "size": 12227
   },
-  {
-    "name": "j",
-    "email": "j@j.con",
-    "password": "12345678",
-    "work": "no",
-    "role": 1
+  "isAdmin": false
+ },
+ {
+  "userName": "Pedro",
+  "userLastName": "Peperino",
+  "userEmail": "pe@p.com",
+  "password": "$2a$10$TEVMpwmFkHiIFHM6yzgLeu7ZppWHh4s2gZBM7.7bXCuvXf3gH9q3y",
+  "work": "Nunca",
+  "id": "1399c002-70b8-4376-97e7-9803e38f9ed1",
+  "avatar": {
+   "fieldname": "avatar",
+   "originalname": "unnamed.jpg",
+   "encoding": "7bit",
+   "mimetype": "image/jpeg",
+   "destination": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users",
+   "filename": "avatar-1659105426131.jpg",
+   "path": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users/avatar-1659105426131.jpg",
+   "size": 12227
   },
-  {
-    "name": "Martin",
-    "email": "martin@palermo.com",
-    "password": "martinpaler",
-    "work": "goleador",
-    "role": 1
+  "isAdmin": false
+ },
+ {
+  "userName": "Martin",
+  "userLastName": "Palermo",
+  "userEmail": "martin@palermo.com",
+  "password": "$2a$10$7g3HNn9E3mDMZMQK3BDj8OmnMrFLzlWuvBjvFIRlbwBoam1dzswfu",
+  "work": "no",
+  "id": "b18a2158-c5d6-440c-b02b-3201563b5451",
+  "avatar": {
+   "fieldname": "avatar",
+   "originalname": "palermo.jpeg",
+   "encoding": "7bit",
+   "mimetype": "image/jpeg",
+   "destination": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users",
+   "filename": "avatar-1659105744292.jpeg",
+   "path": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users/avatar-1659105744292.jpeg",
+   "size": 7630
   },
-  {
-    "name": "pp",
-    "email": "p@p.com",
-    "password": "123456",
-    "work": "No",
-    "role": 1,
-    "img": "https://ui-avatars.com/api/?name=pp"
-  },
-  {
-    "name": "Creado",
-    "email": "cread@o.com",
-    "password": "12345678",
-    "work": "qq",
-    "role": 1,
-    "img": "https://ui-avatars.com/api/?name=Creado"
-  }
+  "isAdmin": false
+ }
 ]

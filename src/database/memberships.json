@@ -5,7 +5,7 @@
     "services": "CHAU",
     "price": "11",
     "oldImagen": "lab.jpg",
-    "img": "lab.jpg"
+    "img": "memberships/lab.jpg"
   },
   {
     "id": "2",
@@ -20,22 +20,15 @@
     ],
     "details": "Shared space for mobile professionals.",
     "price": "USD 300",
-    "img": "flex.jpg"
+    "img": "memberships/flex.jpg"
   },
   {
-    "id": "3",
     "name": "desktop",
-    "services": [
-      "Use of all shared coworking spaces, including living room, kitchen, ping pong and garden.",
-      "Dedicated desk with ergonomic Haworth chair and locked storage space.",
-      "Break with coffee, infusions, cookies and fruit free of charge.",
-      "Terrace and internal garden available.",
-      "Free hours for use of meeting rooms.",
-      "Access to innovative and inspiring events."
-    ],
     "details": "You always have your fixed desk waiting for you.",
-    "price": "USD 500",
-    "img": "desktop.jpg"
+    "services": "Use of all shared coworking spaces, including living room, kitchen, ping pong and garden.,Dedicated desk with ergonomic Haworth chair and locked storage space.,Break with coffee, infusions, cookies and fruit free of charge.,Terrace and internal garden available.,Free hours for use of meeting rooms.,Access to innovative and inspiring events.",
+    "price": "12",
+    "oldImagen": "memberships/desktop.jpg",
+    "img": "memberships/desktop.jpg"
   },
   {
     "id": "4",
@@ -51,13 +44,6 @@
     ],
     "details": "Your private and equipped office for teams of 4 to 50 people.",
     "price": "USD 750",
-    "img": "office.jpg"
-  },
-  {
-    "id": "8e0db285-7f37-4ebd-9ba9-ba4c14f9846d",
-    "name": "PEdro",
-    "services": "papa",
-    "details": "papa",
-    "price": "123"
+    "img": "memberships/office.jpg"
   }
 ]

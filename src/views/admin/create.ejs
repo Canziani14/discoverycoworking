@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- FONTS -->
-    <%- include ("../partials/links") %>
-    <link rel="stylesheet" href="/css/admin.css" />
+    <%- include('../partials/head') %>
+
     <link rel="stylesheet" href="/css/index.css" />
     <title>HOME</title>
   </head>
@@ -21,25 +17,34 @@
         enctype="multipart/form-data"
         id="create"
       >
+      
+
         <div class="form-group">
           <input
             type="text"
             class="form-control"
             name="name"
             placeholder="Name"
-            required="required"
+            
             value=""
           />
         </div>
+        <% if (locals.errors && locals.errors.title) { %>
+          <span class="error-msg"><%= locals.errors.title.msg %></span>
+          <% } %>
+
         <div class="form-group">
           <input
             type="text"
             class="form-control"
             name="details"
             placeholder="Details"
-            required="required"
+            
             value=""
           />
+          <% if (locals.errors && locals.errors.details) { %>
+            <span class="error-msg"><%= locals.errors.details.msg %></span>
+            <% } %>
         </div>
         <div class="form-group">
           <input
@@ -47,25 +52,32 @@
             class="form-control"
             name="services"
             placeholder="Services"
-            required="required"
             value=""
           />
         </div>
+        <% if (locals.errors && locals.errors.services) { %>
+          <span class="error-msg"><%= locals.errors.services.msg %></span>
+          <% } %>
         <div class="form-group">
           <input
             type="number"
             class="form-control"
             name="price"
             placeholder="Price $$"
-            required="required"
             value=""
           />
         </div>
+        <% if (locals.errors && locals.errors.price) { %>
+          <span class="error-msg"><%= locals.errors.price.msg %></span>
+          <% } %>
 
         <!--Aquí solicito la imagen-->
         <div class="custom-file">
-          <input type="file" name="imgMembership" />
+          <input type="file" name="imgMembership"  id="imgMembership" />
         </div>
+        <% if (locals.errors && locals.errors.imgMembership) { %>
+          <span class="error-msg"><%= locals.errors.imgMembership.msg %></span>
+          <% } %>
         <div class="form-group">
           <button type="submit" class="btn btn btn-info">Guardar</button>
           <a href="/admin" class="btn btn-danger">Volver</a>

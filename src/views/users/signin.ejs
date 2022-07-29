@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- FONTS-->
-
-    <link rel="stylesheet" href="/css/login.css" />
-    <title>Sign In</title>
+    <%- include('../partials/head') %>
   </head>
 
   <body>
@@ -20,41 +14,48 @@
         <h1 class="title">Sign In</h1>
         <p class="subtitle">Make an account on Discovery Coworking</p>
         
-        <% if(typeof errors != 'undefined'){ %>
-          <p style="color:red">ERROR</p>
-          <ul>
-            <% for (let i=0; i < errors.length; i++){ %>
-              <li>
-                <%= errors[i].msg %>
-              </li>
-              <%} %>
-          </ul>
-        <%}%>
-
         <form
           action="/signin"
           class="form"
           method="POST"
-        
+          enctype="multipart/form-data"
         >
-          <label for="name" class="label">Name</label>
+          <label for="userName" class="label">Name</label>
           <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Enter your name"
+          type="text"
+          name="userName"
+          placeholder="Nombre"
+          value="<%= locals.old && locals.old.userName ? locals.old.userName : '' %>"
             class="input input-name"
           />
+          <% if (locals.errors && locals.errors.userName) { %>
+            <span class="error-msg"><%= locals.errors.userName.msg %></span>
+            <% } %>
+
+            <label for="userLastName" class="label">LastName</label>
+            <input
+        type="text"
+        name="userLastName"
+        placeholder="LastName"
+        class="input input-name"
+        value="<%= locals.old && locals.old.userLastName ? locals.old.userLastName : '' %>"
+      />
+      <% if (locals.errors && locals.errors.userLastName) { %>
+      <span class="error-msg"><%= locals.errors.userLastName.msg %></span>
+      <% } %>
 
           <label for="email" class="label">Email address</label>
           <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Enter your email adress"
+          type="email"
+          name="userEmail"
+          placeholder="e-mail adress"
+          value="<%= locals.old && locals.old.userEmail ? locals.old.userEmail : '' %>"
             required
             class="input input-email"
           />
+          <% if (locals.errors && locals.errors.userEmail) { %>
+            <span class="error-msg"><%= locals.errors.userEmail.msg %></span>
+            <% } %>
 
           <label for="password" class="label">Password</label>
           <input
@@ -63,16 +64,12 @@
             id="password"
             placeholder="Password"
             class="input input-password"
+            value="<%= locals.old && locals.old.password ? locals.old.password : '' %>"
           />
+          <% if (locals.errors && locals.errors.password) { %>
+            <span class="error-msg"><%= locals.errors.password.msg %></span>
+            <% } %>
 
-          <label for="confirm_password" class="label">Confirm password</label>
-          <input
-            type="password"
-            id="confirm_password"
-            name="confirm_password"
-            placeholder="Confirm password"
-            class="input input-password"
-          />
 
           <label for="work" class="label">Work</label>
           <input
@@ -82,6 +79,11 @@
             placeholder="work"
             class="input input-work"
           />
+          
+          <input type="file" name="avatar" />
+      <% if (locals.errors && locals.errors.avatar) { %>
+      <span class="error-msg"><%= locals.errors.avatar.msg %></span>
+      <% } %>
 
           <button
             type="submit"
