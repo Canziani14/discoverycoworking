@@ -31,4 +31,10 @@ router.get("/changepassword", userController.changepassword);
 
 router.get("/contactus", userController.contactus);
 
+//BASE DE DATOS
+
+router.get("/users", userController.list)
+router.get ("/users/create", userController.create)
+router.get ("/users/detail/:id", userController.details)
+
 module.exports = router;
