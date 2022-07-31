@@ -1,10 +1,10 @@
 [
   {
-    "name": "lab",
+    "name": "LAB",
     "details": "Focused 100% on entrepreneurs and technology startups.",
-    "services": "CHAU",
-    "price": "11",
-    "oldImagen": "lab.jpg",
+    "services": "HOLA",
+    "price": "150",
+    "oldImagen": "memberships/lab.jpg",
     "img": "memberships/lab.jpg"
   },
   {

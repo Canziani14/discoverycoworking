@@ -1,8 +1,10 @@
 const path = require("path");
 const fs = require("fs");
-
+const memberships = require ("../database/memberships.json")
 
 const membershipsController = {
+
+  
   home: function (req, res) {
     if (req.session.userLoged) {
       res.render("products/memberships", {

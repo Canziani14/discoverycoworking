@@ -111,5 +111,24 @@
    "size": 7630
   },
   "isAdmin": false
+ },
+ {
+  "userName": "matias",
+  "userLastName": "canziani",
+  "userEmail": "mcanziani12@gmail.com",
+  "password": "$2a$10$2UcG8QAs3dw24Pcv5CEH8eF0RS7JCDImMZImRAy4nKwocUdhj.oK.",
+  "work": "admin",
+  "id": "c98ff830-c5b4-40cd-b497-774ba2eaea17",
+  "avatar": {
+   "fieldname": "avatar",
+   "originalname": "Screenshot_2021-08-21-08-59-49-307_com.google.android.apps.photos.jpg",
+   "encoding": "7bit",
+   "mimetype": "image/jpeg",
+   "destination": "C:\\Users\\CASA\\Desktop\\Digital House\\Integrador\\discoverycoworking\\discoverycoworking\\public\\imgs\\users",
+   "filename": "avatar-1659284846713.jpg",
+   "path": "C:\\Users\\CASA\\Desktop\\Digital House\\Integrador\\discoverycoworking\\discoverycoworking\\public\\imgs\\users\\avatar-1659284846713.jpg",
+   "size": 205327
+  },
+  "isAdmin": true
  }
 ]
