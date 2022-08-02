@@ -21,7 +21,9 @@ const mainController = {
     res.render("carrito", {
       title: "Carrito",
       styles: "carrito.css",
-    });
+      user: req.session.userLoged,
+      memberships: memberships
+    } );
   }
 };
 
