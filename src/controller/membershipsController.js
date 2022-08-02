@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const memberships = require ("../database/memberships.json")
+const db = require('../../database/models');
 
 const membershipsController = {
 
@@ -47,6 +48,13 @@ const membershipsController = {
   getAllProducts: () => {
     return membershipsDelArchivoJson;
   },
+
+  /*list: function (req, res) {
+    db.Membership.findAll ()
+    .then(memberships => {
+        res.render('./users/userList', {memberships: memberships})
+    })
+  }*/
 };
 
 module.exports = membershipsController;
