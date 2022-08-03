@@ -1,14 +1,13 @@
-Start Doing: Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar. O tal vez son soluciones comprobadas que notamos que deberíamos usar. Por ejemplo usar una wiki para la comunicación o repositorio interno.
+Start Doing: Implementamos HTML y css para la creación de lo que va a ser nuestros Home Detalle de producto, Carrito de compras, Formulario de registro, Formulario de login. Seleccionamos a demas los colores a utilizar.
+
+
+
+More of: Implementación en el proyecto de lo que seras Express + EJS con en base a lo realizado en HTML y css para luego llevar a Json y adicionalmente implementar los metodos HTTP
 
 
 
 
-More of: Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero). Es decir que los [Start Doing] se convertirán en [More of]. Esto significa aquellas cosas que estamos usando o haciendo y que queremos que mejoren. Son practicas que creemos que requiere mas refinamiento y que nos gustan mucho por ello hay que darles mas.
-
-
-
-
-Keep Doing : Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor. Debemos seguir haciéndolo pero no será preocupación mejorarlo. Está bien como esta.
+Keep Doing : seguir trabajando con  con la implementacion de EJS y JSon para simplificar el trabajo
 
 
 
