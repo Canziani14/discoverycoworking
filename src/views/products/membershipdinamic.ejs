@@ -23,14 +23,13 @@
 
 
                 <div class="container-detalle">
-                    <h2>Included Services</h2>
+                    <h2>Included Services</h2>  
 
                     <% for (let i=0; i <=membership.services.length; i++) { %>
-                        <p>
+                        <li>
                             <%= membership.services[i]%>
-                        </p>
+                        </li>
                         <% } %>
-
 
                         <a href="/carrito"> <button class="btn">  I want to be a member </button> </a>
                 </div>

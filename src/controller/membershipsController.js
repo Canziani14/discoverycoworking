@@ -1,10 +1,14 @@
 const path = require("path");
 const fs = require("fs");
 
+
 const membershipsFilePath = path.join(__dirname,'../database/memberships.json');
 const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 
+
 const membershipsController = {
+
+  
   home: function (req, res) {
     if (req.session.userLoged) {
       res.render("products/memberships", {
@@ -47,6 +51,13 @@ const membershipsController = {
   getAllProducts: () => {
     return membershipsDelArchivoJson;
   },
+
+  /*list: function (req, res) {
+    db.Membership.findAll ()
+    .then(memberships => {
+        res.render('./users/userList', {memberships: memberships})
+    })
+  }*/
 };
 
 module.exports = membershipsController;

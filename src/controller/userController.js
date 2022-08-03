@@ -4,11 +4,14 @@ const bcrypt = require("bcryptjs");
 const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
 
-const membershipsFilePath = path.join(__dirname,'../database/memberships.json');
+const membershipsFilePath = path.join(__dirname, '../database/memberships.json');
 const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 
 const usersFilePath = path.join(__dirname, "../database/users.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+
+const db = require('../../database/models');
+
 
 const userController = {
   login: function (req, res) {
@@ -57,10 +60,11 @@ const userController = {
     res.render("users/signin", {
       title: "Signin",
       styles: "login.css",
-    });  },
+    });
+  },
   processRegister: (req, res) => {
     const errors = validationResult(req);
-   
+
     if (!errors.isEmpty()) {
       return res.render("users/signin", {
         errors: errors.mapped(),
@@ -94,6 +98,25 @@ const userController = {
   contactus: function (req, res) {
     res.render("./users/contactus");
   },
+  //BASE DE DATOS
+  list: function (req, res) {
+    db.User.findAll ()
+    .then(users => {
+        res.render('./users/userList', {users: users})
+    })
+  },
+
+  create: function (req, res) {
+
+  },
+
+  details: function (req, res) {
+
+  },
+
+
+
+
 };
 
 module.exports = userController;
