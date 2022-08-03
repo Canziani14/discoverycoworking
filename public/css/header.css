@@ -1,99 +1,128 @@
-header {
-  width: 100%;
-  height: 140px;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-section {
-  width: 95%;
-  margin: auto;
-  min-height: fit-content;
-}
-.header-icons-container {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  background-color: #57bd9e;
-}
-.icons {
-  width: 600px;
-  background-color: #009d71;
-  box-shadow: -39px 1px 0px -6px #3d8ebde1;
-  -webkit-box-shadow: -39px 1px 0px -6px #3d8ebde1;
-  -moz-box-shadow: -39px 1px 0px -6px #3d8ebde1;
-  border-radius: 20px 0px 0px 20px;
-  height: auto;
-  display: flex;
-  justify-items: flex-end;
-  align-items: center;
-  justify-content: space-around;
-  justify-self: end;
-    transition-duration: 1s;
-
-}
-.icons:hover{
-  
-  transition-duration: 1s;
-  box-shadow: -200px 1px 0px -6px #3d8ebde1;
-  -webkit-box-shadow: -200px 1px 00px -6px #3d8ebde1;
-  -moz-box-shadow: -200px 1px 00px -6px #3d8ebde1;
-}
-.ef {
-  display:flex;
-  flex-direction: row;
-  background: #57bd9e;
-  color: black;
-  border-radius: 3px;
-  text-decoration: none;
-  position: relative;
-  padding: 10px;
-  cursor: pointer;
-  transition: 30ms ease all;
-  outline: none;
-}
-.ef:hover {
-  background: #fff;
-  color: #1aab8a;
-}
-.ef:before,
-.ef:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: #1aab8a;
-  transition: 400ms ease all;
-}
-button:after {
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
-}
-.ef:hover:before,
-.ef:hover:after {
-  width: 100%;
-  transition: 800ms ease all;
-}
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 80px;
-  border: 10px solid #009d71;
-  background-color: #3d8ebde1;
-}
-.nav-logo-container {
-  text-align: left;
-}
-.nav-carrito {
-  display: flex;
-  justify-content: space-around;
-}
-img {
-  width: 35%;
-}
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    font-family: sans-serif;
+    background: #f1f1f1;
+  }
+  nav {
+    background: #3d8ebde1;
+    padding: 5px 20px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .logo a:hover {
+    text-decoration: none;
+  }
+  .menu li {
+    font-size: 20px;
+    padding: 15px 5px;
+    white-space: nowrap;
+  }
+  .logo a,
+  .toggle a {
+    font-size: 20px;
+  }
+  .button.secondary {
+    border-bottom: 1px #444 solid;
+  }
+  /* Mobile menu */
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .toggle {
+    order: 1;
+  }
+  .item.button {
+    order: 2;
+  }
+  .item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+  }
+  .item.active {
+    display: block;
+  }
+  /* Tablet menu */
+  @media all and (min-width: 600px) {
+    .menu {
+      justify-content: center;
+    }
+    .logo {
+      flex: 1;
+    }
+    .toggle {
+      flex: 1;
+      text-align: right;
+    }
+    .item.button {
+      width: auto;
+      order: 1;
+      display: block;
+    }
+    .toggle {
+      order: 2;
+    }
+    .button.secondary {
+      border: 0;
+    }
+    .button a {
+      padding: 7.5px 15px;
+      background: teal;
+      border: 1px #006d6d solid;
+    }
+    .button.secondary a {
+      background: transparent;
+    }
+    .button a:hover {
+      text-decoration: none;
+    }
+    .button:not(.secondary) a:hover {
+      background: #006d6d;
+      border-color: #005959;
+    }
+    .button.secondary a:hover {
+      color: #ddd;
+    }
+  }
+  /* Desktop menu */
+  @media all and (min-width: 900px) {
+    .item {
+      display: block;
+      width: auto;
+    }
+    .toggle {
+      display: none;
+    }
+    .logo {
+      order: 0;
+    }
+    .item {
+      order: 1;
+    }
+    .button {
+      order: 2;
+    }
+    .menu li {
+      padding: 15px 10px;
+    }
+    .menu li.button {
+      padding-right: 0;
+    }
+  }
