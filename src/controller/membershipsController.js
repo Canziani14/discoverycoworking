@@ -1,6 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 
+const membershipsFilePath = path.join(__dirname,'../database/memberships.json');
+const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 
 const membershipsController = {
   home: function (req, res) {
