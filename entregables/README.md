@@ -27,4 +27,5 @@ Desarrollador Trainee 4: Tulio Castillo, 30 Años. Abogado. Actualmente me desem
 
 
 * Link del tablero de trabajo: 
+
 https://app.clickup.com/25736446/v/l/s/49633423
