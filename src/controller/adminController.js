@@ -90,5 +90,13 @@ module.exports = {
         fs.writeFileSync(path.resolve(__dirname,'../database/memberships.json'),membershipEdit)
 
         res.redirect('/admin');
-  }
+  },
+  destroy:(req,res) =>{
+    let membership = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/memberships.json')));
+    const membershipDeleteName = req.params.name;
+    const membershipFinal = membership.filter(membership => membership.name != membershipDeleteName);
+    let membershipGuardar = JSON.stringify(membershipFinal,null,2)
+    fs.writeFileSync(path.resolve(__dirname, '../database/memberships.json'),membershipGuardar);
+    res.redirect('/admin');
+}
 };

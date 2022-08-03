@@ -2,7 +2,14 @@
   {
     "name": "LAB",
     "details": "Focused 100% on entrepreneurs and technology startups.",
-    "services": "24x7 access,Break with coffee, infusions, cookies and fruit free of charge,Use of all shared coworking spaces, including living room, kitchen,ping pong and garden,Access to innovative and inspiring events.,Terrace and internal garden",
+    "services": [
+      "24x7 access",
+      "Break with coffee, infusions, cookies and fruit free of charge",
+      "Use of all shared coworking spaces",
+      "including living room, kitchen,ping pong and garden",
+      "Access to innovative and inspiring events",
+      "Terrace and internal garden"
+    ],
     "price": "150",
     "oldImagen": "memberships/lab.jpg",
     "img": "memberships/lab.jpg"
