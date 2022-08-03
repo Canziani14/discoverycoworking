@@ -4,5 +4,6 @@ const multer = require("multer");
 const mainController = require("../controller/mainController");
 
 router.get("/", mainController.index);
-router.get('/carrito', mainController.carrito)
+router.get('/carrito/:nameMembership', mainController.carrito)
+
 module.exports = router;
