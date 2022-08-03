@@ -3,6 +3,7 @@
 
 <head>
     <%- include('../partials/head') %>
+    
 </head>
 
 <body>
@@ -15,22 +16,19 @@
             <section>
 
                 <div class="products-container">
-                <% memberships.forEach(function(membership){ %>
+                    <% memberships.forEach(function(membership){ %>
+             
                         <div class="product-card">
-                            <img class="imgmember" src="/imgs/<%= membership.img %>" />
-                            <div class="product-info">
-                                <p class="product-precio">
-                                    <%= membership.price %>
-                                </p>
-                                <p class="product-name">
-                                    <%= membership.name %>
-                                </p>
-                                <a href="/memberships/<%= membership.name %>"><button
-                                        class="btn">MORE DETAILS</button></a>
-                            </div>
+                          <img class="imgmember" src="imgs/<%= membership.img%>" />
+                          <div class="product-info">
+                            <p class="product-precio"> <%= membership.price %></p>
+                            <p class="product-name"> <%= membership.name %></p>
+                            <a href="/memberships/<%= membership.name %>"
+                              ><button class="btn">MORE DETAILS</button></a>
+                          </div>
                         </div>
-                    </div>
-                    <% }); %>
+          
+                      <% }); %>
 
             </section>
 

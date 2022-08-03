@@ -2,14 +2,7 @@
   {
     "name": "LAB",
     "details": "Focused 100% on entrepreneurs and technology startups.",
-    "services": [
-      "24x7 access",
-      "Break with coffee, infusions, cookies and fruit free of charge",
-      "Use of all shared coworking spaces, including living room, kitchen",
-      "ping pong and garden",
-      "Access to innovative and inspiring events.",
-      "Terrace and internal garden"
-    ],
+    "services": "24x7 access,Break with coffee, infusions, cookies and fruit free of charge,Use of all shared coworking spaces, including living room, kitchen,ping pong and garden,Access to innovative and inspiring events.,Terrace and internal garden",
     "price": "150",
     "oldImagen": "memberships/lab.jpg",
     "img": "memberships/lab.jpg"
@@ -18,13 +11,13 @@
     "name": "FLEX",
     "details": "Shared space for mobile professionals.",
     "services": [
-    "Access business days, Monday to Friday from 8:30 a.m. to 7:30 p.m.",
-    "Break with coffee, infusions, cookies and fruit free of charge.",
-    "Use of all shared coworking spaces, including living room, kitchen, ping pong and garden",
-    "Access to innovative and inspiring events.",
-    "Terrace and internal garden available.",
-    "Free hours for use of meeting rooms."
-  ],
+      "Access business days, Monday to Friday from 8:30 a.m. to 7:30 p.m.",
+      "Break with coffee, infusions, cookies and fruit free of charge.",
+      "Use of all shared coworking spaces, including living room, kitchen, ping pong and garden",
+      "Access to innovative and inspiring events.",
+      "Terrace and internal garden available.",
+      "Free hours for use of meeting rooms."
+    ],
     "price": "300",
     "oldImagen": "memberships/flex.jpg",
     "img": "memberships/flex.jpg"
@@ -39,7 +32,6 @@
       "Terrace and internal garden available.",
       "Free hours for use of meeting rooms.",
       "Access to innovative and inspiring events."
-
     ],
     "price": "500",
     "oldImagen": "memberships/desktop.jpg",
@@ -49,7 +41,7 @@
     "name": "OFFICE",
     "details": "Your private and equipped office for teams of 4 to 50 people.",
     "services": [
-      "24x7 access.", 
+      "24x7 access.",
       "Private and furnished offices with modern equipment including desks",
       "Haworth ergonomic chair and storage space.",
       "Use of all shared coworking spaces, including living room, kitchen, ping pong and garden.",
@@ -58,7 +50,6 @@
       "Free hours for use of meeting rooms.",
       "Access to innovative and inspiring events."
     ],
-     
     "price": "750",
     "oldImagen": "memberships/office.jpg",
     "img": "memberships/office.jpg"
