@@ -24,3 +24,7 @@ Desarrollador Trainee 4: Tulio Castillo, 30 Años. Abogado. Actualmente me desem
 3) https://www.areatresworkplace.com/home
 4) https://www.bunkercoworking.com/
 5) http://www.enjoyurbanstation.com/argentina/es/home/
+
+
+* Link del tablero de trabajo: 
+https://app.clickup.com/25736446/v/l/s/49633423
