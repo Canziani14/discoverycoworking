@@ -44,7 +44,7 @@ module.exports = {
     //le asignamos el id al producto
     newMembership.id = id;
     // le asignamos el array de imagenes
-    newMembership.img = req.files;
+    newMembership.img = req.file;
 
     memberships.push(newMembership);
    
