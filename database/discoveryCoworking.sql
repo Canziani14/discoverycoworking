@@ -34,7 +34,7 @@ CREATE TABLE `discoverycoworking`.`services` (
   `id_services` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
    `id_membership` INT NULL,
-  PRIMARY KEY (`id_category`));
+  PRIMARY KEY (`id_services`));
   
   
   
