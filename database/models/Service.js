@@ -1,27 +1,23 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'ContactUs';
+    let alias = 'Service';
     let cols = {
-        id_ContactUs: {
+        id_service: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        service: {
             type: dataTypes.STRING
         },
-
-        email: {
-            type: dataTypes.STRING
-        },
-        comments: {
+        id_membership : {
             type: dataTypes.STRING
         },
     };
     let config = {
-        tableName: 'ContactUs',
+        tableName: 'services',
         timestamps: false
     };
-    const ContactUs = sequelize.define(alias, cols, config);
+    const Service = sequelize.define(alias, cols, config);
 
-    return ContactUs
+    return Service
 }

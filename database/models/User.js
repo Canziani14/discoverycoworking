@@ -1,29 +1,26 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'User';
     let cols = {
-        idUsers: {
+        id_users: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        Name: {
+        userName: {
             type: dataTypes.STRING
         },
-        LastName : {
+        userEmail : {
             type: dataTypes.STRING
         },
-        Email: {
+        password: {
             type: dataTypes.STRING
         },
-        Password: {
+        avatar: {
             type: dataTypes.STRING
         },
-        Work: {
+        category: {
             type: dataTypes.STRING
         },
-        Avatar: {
-            type: dataTypes.STRING
-        }
     };
     let config = {
         tableName: 'users',

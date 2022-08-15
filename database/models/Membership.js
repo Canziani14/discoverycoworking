@@ -1,22 +1,28 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Membership';
     let cols = {
-        idMemberships: {
+        id_memberships: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        Services: {
+        name: {
             type: dataTypes.STRING
         },
-        Details: {
+        details: {
             type: dataTypes.STRING
         },
-        Price : {
+        id_services : {
+            type: dataTypes.INTEGER
+        },
+        price: {
+            type: dataTypes.INTEGER
+        },
+        img : {
             type: dataTypes.STRING
         },
-        Images: {
-            type: dataTypes.STRING
+        id_user : {
+            type: dataTypes.INTEGER
         },
     };
     let config = {

@@ -1,27 +1,24 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'ContactUs';
+    let alias = 'User_membership';
     let cols = {
-        id_ContactUs: {
+        id_users_memberships: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        userName: {
+            type: dataTypes.STRING
+        },
+        userEmail : {
             type: dataTypes.STRING
         },
 
-        email: {
-            type: dataTypes.STRING
-        },
-        comments: {
-            type: dataTypes.STRING
-        },
     };
     let config = {
-        tableName: 'ContactUs',
+        tableName: 'users_memberships',
         timestamps: false
     };
-    const ContactUs = sequelize.define(alias, cols, config);
+    const User_membership = sequelize.define(alias, cols, config);
 
-    return ContactUs
+    return User_membership
 }
