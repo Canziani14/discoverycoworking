@@ -11,11 +11,12 @@ const authMiddleware = require("../middlewares/access/AuthorizedMd");
 const adminAcces = require("../middlewares/access/adminMd");
 
 
-//RUTAS
+/*//RUTAS
 router.get("/memberships", membershipsController.home);
+*/
 router.get("/memberships/:nameMembership", membershipsController.dinamic);
 
 //BASE DE DATOS
-//router.get ("/memberships/list", membershipsController.list)
+router.get ("/memberships", membershipsController.list)
 
 module.exports = router;
