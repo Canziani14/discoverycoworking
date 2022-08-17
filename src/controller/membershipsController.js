@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-
+const db = require('../../database/models');
 
 const membershipsFilePath = path.join(__dirname,'../database/memberships.json');
 const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
@@ -9,7 +9,9 @@ const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 const membershipsController = {
 
   
-  home: function (req, res) {
+ /* 
+ resuelto con base de datos
+ home: function (req, res) {
     if (req.session.userLoged) {
       res.render("products/memberships", {
         memberships: memberships,
@@ -24,7 +26,7 @@ const membershipsController = {
         styles: "membership.css",
       });
     }
-  },
+  },*/
   dinamic: function (req, res) {
     
     let nameMembership = req.params.nameMembership;
@@ -52,12 +54,26 @@ const membershipsController = {
     return membershipsDelArchivoJson;
   },
 
-  /*list: function (req, res) {
+  //BASE DE DATOS
+  list: function (req, res) {
     db.Membership.findAll ()
     .then(memberships => {
-        res.render('./users/userList', {memberships: memberships})
+      res.render("products/memberships", {
+        memberships: memberships,
+        title: "Memberships",
+        styles: "membership.css",
+        user: req.session.userLoged,
+      });
     })
-  }*/
+  },
+
+  create: function (req, res) {
+
+  },
+
+  details: function (req, res) {
+
+  },
 };
 
 module.exports = membershipsController;
