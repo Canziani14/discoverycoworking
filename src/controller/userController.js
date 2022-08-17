@@ -100,7 +100,9 @@ const userController = {
   },
   //BASE DE DATOS
   list: function (req, res) {
-    db.User.findAll ()
+    db.User.findAll ({
+      include: [{association:"categorys"}]
+    })
     .then(users => {
         res.render('./users/userList', {users: users})
     })

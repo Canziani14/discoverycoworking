@@ -7,7 +7,8 @@
     <title>User List</title>
     <style>
         body{
-            color:red
+            color:red;
+            background-color: black;
         }
     </style>
 </head>
@@ -18,7 +19,7 @@
     <ul>
         <% for( let i = 0; i < users.length; i++ ) { %>
             <li>
-                <%= users[i].userName +" " + " con Email: " + users[i].userEmail + " con categoria " + users[i].id_category %> 
+                <%= users[i].userName +" " + " con Email: " + users[i].userEmail + " con categoria " + users[i].categorys.name %> 
             </li>
         <% } %>
     </ul>

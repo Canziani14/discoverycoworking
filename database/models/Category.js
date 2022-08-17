@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Category';
     let cols = {
-        id_categorys: {
+        id_category: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
     };
     
     let config = {
-        tableName: 'categorys',
+        tableName: 'category',
         timestamps: false
     };
     const Category = sequelize.define(alias, cols, config);
