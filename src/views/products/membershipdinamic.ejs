@@ -11,12 +11,13 @@
 
         <main>
             <h1 class="main-title">
-                <%= membership.name.toUpperCase() %>
+                MEMBERSHIP <%= membership.name.toUpperCase() %>
             </h1>
+            <br><br>
             
             <div class="container">
                 <div class="container-img">
-                    <img src="/imgs/<%= membership.img %>" alt=" ">
+                    <img class="img" src="/imgs/<%= membership.img %>" alt=" ">
                 </div>
 
 
@@ -31,15 +32,17 @@
                         </li>
                         
                         <% } %>
+                        <div class="container-detalle2">
+                            <h2>
+                                <%= membership.details %>
+                            </h2>
+                            <br><br><br>    
                         <a href="/carrito/<%=membership.name%> "> <button class="btn">  I want to be a member </button> </a>
                         
                 </div>
             </div>
 
-            <div class="container-detalle2">
-                <h2>
-                    <%= membership.details %>
-                </h2>
+            
 
             </div>
             

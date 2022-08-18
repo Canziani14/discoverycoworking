@@ -9,8 +9,8 @@ const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 const membershipsController = {
 
   
- /* 
- resuelto con base de datos
+ 
+ //resuelto con base de datos
  home: function (req, res) {
     if (req.session.userLoged) {
       res.render("products/memberships", {
@@ -26,8 +26,21 @@ const membershipsController = {
         styles: "membership.css",
       });
     }
-  },*/
+  },
+
+  
   dinamic: function (req, res) {
+
+    /*
+
+    db.Membership.findByPk(req.params.nameMembership)
+            .then(membership => {
+                res.render('products/membershipdinamic.ejs', {membership: membership}, 
+                {title: filteredMembership.name,
+                  styles: "membership.css",
+                  membership: filteredMembership,
+                  user: req.session.userLoged,})
+            })*/
     
     let nameMembership = req.params.nameMembership;
 
@@ -38,14 +51,14 @@ const membershipsController = {
     if (req.session.userLoged) {
       res.render("products/membershipdinamic", {
         title: filteredMembership.name,
-        styles: "membership.css",
+        styles: "membershipDinamic.css",
         membership: filteredMembership,
         user: req.session.userLoged,
       });
     } else {
       res.render("products/membershipdinamic", {
         title: filteredMembership.title,
-        styles: "membership.css",
+        styles: "membershipDinamic.css",
         membership: filteredMembership,
       });
     }
@@ -55,8 +68,10 @@ const membershipsController = {
   },
 
   //BASE DE DATOS
-  list: function (req, res) {
-    db.Membership.findAll ()
+  home: function (req, res) {
+    db.Membership.findAll ({
+      include: [{association:"service"}]
+    })
     .then(memberships => {
       res.render("products/memberships", {
         memberships: memberships,

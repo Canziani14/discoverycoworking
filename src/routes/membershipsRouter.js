@@ -14,9 +14,12 @@ const adminAcces = require("../middlewares/access/adminMd");
 /*//RUTAS
 router.get("/memberships", membershipsController.home);
 */
+/*
 router.get("/memberships/:nameMembership", membershipsController.dinamic);
-
+*/
 //BASE DE DATOS
-router.get ("/memberships", membershipsController.list)
+router.get ("/memberships", membershipsController.home)
+
+router.get("/memberships/:nameMembership", membershipsController.dinamic)
 
 module.exports = router;

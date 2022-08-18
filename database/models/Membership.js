@@ -31,5 +31,13 @@ module.exports = (sequelize, dataTypes) => {
     };
     const Membership = sequelize.define(alias, cols, config);
 
+    Membership.associate = function(models){
+        Membership.hasMany (models.Service, {
+            as:"service",
+            foreignKey: "id_services"
+        })
+    }
+
+
     return Membership
 }

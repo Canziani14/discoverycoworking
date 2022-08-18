@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Service';
     let cols = {
-        id_service: {
+        id_services: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -18,6 +18,14 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
     const Service = sequelize.define(alias, cols, config);
+
+    Service.associate = function(models){
+        Service.belongsTo (models.Category, {
+            as:"membership",
+            foreignKey: "id_services"
+        })
+    }
+
 
     return Service
 }
