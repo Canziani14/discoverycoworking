@@ -7,9 +7,7 @@ const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 
 
 const membershipsController = {
-
-  
- 
+ /*
  //resuelto con base de datos
  home: function (req, res) {
     if (req.session.userLoged) {
@@ -26,21 +24,35 @@ const membershipsController = {
         styles: "membership.css",
       });
     }
-  },
+  },*/
 
   
+ 
+ 
+
+  getAllProducts: () => {
+    return membershipsDelArchivoJson;
+  },
+
+  //BASE DE DATOS
+  home: function (req, res) {
+    db.Membership.findAll ({
+      include: [{association:"service"}]
+    })
+    .then(memberships => {
+      res.render("products/memberships", {
+        memberships: memberships,
+        title: "Memberships",
+        styles: "membership.css",
+        user: req.session.userLoged,
+      });
+    })
+  },
+
   dinamic: function (req, res) {
 
-    /*
-
-    db.Membership.findByPk(req.params.nameMembership)
-            .then(membership => {
-                res.render('products/membershipdinamic.ejs', {membership: membership}, 
-                {title: filteredMembership.name,
-                  styles: "membership.css",
-                  membership: filteredMembership,
-                  user: req.session.userLoged,})
-            })*/
+  
+        
     
     let nameMembership = req.params.nameMembership;
 
@@ -62,33 +74,16 @@ const membershipsController = {
         membership: filteredMembership,
       });
     }
-  },
-  getAllProducts: () => {
-    return membershipsDelArchivoJson;
-  },
-
-  //BASE DE DATOS
-  home: function (req, res) {
-    db.Membership.findAll ({
-      include: [{association:"service"}]
-    })
-    .then(memberships => {
-      res.render("products/memberships", {
-        memberships: memberships,
-        title: "Memberships",
-        styles: "membership.css",
-        user: req.session.userLoged,
-      });
-    })
-  },
-
+  }
+/*
   create: function (req, res) {
 
   },
 
   details: function (req, res) {
 
-  },
+  },*/
 };
+
 
 module.exports = membershipsController;

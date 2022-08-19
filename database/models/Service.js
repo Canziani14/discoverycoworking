@@ -20,9 +20,9 @@ module.exports = (sequelize, dataTypes) => {
     const Service = sequelize.define(alias, cols, config);
 
     Service.associate = function(models){
-        Service.belongsTo (models.Category, {
+        Service.hasMany (models.Category, {
             as:"membership",
-            foreignKey: "id_services"
+            foreignKey: "id_membership"
         })
     }
 
