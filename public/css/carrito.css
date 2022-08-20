@@ -54,6 +54,19 @@ header img {
     width: 400px;
 }
 
+.shopp{
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    /* centrar vertical y horizontalmente */
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}
+.imgShopp{
+    width: 300px;
+}
+
 /*boton*/
 .btn {
     font-family: 'Nunito', sans-serif;
@@ -72,6 +85,7 @@ header img {
     outline: none;
     position: relative;
     padding: 10px;
+    margin: 10px;
     }
   /*
   .btn::before {

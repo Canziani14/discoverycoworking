@@ -43,6 +43,14 @@ const mainController = {
       });
     }
   },
+  shopp: function (req, res) {
+    res.render("users/shopp", {
+      title: "Carrito",
+      styles: "carrito.css",
+      user: req.session.userLoged,
+      memberships: null
+    })
+  }
 }
 
 

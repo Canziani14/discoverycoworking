@@ -41,7 +41,7 @@ USE discoverycoworking;
   VALUE (default, "LAB", "Focused 100% on entrepreneurs and technology startups.", 1, 150, "lab.jpg", default);
 
     INSERT INTO memberships (id_membership,name,details,id_services,price,img,id_user)
-  VALUE (default, "FLEX", "Shared space for mobile professionals.", 2, 300, "flex.jpg.jpg", default);
+  VALUE (default, "FLEX", "Shared space for mobile professionals.", 2, 300, "flex.jpg", default);
 
     INSERT INTO memberships (id_membership,name,details,id_services,price,img,id_user)
   VALUE (default, "DESKTOP", "You always have your fixed desk waiting for you.", 3, 500, "desktop.jpg", default);
