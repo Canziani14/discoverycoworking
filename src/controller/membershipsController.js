@@ -1,14 +1,14 @@
 const path = require("path");
 const fs = require("fs");
 const db = require('../../database/models');
+const { log } = require("console");
 
 const membershipsFilePath = path.join(__dirname,'../database/memberships.json');
-const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
+//const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 
 
 const membershipsController = {
  /*
- //resuelto con base de datos
  home: function (req, res) {
     if (req.session.userLoged) {
       res.render("products/memberships", {
@@ -50,10 +50,34 @@ const membershipsController = {
   },
 
   dinamic: function (req, res) {
+    let id = req.params.id;
+    console.log(id)
+    db.Membership.findByPk (id, {
+      include: [{association:"service"}]
+    })
+    .then (function (membership){
+      console.log(membership)
+      res.render ("products/membershipdinamic", {membership},{
+        membership: membership,
+        title: "Memberships",
+        styles: "membership.css",
+        user: req.session.userLoged,
+      });
+      console.log(membership.dataValues.service)
+    })
 
+    /*
+    .then(function(membership) {
+      res.render("products/membershipdinamic", {
+        membership: membership,
+        title: "Memberships",
+        styles: "membership.css",
+        user: req.session.userLoged,
+      });
+    })*/
   
         
-    
+/* 
     let nameMembership = req.params.nameMembership;
 
     const filteredMembership = memberships.find((membership)=>{
@@ -73,8 +97,8 @@ const membershipsController = {
         styles: "membershipDinamic.css",
         membership: filteredMembership,
       });
-    }
-  }
+    }*/
+  },
 /*
   create: function (req, res) {
 

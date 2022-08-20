@@ -20,6 +20,8 @@ router.get("/memberships/:nameMembership", membershipsController.dinamic);
 //BASE DE DATOS
 router.get ("/memberships", membershipsController.home)
 
-router.get("/memberships/:nameMembership", membershipsController.dinamic)
+//router.get("/memberships/:nameMembership", membershipsController.dinamic)
+router.get ("/memberships/:id", membershipsController.dinamic)
+
 
 module.exports = router;
