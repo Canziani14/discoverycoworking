@@ -50,7 +50,16 @@ const mainController = {
       user: req.session.userLoged,
       memberships: null
     })
-  }
+  },
+  toBuy:function (req, res) {
+    res.render("users/toBuy", {
+      title: "successful purchase",
+      styles: "carrito.css",
+      user: req.session.userLoged,
+      memberships: null
+    })
+  },
+  
 }
 
 
