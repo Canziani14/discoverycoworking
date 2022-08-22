@@ -35,6 +35,14 @@ module.exports = (sequelize, dataTypes) => {
         Membership.belongsTo (models.Service, {
             as:"service",
             foreignKey: "id_services"
+        }),
+
+        Membership.belongsToMany(models.User, {
+            as: "users",
+            through: "user_membership", /// Tabla intermedia 
+            foreignKey: "id_membership", /// Es el FK del modelo en el que estas (en la tabla intermedia de la bd)
+            otherKey: "id_user", /// Es el FK del otro modelo (en la tabla intermedia de la bd)
+            timestamps: false
         })
     }
 
