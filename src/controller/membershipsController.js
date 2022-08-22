@@ -27,19 +27,18 @@ const membershipsController = {
 
   dinamic: function (req, res) {
     let id = req.params.id;
-    console.log(id)
     db.Membership.findByPk (id, {
       include: [{association:"service"}]
     })
     .then (function (membership){
-      console.log(membership)
+      
       res.render ("products/membershipdinamic",{
         membership: membership,
         title: "Memberships",
         styles: "membership.css",
         user: req.session.userLoged,
       });
-      console.log(membership.dataValues.service)
+      
     })     
 
   },
