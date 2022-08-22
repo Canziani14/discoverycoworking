@@ -1,22 +1,23 @@
 const path = require("path");
 const fs = require("fs");
-
+const db = require('../../database/models');
 
 const membershipsFilePath = path.join(__dirname, '../database/memberships.json');
 const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 
 const mainController = {
-  index: (req, res) => {
-    if (req.session.userLoged) {
+  index:   function (req, res) {
+    db.Membership.findAll ({
+      include: [{association:"service"}]
+    })
+    .then(memberships => {
       res.render("index", {
-        title: "Inicio",
+        memberships: memberships,
+        title: "Memberships",
         styles: "index.css",
         user: req.session.userLoged,
-        memberships: memberships
       });
-    } else {
-      res.render("index", { title: "Inicio", styles: "index.css", memberships });
-    }
+    })
   },
   carrito: function (req, res) {
 
