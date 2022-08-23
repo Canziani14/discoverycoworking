@@ -28,7 +28,7 @@ USE discoverycoworking;
      CREATE TABLE `discoverycoworking`.`memberships` (
   `id_membership` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
-  `details` VARCHAR(45) NULL,
+  `details` VARCHAR(100) NULL,
   `id_services` INT NULL,
   `price` INT NULL,
   `img` VARCHAR(15) NULL,

@@ -11,16 +11,11 @@ const authMiddleware = require("../middlewares/access/AuthorizedMd");
 const adminAcces = require("../middlewares/access/adminMd");
 
 
-/*//RUTAS
-router.get("/memberships", membershipsController.home);
-*/
-/*
-router.get("/memberships/:nameMembership", membershipsController.dinamic);
-*/
 //BASE DE DATOS
+//findall
 router.get ("/memberships", membershipsController.home)
 
-//router.get("/memberships/:nameMembership", membershipsController.dinamic)
+//findbypk
 router.get ("/memberships/:id", membershipsController.dinamic)
 
 
