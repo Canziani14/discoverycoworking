@@ -22,13 +22,13 @@ module.exports = {
       name: req.body.name,
       details: req.body.details,
       services: req.body.services,
-      prince: req.body.price,
+      price: req.body.price,
       imgMembership: req.body.imgMembership
     }
     db.Membership.create(newMembership)
-    res.render("/create"), {
+    res.render("admin/create"), {
       title: "Admin",
-      styles: 'admin.css',
+      styles: "admin.css",
       user: req.session.userLoged,
 
     };
@@ -93,7 +93,7 @@ module.exports = {
       prince: req.body.price,
       imgMembership: req.body.imgMembership
   }
-  console.log(movie)
+  
   db.Movie.update(updateMembership, {where:{id: req.params.id}})
   res.redirect('/memberships')
   },
