@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
     const Service = sequelize.define(alias, cols, config);
-
+//relacion tiene muchos
     Service.associate = function(models){
         Service.hasMany (models.Category, {
             as:"membership",

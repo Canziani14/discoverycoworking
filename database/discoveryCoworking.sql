@@ -67,7 +67,9 @@ CREATE TABLE `discoverycoworking`.`category` (
   PRIMARY KEY (`id_category`));
 
   INSERT INTO category (id_category,name)
-  VALUE (default, default);
+  VALUE (default, "admin");
+    INSERT INTO category (id_category,name)
+  VALUE (default, "user");
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------*/  
 

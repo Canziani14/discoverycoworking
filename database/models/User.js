@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
         avatar: {
             type: dataTypes.STRING
         },
-        id_category: {
+        category: {
             type: dataTypes.STRING
         },
     };
@@ -28,13 +28,14 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
     const User = sequelize.define(alias, cols, config);
-
+//relacion pertenece a
     User.associate = function(models){
         User.belongsTo (models.Category, {
             as:"categorys",
-            foreignKey: "id_category"
+            foreignKey: "category"
         }), 
 
+        //relacoin muchos a muchos
         User.belongsToMany(models.Membership, {
             as: "memberships",
             through: "user_membership", /// Tabla intermedia 

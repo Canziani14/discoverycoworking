@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
     const Membership = sequelize.define(alias, cols, config);
-
+//relacion pertenece a
     Membership.associate = function(models){
         Membership.belongsTo (models.Service, {
             as:"service",
