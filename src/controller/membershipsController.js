@@ -57,7 +57,7 @@ const membershipsController = {
     })
     .then (function (membership){
       console.log(membership)
-      res.render ("products/membershipdinamic", {membership},{
+      res.render ("products/membershipdinamic",{
         membership: membership,
         title: "Memberships",
         styles: "membership.css",

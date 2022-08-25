@@ -1,48 +1,27 @@
 /* FOOTER*/
 footer {
-    background-color: #57bd9e ;
-    padding-top: 15px;
-    margin-top: 50px;
+    background-color: #3d8ebde1;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    background-size: auto;
-    
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 120px;
+    margin-top:140px;
   }
-  
-  figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  img {
-    width: 200px;
-  }
-
-  .items{
-    
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    color: red;
-    padding-bottom: 10px;
-  }
-
-  .abboutus{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-
-  
-  footer i {
-    margin: 0px 20px;
+h2{
+  color:white;
+}
+img{
+    width:200px;
   }
 
   .icons-redes {
     display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    gap:30px;
   }
   
   .footerwhatsapp {
@@ -56,28 +35,3 @@ footer {
     text-align: center;
   }
   
-  #insta {
-    background: radial-gradient(
-      circle at 30% 107%,
-      #fdf497 0%,
-      #fdf497 5%,
-      #fd5949 45%,
-      #d6249f 60%,
-      #285aeb 90%
-    );
-    -webkit-background-clip: text;
-    /* Also define standard property for compatibility */
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px; /* change this to change the size*/
-  }
-  #face {
-    color: blue;
-  }
-  #tweet {
-    color: #285aeb;
-  }
-  
-  #github{
-    color: rgba(3, 3, 3, 0.171)
-  }
