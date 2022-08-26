@@ -104,6 +104,7 @@ const userController = {
       include: [{association:"category",association:"memberships"}]
     })
     .then(users => {
+      
       console.log(users)
         res.render('./users/userList', {users: users})
     })

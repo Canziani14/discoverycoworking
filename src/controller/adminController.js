@@ -18,22 +18,24 @@ module.exports = {
     });
   },
   create: (req, res) => {  
-
-  let newMembership = {
+console.log(req.body)
+    db.Membership.create({
       name: req.body.name,
       details: req.body.details,
       services: req.body.services,
       price: req.body.price,
-      imgMembership: req.body.imgMembership
-    }
-    db.Membership.create(newMembership)
-    res.render("admin/create"), {
-      title: "Admin",
-      styles: "admin.css",
-      user: req.session.userLoged,
-      
-    };
-    console.log(newMembership)
+      imgMembership: req.body.imgMembership})
+    .then ( function(result) {
+      console.log(result)
+      res.render("admin/create"), {
+        title: "Admin",
+        styles: "admin.css",
+        user: req.session.userLoged,
+        
+      };
+    })
+    
+    
   },
   createProcess: (req, res) => {
     const errors = validationResult(req);

@@ -10,16 +10,17 @@ USE discoverycoworking;
   `userEmail` VARCHAR(45) NULL,
   `password` VARCHAR(45) NULL,
   `avatar` VARCHAR(45) NULL,
-  `category` VARCHAR(15) NULL,
+  `id_category` VARCHAR(15) NULL,
+  `id_membership` INT NULL,
   PRIMARY KEY (`id_users`));
 
   /*creamos usuario administrador y usuario comun de prueba*/
 
-  INSERT INTO users (id_users,userName,userEmail,password,avatar,category)
-  VALUE (default, "Administrador", "admin@gmail.com", "123456", "img avatar", "admin");
+  INSERT INTO users (id_users,userName,userEmail,password,avatar,id_category,id_membership)
+  VALUE (default, "Administrador", "admin@gmail.com", "123456", "img avatar", 1, 1);
 
-  INSERT INTO users (id_users,userName,userEmail,password,avatar,category)
-  VALUE (default, "usuario", "user@gmail.com", "123456", "img avatar", "user");
+  INSERT INTO users (id_users,userName,userEmail,password,avatar,id_category,id_membership)
+  VALUE (default, "usuario", "user@gmail.com", "123456", "img avatar", 2,1);
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------*/  
 
@@ -32,22 +33,21 @@ USE discoverycoworking;
   `id_services` INT NULL,
   `price` INT NULL,
   `img` VARCHAR(15) NULL,
-  `id_User` INT NULL,
   PRIMARY KEY (`id_membership`));
 
   /*creamos las 4 membresias*/
 
-   INSERT INTO memberships (id_membership,name,details,id_services,price,img,id_user)
-  VALUE (default, "LAB", "Focused 100% on entrepreneurs and technology startups.", 1, 150, "lab.jpg", default);
+   INSERT INTO memberships (id_membership,name,details,id_services,price,img)
+  VALUE (default, "LAB", "Focused 100% on entrepreneurs and technology startups.", 1, 150, "lab.jpg");
 
-    INSERT INTO memberships (id_membership,name,details,id_services,price,img,id_user)
-  VALUE (default, "FLEX", "Shared space for mobile professionals.", 2, 300, "flex.jpg", default);
+    INSERT INTO memberships (id_membership,name,details,id_services,price,img)
+  VALUE (default, "FLEX", "Shared space for mobile professionals.", 2, 300, "flex.jpg");
 
-    INSERT INTO memberships (id_membership,name,details,id_services,price,img,id_user)
-  VALUE (default, "DESKTOP", "You always have your fixed desk waiting for you.", 3, 500, "desktop.jpg", default);
+    INSERT INTO memberships (id_membership,name,details,id_services,price,img)
+  VALUE (default, "DESKTOP", "You always have your fixed desk waiting for you.", 3, 500, "desktop.jpg");
 
-    INSERT INTO memberships (id_membership,name,details,id_services,price,img,id_user)
-  VALUE (default, "OFFICE", "Your private and equipped office for teams of 4 to 50 people.", 4, 750, "office.jpg", default);
+    INSERT INTO memberships (id_membership,name,details,id_services,price,img)
+  VALUE (default, "OFFICE", "Your private and equipped office for teams of 4 to 50 people.", 4, 750, "office.jpg");
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------*/  
 

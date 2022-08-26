@@ -21,19 +21,19 @@ app.use(session({
   saveUninitialized: false
 }))
 
-
-
-// ubicacion de la carpeta de vistas para express
-app.set('views', path.join(__dirname, 'views'));
-//motor de vista usado en la app
-app.set('view engine','ejs');
-
 // MIDDLEWARES GLOBALES
 app.use(express.static(path.resolve(__dirname, ".." ,"public")))
 app.use(express.json());
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false}));
+
+// ubicacion de la carpeta de vistas para express
+app.set('views', path.join(__dirname, 'views'));
+//motor de vista usado en la app
+app.set('view engine','ejs');
+
+
 
 
 //ROUTES PATHS
