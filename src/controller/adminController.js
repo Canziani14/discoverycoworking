@@ -17,8 +17,9 @@ module.exports = {
       user: req.session.userLoged,
     });
   },
-  create: (req, res) => {
-    let newMembership = {
+  create: (req, res) => {  
+
+  let newMembership = {
       name: req.body.name,
       details: req.body.details,
       services: req.body.services,
@@ -30,8 +31,9 @@ module.exports = {
       title: "Admin",
       styles: "admin.css",
       user: req.session.userLoged,
-
+      
     };
+    console.log(newMembership)
   },
   createProcess: (req, res) => {
     const errors = validationResult(req);

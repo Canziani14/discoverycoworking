@@ -21,9 +21,7 @@ module.exports = (sequelize, dataTypes) => {
         img : {
             type: dataTypes.STRING
         },
-        id_user : {
-            type: dataTypes.INTEGER
-        },
+       
     };
     let config = {
         tableName: 'memberships',
@@ -37,13 +35,15 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "id_services"
         }),
 
-        Membership.belongsToMany(models.User, {
-            as: "users",
-            through: "user_membership", /// Tabla intermedia 
-            foreignKey: "id_membership", /// Es el FK del modelo en el que estas (en la tabla intermedia de la bd)
-            otherKey: "id_user", /// Es el FK del otro modelo (en la tabla intermedia de la bd)
-            timestamps: false
+        Membership.belongsTo (models.User, {
+            as:"users",
+            foreignKey: "id_membership"
         })
+
+
+
+
+        
     }
 
 
