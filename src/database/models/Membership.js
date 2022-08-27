@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
     const Membership = sequelize.define(alias, cols, config);
 //relacion pertenece a
     Membership.associate = function(models){
-        Membership.belongsTo (models.Service, {
+        Membership.hasMany (models.Service, {
             as:"service",
             foreignKey: "id_services"
         }),

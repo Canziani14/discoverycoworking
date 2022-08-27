@@ -31,6 +31,7 @@ const membershipsController = {
       include: [{association:"service"}]
     })
     .then (function (membership){
+      console.log(membership)
       res.render ("products/membershipdinamic",{
         membership: membership,
         title: "Memberships",

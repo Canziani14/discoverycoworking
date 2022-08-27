@@ -73,15 +73,25 @@ const userController = {
         styles: "login.css",
       });
     } else {
-      newUser = req.body;
-      newUser.password = bcrypt.hashSync(newUser.password, 10);
-      newUser.id = uuidv4();
-      newUser.avatar = req.file;
-      newUser.isAdmin = false;
+      db.User.create({
+      userName: req.body.userName,
+      lastName: req.body.userLastName,
+      userEmail: req.body.userEmail,
+      password: req.body.password =  bcrypt.hashSync(req.body.password, 10),
+      id_category: req.body.category,
+      avatar:req.file.filename})
 
-      users.push(newUser);
-      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
-      res.redirect("/login");
+      .then ( function(result) {
+        res.render("index", {
+          memberships: memberships,
+          title: "Home",
+          styles: "index.css",
+          user: req.session.userLoged,
+          
+        });
+      })
+
+
     }
   },
   processLogout: (req, res) => {

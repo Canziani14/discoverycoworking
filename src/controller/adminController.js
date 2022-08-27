@@ -25,13 +25,9 @@ module.exports = {
       services: req.body.services,
       price: req.body.price,
       imgMembership: req.body.imgMembership})
-      console.log(req.body.name)
-      console.log(req.body.details)
-      console.log(req.body.services)
-      console.log(req.body.price)
-      console.log(req.body.imgMembership)
+   
 
-    /*.then ( function(result) {
+    .then ( function(result) {
       console.log(result)
       res.render("admin/create"), {
         title: "Admin",
@@ -39,7 +35,7 @@ module.exports = {
         user: req.session.userLoged,
         
       };
-    })*/
+    })
     
     
   },
