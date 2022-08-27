@@ -21,7 +21,6 @@ module.exports = (sequelize, dataTypes) => {
         img : {
             type: dataTypes.STRING
         },
-       
     };
     let config = {
         tableName: 'memberships',
@@ -39,11 +38,6 @@ module.exports = (sequelize, dataTypes) => {
             as:"users",
             foreignKey: "id_membership"
         })
-
-
-
-
-        
     }
 
 

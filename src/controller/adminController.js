@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid"); //genera ids automaticos
 const { validationResult } = require("express-validator");
-const db = require("../../database/models");
+const db = require("../database/models");
 
 const membershipsFilePath = path.join(__dirname, '../database/memberships.json');
 const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
@@ -18,14 +18,20 @@ module.exports = {
     });
   },
   create: (req, res) => {  
-console.log(req.body)
+
     db.Membership.create({
       name: req.body.name,
       details: req.body.details,
       services: req.body.services,
       price: req.body.price,
       imgMembership: req.body.imgMembership})
-    .then ( function(result) {
+      console.log(req.body.name)
+      console.log(req.body.details)
+      console.log(req.body.services)
+      console.log(req.body.price)
+      console.log(req.body.imgMembership)
+
+    /*.then ( function(result) {
       console.log(result)
       res.render("admin/create"), {
         title: "Admin",
@@ -33,7 +39,7 @@ console.log(req.body)
         user: req.session.userLoged,
         
       };
-    })
+    })*/
     
     
   },

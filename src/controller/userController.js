@@ -10,7 +10,7 @@ const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 const usersFilePath = path.join(__dirname, "../database/users.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
-const db = require('../../database/models');
+const db = require('../database/models');
 
 
 const userController = {
@@ -104,8 +104,15 @@ const userController = {
       include: [{association:"category",association:"memberships"}]
     })
     .then(users => {   
-        res.render('./users/userList', {users: users})
+        res.render('./users/userList', {users: users,title: "User List",
+        styles: "index.css",
+        user: req.session.userLoged})
     })
+    
+  
+
+
+
   },
 
   create: function (req, res) {
