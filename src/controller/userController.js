@@ -103,9 +103,7 @@ const userController = {
     db.User.findAll ({
       include: [{association:"category",association:"memberships"}]
     })
-    .then(users => {
-      
-      console.log(users)
+    .then(users => {   
         res.render('./users/userList', {users: users})
     })
   },
