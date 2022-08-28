@@ -82,10 +82,10 @@ const userController = {
       avatar:req.file.filename})
 
       .then ( function(result) {
-        res.render("index", {
+        res.render("users/login", {
           memberships: memberships,
           title: "Home",
-          styles: "index.css",
+          styles: "login.css",
           user: req.session.userLoged,
           
         });

@@ -36,25 +36,7 @@
   },
   "isAdmin": true
  },
- {
-  "userName": "Matias",
-  "userLastName": "Canziani",
-  "userEmail": "mati@canziani.com",
-  "password": "$2a$10$x.8OskYNzaLDvvskpUcHj.xZjm6G8.p2S2PDTrBb5c9nguc391hl.",
-  "work": "12345678",
-  "id": "7e979e17-66ec-4331-94d3-e5e4fec7968e",
-  "avatar": {
-   "fieldname": "avatar",
-   "originalname": "unnamed.jpg",
-   "encoding": "7bit",
-   "mimetype": "image/jpeg",
-   "destination": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users",
-   "filename": "avatar-1659104874335.jpg",
-   "path": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users/avatar-1659104874335.jpg",
-   "size": 12227
-  },
-  "isAdmin": false
- },
+
  {
   "userName": "Jorge",
   "userLastName": "tata",
@@ -109,44 +91,6 @@
    "filename": "avatar-1659105744292.jpeg",
    "path": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users/avatar-1659105744292.jpeg",
    "size": 7630
-  },
-  "isAdmin": false
- },
- {
-  "userName": "matias",
-  "userLastName": "canziani",
-  "userEmail": "mcanziani12@gmail.com",
-  "password": "$2a$10$2UcG8QAs3dw24Pcv5CEH8eF0RS7JCDImMZImRAy4nKwocUdhj.oK.",
-  "work": "admin",
-  "id": "c98ff830-c5b4-40cd-b497-774ba2eaea17",
-  "avatar": {
-   "fieldname": "avatar",
-   "originalname": "Screenshot_2021-08-21-08-59-49-307_com.google.android.apps.photos.jpg",
-   "encoding": "7bit",
-   "mimetype": "image/jpeg",
-   "destination": "C:\\Users\\CASA\\Desktop\\Digital House\\Integrador\\discoverycoworking\\discoverycoworking\\public\\imgs\\users",
-   "filename": "avatar-1659284846713.jpg",
-   "path": "C:\\Users\\CASA\\Desktop\\Digital House\\Integrador\\discoverycoworking\\discoverycoworking\\public\\imgs\\users\\avatar-1659284846713.jpg",
-   "size": 205327
-  },
-  "isAdmin": true
- },
- {
-  "userName": "Matias",
-  "userLastName": "Canziani",
-  "userEmail": "mcanziani12@gmail.com",
-  "password": "$2a$10$PgkSAqHTF805C7juauNaL.FNf4ah8Ttl6heasTMhDdl2SbmonuR/6",
-  "work": "",
-  "id": "e4218577-77b1-40aa-896d-35d536fd4c80",
-  "avatar": {
-   "fieldname": "avatar",
-   "originalname": "Sin tÃ­tulo.jpg",
-   "encoding": "7bit",
-   "mimetype": "image/jpeg",
-   "destination": "C:\\Users\\Matias Canziani\\Desktop\\Proyectos\\discoverycoworking\\public\\imgs\\users",
-   "filename": "avatar-1661613585147.jpg",
-   "path": "C:\\Users\\Matias Canziani\\Desktop\\Proyectos\\discoverycoworking\\public\\imgs\\users\\avatar-1661613585147.jpg",
-   "size": 372029
   },
   "isAdmin": false
  }
