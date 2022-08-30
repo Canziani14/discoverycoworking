@@ -7,6 +7,7 @@ USE discoverycoworking;
   CREATE TABLE `discoverycoworking`.`users` (
   `id_users` INT NOT NULL AUTO_INCREMENT,
   `userName` VARCHAR(45) NULL,
+  `lastName` VARCHAR(45) NULL,
   `userEmail` VARCHAR(45) NULL,
   `password` VARCHAR(45) NULL,
   `avatar` VARCHAR(45) NULL,

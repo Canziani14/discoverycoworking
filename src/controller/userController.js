@@ -119,8 +119,6 @@ const userController = {
         user: req.session.userLoged})
     })
     
-  
-
 
 
   },
