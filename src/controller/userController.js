@@ -3,14 +3,14 @@ const fs = require("fs");
 const bcrypt = require("bcryptjs");
 const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
-
+/*
 const membershipsFilePath = path.join(__dirname, '../database/memberships.json');
 const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 
 const usersFilePath = path.join(__dirname, "../database/users.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-
-const db = require('../../database/models');
+*/
+const db = require('../database/models');
 
 
 const userController = {
@@ -30,10 +30,31 @@ const userController = {
         styles: "login.css",
       });
     } else {
-      const userFound = users.find((user) => {
-        if (bcrypt.compareSync(req.body.password, user.password))
-          return user.userEmail === req.body.email;
-      });
+    const userFound = db.User.findOne ({
+        where: {
+          userEmail: req.body.email
+        }
+        
+      })
+      if (userFound) {
+        userFound.then(users => { 
+          let passOk =bcrypt.compareSync(req.body.password, users.password)
+          if ( passOk) {
+            console.log("clave correcta")
+            res.render('index', {
+            users: users,
+            title: "HOME",
+            styles: "index.css",
+            user: req.session.userLoged})
+          }else{
+            console.log("incorrect password")
+          }
+        })
+      }
+     
+
+
+      req.session.userLoged = userFound;
 
       if (userFound == undefined) {
         res.render("users/login", {
@@ -43,7 +64,7 @@ const userController = {
         });
       }
 
-      req.session.userLoged = userFound;
+      
 
       if (req.body.remember_me != undefined) {
         //chequear el timepo de la cookie
@@ -73,15 +94,25 @@ const userController = {
         styles: "login.css",
       });
     } else {
-      newUser = req.body;
-      newUser.password = bcrypt.hashSync(newUser.password, 10);
-      newUser.id = uuidv4();
-      newUser.avatar = req.file;
-      newUser.isAdmin = false;
+      db.User.create({
+      userName: req.body.userName,
+      lastName: req.body.userLastName,
+      userEmail: req.body.userEmail,
+      password: req.body.password =  bcrypt.hashSync(req.body.password, 10),
+      id_category: req.body.category,
+      avatar:req.file.filename})
 
-      users.push(newUser);
-      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
-      res.redirect("/login");
+      .then ( function(result) {
+        res.render("users/login", {
+          memberships: result,
+          title: "Home",
+          styles: "login.css",
+          user: req.session.userLoged,
+          
+        });
+      })
+
+
     }
   },
   processLogout: (req, res) => {
@@ -101,24 +132,14 @@ const userController = {
   //BASE DE DATOS
   list: function (req, res) {
     db.User.findAll ({
-      include: [{association:"categorys"}]
+      include: [{association:"category",association:"memberships"}]
     })
-    .then(users => {
-        res.render('./users/userList', {users: users})
+    .then(users => {   
+        res.render('./users/userList', {users: users,title: "User List",
+        styles: "index.css",
+        user: req.session.userLoged})
     })
   },
-
-  create: function (req, res) {
-
-  },
-
-  details: function (req, res) {
-
-  },
-
-
-
-
 };
 
 module.exports = userController;

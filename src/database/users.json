@@ -36,25 +36,7 @@
   },
   "isAdmin": true
  },
- {
-  "userName": "Matias",
-  "userLastName": "Canziani",
-  "userEmail": "mati@canziani.com",
-  "password": "$2a$10$x.8OskYNzaLDvvskpUcHj.xZjm6G8.p2S2PDTrBb5c9nguc391hl.",
-  "work": "12345678",
-  "id": "7e979e17-66ec-4331-94d3-e5e4fec7968e",
-  "avatar": {
-   "fieldname": "avatar",
-   "originalname": "unnamed.jpg",
-   "encoding": "7bit",
-   "mimetype": "image/jpeg",
-   "destination": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users",
-   "filename": "avatar-1659104874335.jpg",
-   "path": "/home/jav1stro/visualStudioCode/DigitalHouse/discoverycoworking/public/imgs/users/avatar-1659104874335.jpg",
-   "size": 12227
-  },
-  "isAdmin": false
- },
+
  {
   "userName": "Jorge",
   "userLastName": "tata",
@@ -149,5 +131,6 @@
    "size": 38628
   },
   "isAdmin": false
+
  }
 ]

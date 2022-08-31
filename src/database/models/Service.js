@@ -20,12 +20,10 @@ module.exports = (sequelize, dataTypes) => {
     const Service = sequelize.define(alias, cols, config);
 //relacion tiene muchos
     Service.associate = function(models){
-        Service.hasMany (models.Category, {
+        Service.belongsTo (models.Membership, {
             as:"membership",
             foreignKey: "id_membership"
         })
     }
-
-
     return Service
 }

@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const db = require('../../database/models');
+const db = require('../database/models');
 const { log } = require("console");
 
 
@@ -31,6 +31,7 @@ const membershipsController = {
       include: [{association:"service"}]
     })
     .then (function (membership){
+
       res.render ("products/membershipdinamic",{
         membership: membership,
         title: "Memberships",

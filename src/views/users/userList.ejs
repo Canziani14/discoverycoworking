@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User List</title>
-    <style>
-        body{
-            color:red;
-            background-color: black;
-        }
-    </style>
+    <%- include('../partials/head') %>
+    
 </head>
 <body>
+   
 
     <h1>User List</h1>
 
     <ul>
         <% for( let i = 0; i < users.length; i++ ) { %>
             <li>
-                <%= users[i].userName +" " + " con Email: " + users[i].userEmail + " con categoria " %> 
+                <%= users[i].id_users + " - " + users[i].userName + " con Email: " +
+                users[i].userEmail + ", tiene la membresia " + users[i].id_membership +
+                " y con categoria "+ users[i].id_category%> 
             </li>
         <% } %>
     </ul>

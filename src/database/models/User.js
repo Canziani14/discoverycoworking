@@ -9,6 +9,9 @@ module.exports = (sequelize, dataTypes) => {
         userName: {
             type: dataTypes.STRING
         },
+        lastName:{
+            type: dataTypes.STRING
+        },
         userEmail : {
             type: dataTypes.STRING
         },
@@ -18,9 +21,10 @@ module.exports = (sequelize, dataTypes) => {
         avatar: {
             type: dataTypes.STRING
         },
-        category: {
-            type: dataTypes.STRING
-        },
+        id_membership:{
+            type: dataTypes.INTEGER,
+        }
+        
     };
 
     let config = {
@@ -31,18 +35,17 @@ module.exports = (sequelize, dataTypes) => {
 //relacion pertenece a
     User.associate = function(models){
         User.belongsTo (models.Category, {
-            as:"categorys",
-            foreignKey: "category"
+            as:"category",
+            foreignKey: "id_category"
         }), 
 
-        //relacoin muchos a muchos
-        User.belongsToMany(models.Membership, {
-            as: "memberships",
-            through: "user_membership", /// Tabla intermedia 
-            foreignKey: "id_user", /// Es el FK del modelo en el que estas (en la tabla intermedia de la bd)
-            otherKey: "id_membership", /// Es el FK del otro modelo (en la tabla intermedia de la bd)
-            timestamps: false
+        User.hasMany (models.Membership, {
+            as:"memberships",
+            foreignKey: "id_membership"
         })
+
+        
+        
     }
 
     return User
