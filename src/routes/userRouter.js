@@ -12,7 +12,7 @@ const authMiddleware = require('../middlewares/access/AuthorizedMd')
 
 router.get("/login", unAuthMiddleware, userController.login);
 
-router.post('/login', loginValidations ,userController.processLogin);
+router.post('/login',loginValidations ,userController.processLogin);
 
 router.get("/signin", userController.signin);
 
@@ -34,7 +34,6 @@ router.get("/contactus", userController.contactus);
 //BASE DE DATOS
 
 router.get("/users", userController.list)
-router.get ("/users/create", userController.create)
-router.get ("/users/detail/:id", userController.details)
+
 
 module.exports = router;
