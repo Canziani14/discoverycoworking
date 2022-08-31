@@ -31,15 +31,10 @@ const membershipsController = {
       include: [{association:"service"}]
     })
     .then (function (membership){
-<<<<<<< HEAD
-      console.log(membership)
-=======
-      
->>>>>>> 554b9086d040d5a7f64f976e35849d666926ec7f
       res.render ("products/membershipdinamic",{
         membership: membership,
         title: "Memberships",
-        styles: "membership.css",
+        styles: "membershipDinamic.css",
         user: req.session.userLoged,
       });
       

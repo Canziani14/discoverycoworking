@@ -1,7 +1,11 @@
 body {
-  background-color: #4cb5ae56;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'Arimo', sans-serif !important;
+  font-weight: 400;
   margin: 0;
   padding: 0;
+  background-color: #57bd9ebc !important;
+
+}
+main{
+  z-index: -1000;
 }

@@ -12,29 +12,35 @@
 
 
         <h1 class="main-title">BUY DETAILS</h1>
-        <br>
 
-        <main class="carrito-container">
+        <main>
 
+            <div class="container">
 
+            <div class="info">
+                          
+                    <div  class="name"> <%= membership.name %>  </div>
+                    <br>
+                    <p><%= membership.details %> </p>
+                    <br>
 
-            <div><img class="carrito-img" src="/imgs/<%= membership.img %>  " alt=""></div>
+            
+                    <div class="price"> $ <%= membership.price %>  </div>
+                </div>
+            
 
-            <div>
-                <h3> <%= membership.name %>  </h3>
-                <p><%= membership.details %> </p>
-            </div>
-            <div>
-                <h2>PRICE</h2>
-                <h3> <%= membership.price %>  </h3>
+            <div class="div-total">
+                <h2>TOTAL</h2>
+                <div class="price"> $ <%= membership.price %></div>
+               <button class="btn"> <a href="/toBuy"> BUY</a></button> 
             </div>
             
+
+           
+        </div>
         </main>
 
-        <section class="section-total">
-            <h2>TOTAL <%= membership.price %> </h2>
-           <a href="/toBuy"> <button class="btn">BUY</button> </a>
-        </section>
+        
 
         <!--footer-->
         <%- include ("./partials/footer") %>

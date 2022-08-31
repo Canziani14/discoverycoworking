@@ -1,82 +1,65 @@
-header {
-   /* position: fixed; */
-    width: 100%;
-    border-bottom: 5px var(--color5) solid;
-    background-color: var(--color3);
-    z-index: 1;
-    height: 80px;
-}
-
-.header-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.header-nav {
-    display: flex;
-    width: 100%;
-    font-size: 20px;
-    justify-content: space-around;
-}
-
-header a {
-    text-decoration: none;
-    text-decoration: underline 3px var(--color5);
+main{
+    padding-top:60px;
+    height: 52vh;
+  }
+.main-title{
+    font-family: 'Arimo', sans-serif !important;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 2rem;
     color: black;
-}
+    text-decoration: underline #4cb5ae;
+  }
 
-header img {
-    width: 300px;
-    height: 80px;
-}
 
-.main-title {
-    text-align: center;
-    text-decoration: underline 3px var(--color4);
-}
+  .container{
+    border: 2px  solid #4cb5ae;
+    border-radius: 30px;
+    background-color: rgb(213, 254, 249);
+    padding:80px;
+    width:60%;
+    margin:auto;
+    text-align:center;
+    align-items: center;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+  }
 
-.section-total {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.carrito-container {
-    display: flex;
-    border: 10px var(--color5) solid;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    height: 500px;
-}
-
-.carrito-img {
-    height: 200px;
-    width: 400px;
-}
-
-.shopp{
-    text-align: center;
-    width: 100px;
-    height: 100px;
-    /* centrar vertical y horizontalmente */
-    position: absolute;
-    top: 30%;
-    left: 50%;
-}
-.imgShopp{
-    width: 300px;
-}
-
-/*boton*/
-.btn {
-    font-family: 'Nunito', sans-serif;
+  .container:hover{
+    background-color: rgb(183, 255, 247);
+  }
+  .info{
+    background-color: #57bd9e5e;
+    padding:20px;
+    
+  }
+  .div-total{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    background-color: #57bd9e5e;
+    padding:20px;
+    height:200px;
+    
+  }
+  .name{
+    font-size:2rem;
+    font-weight:bold;
+  }
+  .price{
+    font-weight:bold;
+    font-size:30px;
+  }
+  .btn {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 1.3px;
-    font-weight: 700;
-    color: #313133;
-    background: #4FD1C5;
-    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+    font-weight: 900;
+  
+    background: linear-gradient(90deg, rgb(172, 235, 227) 0%, rgb(26, 70, 66) 100%);
     border: none;
     border-radius: 1000px;
     box-shadow: 12px 12px 24px rgba(79,209,197,.64);
@@ -85,96 +68,34 @@ header img {
     outline: none;
     position: relative;
     padding: 10px;
-    margin: 10px;
     }
-  /*
-  .btn::before {
-  content: '';
-    border-radius: 1000px;
-    min-width: calc(170px + 12px);
-    min-height: calc(30px + 12px);
-    border: 6px solid #00FFCB;
-    box-shadow: 0 0 60px rgba(0,255,203,.64);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: all .3s ease-in-out 0s;
-  }
-  */
-  .btn:hover, .button:focus {
-    color: #313133;
-    transform: translateY(-6px);
-  }
+
+    .btn a{
+        color:black;
+            font-weight: 900;
+        text-decoration: none;
+    }
   
-  .btn:hover::before, button:focus::before {
-    opacity: 1;
+  .btn:hover{
+    font-weight: 700;
+    border: 3px solid rgba(79,209,197,.64);
+      background: white;
+    color:rgb(34, 85, 80);
   }
-/*
-  .btn::after {
-    content: '';
-    width: 30px; height: 30px;
-    border-radius: 100%;
-    border: 6px solid #00FFCB;
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: ring 1.5s infinite;
-  }*/
 
 
 
+  .purchase{
+    background-color: rgb(218, 255, 250);
+    color: rgb(34, 85, 80);
+    width:40%;
+    margin:auto;
+    margin-top:100px;
+    padding:50px;
+    text-align: center;
+    font-size: 2rem;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* FOOTER*/
-footer {
-    margin: 20px;
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footerface {
-    color: blue;
-    position: relative;
-    bottom: 15px;
-}
-
-.footerinsta {
-    color: orange;
-    position: relative;
-    right: 200px;
-    bottom: 15px;
-}
-
-.footertwiter {
-    color: rgb(77, 77, 228);
-    position: relative;
-    right: 400px;
-    bottom: 15px;
-}
-
-.footerwhatsapp {
-    color: rgb(15, 99, 15);
-    position: fixed;
-    right: 15px;
-    bottom: 35px
-}
+  .shopp-container{
+    text-align: center;
+  }

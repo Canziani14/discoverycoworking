@@ -8,48 +8,22 @@
 
 <body>
     <%- include ("../partials/header") %>
-
+    <h1 class="main-title">
+        Membership <%= membership.name %>
+    </h1>
         <main>
-            <h1 class="main-title">
-                MEMBERSHIP <%= membership.name.toUpperCase() %>
-            </h1>
-            <br><br>
-            
+         
             <div class="container">
                 <div class="container-img">
                     <img class="img" src="/imgs/memberships/<%= membership.img %>" alt=" ">
                 </div>
-
-
-
-
-                <div class="container-detalle">
-                    <h2>Included Services</h2>  
-
-<<<<<<< HEAD
-
-=======
-                    <% for (let i=0; i <=membership.service.length; i++) { %>
-                       
-                        
-                        <li>
-                            <%= membership.service.length %>
-                        </li>
-                        
-                        <% } %>
->>>>>>> 554b9086d040d5a7f64f976e35849d666926ec7f
-                        <div class="container-detalle2">
-                            <h2>
+                              <div class="detalle">
                                 <%= membership.details %>
-                            </h2>
-                            <br><br><br>    
+                              </div> 
+                              <div class="price"> $<%= membership.price %></div>
+                            
                         <a href="/carrito/<%=membership.name%> "> <button class="btn">  I want to be a member </button> </a>
                         
-                </div>
-            </div>
-
-            
-
             </div>
             
         </main>

@@ -130,5 +130,24 @@
    "size": 205327
   },
   "isAdmin": true
+ },
+ {
+  "userName": "Prueba",
+  "userLastName": "Pruebini",
+  "userEmail": "prueba@prueba.com",
+  "password": "$2a$10$K9I75YeAY8I4VpxyB7B5fuNQyO06huSKNyPybZ01lnLDGUNBa4.ya",
+  "work": "no",
+  "id": "b6ba0f7e-2fb6-4eed-80b8-787fecac24ae",
+  "avatar": {
+   "fieldname": "avatar",
+   "originalname": "E4hdb2GXoAUR_-S.jpg",
+   "encoding": "7bit",
+   "mimetype": "image/jpeg",
+   "destination": "C:\\Users\\USER\\Desktop\\VisualStudioCode\\DigitalHouse\\discoverycoworking\\public\\imgs\\users",
+   "filename": "avatar-1661953223875.jpg",
+   "path": "C:\\Users\\USER\\Desktop\\VisualStudioCode\\DigitalHouse\\discoverycoworking\\public\\imgs\\users\\avatar-1661953223875.jpg",
+   "size": 38628
+  },
+  "isAdmin": false
  }
 ]

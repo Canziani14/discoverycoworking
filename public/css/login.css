@@ -10,7 +10,7 @@
     --lg:18px;
 }
 body{
-    background-color: #57bd9e;
+    background-color: #57bd9ebc;
     font-family: 'Quicksand,sans-eirf';
     margin: 0;
     padding: 0;
@@ -114,6 +114,10 @@ body{
     font-size: var(--md);
     font-weight: bold;
     height:50px;
+}
+.secondary-button a{
+    text-decoration: none;
+    color:black;
 }
 .secondary-button:hover{
     background-color: #009d71;
