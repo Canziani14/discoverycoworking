@@ -4,9 +4,6 @@ const { v4: uuidv4 } = require("uuid"); //genera ids automaticos
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
 
-// const membershipsFilePath = path.join(__dirname, '../database/memberships.json');
-// const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
-
 module.exports = {
   index: (req, res) => {
     db.Membership.findAll()
@@ -19,12 +16,9 @@ module.exports = {
           user: req.session.userLoged,
         });
       }
-    )
-
-   
+    )   
   },
   create: (req, res) => {  
-
       res.render("admin/create"), {
         title: "Admin create",
         styles: "admin.css",
@@ -67,10 +61,8 @@ module.exports = {
   show: (req, res) => {
     let membership = db.Membership.findByPk(req.params.idMembership, {include: [{association: 'service'}]});
     let service = db.Service.findAll();
-    // console.log('membership:', JSON.stringify(membership))
     Promise.all([membership, service])
         .then(([Membership, Service]) => {
-          // console.log('membershipPost:', Membership)
             return res.render('admin/detail.ejs', {membership: Membership, service:Service})
         })
         .catch(error => res.send(error));
@@ -83,11 +75,8 @@ module.exports = {
                 return res.render('admin/edit.ejs', {membershipAEditar: Membership, service:Service})
             })
             .catch(error => res.send(error));
-
-        
     },
 
-  //falta modicificar con el html para que traiga los values 
   update: (req, res) => {
     let updateMembership = {
       name: req.body.name,
@@ -97,7 +86,7 @@ module.exports = {
       img: req.body.imagen
   }
   
-  db.Membership.update(updateMembership, {where:{id: req.params.id}})
+  db.Membership.update(updateMembership, {where:{id: req.params.idMembership}})
   res.redirect('/memberships')
   },
 
