@@ -23,6 +23,10 @@
                                 <%= membership.details %>
                               </div> 
                               <div class="price"> $<%= membership.price %></div>
+                              <% for( let i = 0; i < id_services.length; i++ ) { %>
+                                <li><%= membership.id_services %> </li>
+                              <% } %>
+                              
                             
                         <a href="/carrito/<%=membership.name%> "> <button class="btn">  I want to be a member </button> </a>
                         
