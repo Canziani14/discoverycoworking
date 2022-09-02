@@ -10,7 +10,7 @@ USE discoverycoworking;
   `lastName` VARCHAR(45) NULL,
   `userEmail` VARCHAR(45) NULL,
   `password` VARCHAR(255) NULL,
-  `avatar` VARCHAR(45) NULL,
+  `avatar` VARCHAR(255) NULL,
   `id_category` VARCHAR(15) NULL,
   `id_membership` INT NULL,
   PRIMARY KEY (`id_users`));
@@ -18,7 +18,7 @@ USE discoverycoworking;
   /*creamos usuario administrador y usuario comun de prueba*/
 
   INSERT INTO users (id_users,userName,userEmail,password,avatar,id_category,id_membership)
-  VALUE (default, "Administrador", "admin@gmail.com", "12345678", "img avatar", 1, 1);
+  VALUE (default, "Administrador", "javi@javi.com", "12345678", "img avatar", 1, 1);
 
   INSERT INTO users (id_users,userName,userEmail,password,avatar,id_category,id_membership)
   VALUE (default, "usuario", "user@gmail.com", "12345678", "img avatar", 2,1);
@@ -33,7 +33,7 @@ USE discoverycoworking;
   `details` VARCHAR(100) NULL,
   `id_services` INT NULL,
   `price` INT NULL,
-  `img` VARCHAR(15) NULL,
+  `img` VARCHAR(255) NULL,
   PRIMARY KEY (`id_membership`));
 
   /*creamos las 4 membresias*/

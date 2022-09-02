@@ -16,13 +16,13 @@ router.post(
   createMembershipValidations,
   adminController.createProcess
 );
-router.get("/admin/detail/:nameMembership", adminController.show);
-router.get("/admin/edit/:nameMembership", adminController.edit);
+router.get("/admin/detail/:idMembership", adminController.show);
+router.get("/admin/edit/:idMembership", adminController.edit);
 router.put(
-  "/admin/edit/:nameMembership",
-  upload.single("imgMembership"),
+  "/admin/edit/:idMembership",
+  upload.single("imagen"),
   adminController.update
 );
-router.get("/admin/delete/:nameMemberships", adminController.destroy)
+router.get("/admin/delete/:idMembership", adminController.destroy)
 
 module.exports = router;

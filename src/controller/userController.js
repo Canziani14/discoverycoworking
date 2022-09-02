@@ -34,7 +34,6 @@ const userController = {
         where: {
           userEmail: req.body.email
         }
-        
       })
       if (userFound) {
         userFound.then(users => { 
@@ -51,9 +50,6 @@ const userController = {
           }
         })
       }
-     
-
-
       req.session.userLoged = userFound;
 
       if (userFound == undefined) {
@@ -63,8 +59,6 @@ const userController = {
           styles: "login.css",
         });
       }
-
-      
 
       if (req.body.remember_me != undefined) {
         //chequear el timepo de la cookie

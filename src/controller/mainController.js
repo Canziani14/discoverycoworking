@@ -13,7 +13,7 @@ const mainController = {
     .then(memberships => {
       res.render("index", {
         memberships: memberships,
-        title: "Memberships",
+        title: "Home",
         styles: "index.css",
         user: req.session.userLoged,
       });
