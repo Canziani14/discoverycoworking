@@ -45,15 +45,14 @@ module.exports = {
         details: req.body.details,
         services: req.body.services,
         price: req.body.price,
-      img:req.file.filename})
+        img:req.file.filename})
 
-      .then ( function(result) {
-        res.render("products/memberships", {
+      .then ( function(memberships) {
+        res.render("admin/admin.ejs", {
           memberships: memberships,
-          title: "memberships",
+          title: "Memberships",
           styles: "membership.css",
           user: req.session.userLoged,
-          
         });
       })
     }
@@ -82,16 +81,16 @@ module.exports = {
       name: req.body.name,
       details: req.body.details,
       services: req.body.services,
-      prince: req.body.price,
-      img: req.body.imagen
+      price: req.body.price,
+      img:req.file.filename
   }
-  
-  db.Membership.update(updateMembership, {where:{id: req.params.idMembership}})
+  console.log(updateMembership)
+  db.Membership.update(updateMembership, {where:{id_membership: req.params.idMembership}})
   res.redirect('/memberships')
   },
 
   destroy: (req, res) => {
-    db.Membership.destroy({where:{id: req.params.id}})
+    db.Membership.destroy({where:{id_membership: req.params.idMembership}})
     res.redirect('/memberships')
   },
    

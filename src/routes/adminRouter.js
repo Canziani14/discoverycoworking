@@ -9,7 +9,7 @@ const authMiddleware = require("../middlewares/access/AuthorizedMd");
 const adminAcces = require("../middlewares/access/adminMd");
 
 router.get("/admin", adminController.index);
-router.get("/admin/create", authMiddleware, adminAcces, adminController.create);
+router.get("/admin/create", authMiddleware,  adminController.create);
 router.post(
   "/admin/create",
   upload.single("imgMembership"),
