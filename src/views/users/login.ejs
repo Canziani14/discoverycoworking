@@ -8,22 +8,27 @@
     <div class="login">
       <div class="form-container">
         <a href="/"> <img src="../imgs/logo.png" alt="logo" class="logo" /></a>
+        <div>
+          <ul id="errores"> </ul>
+        </div>
 
-        <form action="/login" method="POST" class="form" id="form">
-         
+        <form action="/login" method="post" class="form" id="form">
+  
           <label for="email" class="label">Email</label>
           <input
             type="email"
             name="email"
             id="email"
-            placeholder="Enter your email adress"
+            placeholder="Email"
             required
             class="input input-email"
-            value="<%= typeof old != 'undefined' ? old.email : '' %>"
+            value=""
           />
-          <% if (locals.errors && locals.errors.email) { %>
-            <span class="error-msg"><%= locals.errors.email.msg %></span>
-            <% } %>
+          <% if(typeof(errors) != 'undefined'){%>
+            <span class="text-danger">
+              <%= errors[0].msg %>
+            </span>
+         <%}%>
 
           <label for="password" class="label">Password</label>
           <input
@@ -34,30 +39,26 @@
             class="input input-password"
             required
           />
-          <% if (locals.errors && locals.errors.password) { %>
-            <span class="error-msg"><%= locals.errors.password.msg %></span>
-            <% } %> <% if(locals.error) { %>
-            <span class="error-msg"><%= locals.error %></span>
-            <% } %>
+          <span class="input-group-text" id="eye"><i class="fas fa-eye-slash"></i></span>
+          <% if(typeof(errors) != 'undefined' ){%>
+            <span class="text-danger">
+              <%= errors[0].msg %>
+            </span>
+         <%}%>
           <div>
-            <input type="checkbox" name="remember_me" id="remember_me" /><label
+            <input type="checkbox" name="recordarme" id="remember_me" /><label
               class="checkbox-inline">
               Remember me</label
             >
           </div>
 
-          <input
-            type="submit"
-            value="Ingresar"
-            class="primary-button login-button"
-          />
+          <button type="submit" class="btn btn btn-info">Ingresar</button>
 
           <a href="/">Forgot your password?</a>
         </form>
 
 
         <button class="secondary-button signup-button"><a  href="/signin">Sign up</a></button>
-
       </div>
     </div>
     <script src="../../js/login.js"></script>

@@ -3,15 +3,9 @@ const fs = require("fs");
 const bcrypt = require("bcryptjs");
 const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
-/*
-const membershipsFilePath = path.join(__dirname, '../database/memberships.json');
-const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 
-const usersFilePath = path.join(__dirname, "../database/users.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-*/
 const db = require('../database/models');
-
+const User = db.User;
 
 const userController = {
   login: function (req, res) {
@@ -21,55 +15,48 @@ const userController = {
     });
   },
   processLogin: function (req, res) {
-    const errors = validationResult(req);
+    db.User.findAll()
+    .then((users) => {		
+      //Aquí guardo los errores que vienen desde la ruta, valiendome del validationResult
+      let errors = validationResult(req);
+      
+      let userLogged = [];
+      
+      if(req.body.email != '' && req.body.password != ''){
+        userLogged = users.filter(function (user) {
+          return user.userEmail === req.body.email  
+        });
+        console.log('USUARIO:',userLogged);
+        //Aquí verifico si la clave que está colocando es la misma que está hasheada en la Base de datos - El compareSync retorna un true ó un false
 
-    if (!errors.isEmpty()) {
-      return res.render("users/login", {
-        errors: errors.mapped(),
-        title: "Login",
-        styles: "login.css",
-      });
-    } else {
-    const userFound = db.User.findOne ({
-        where: {
-          userEmail: req.body.email
+        //
+        if(bcrypt.compareSync(req.body.password,userLogged[0].password) !== true){
+          console.log(req.body.password)
+          console.log('USUARIO LOGGEADO',userLogged[0].password)
+          userLogged = [];
         }
-      })
-      if (userFound) {
-        userFound.then(users => { 
-          let passOk =bcrypt.compareSync(req.body.password, users.password)
-          if ( passOk) {
-            console.log("clave correcta")
-            res.render('index', {
-            users: users,
-            title: "HOME",
-            styles: "index.css",
-            user: req.session.userLoged})
-          }else{
-            console.log("incorrect password")
-          }
-        })
       }
-      req.session.userLoged = userFound;
-
-      if (userFound == undefined) {
-        res.render("users/login", {
-          error: "credenciales invalidas",
+      //console.log(userLogged);
+      //return res.send(userLogged);
+      //Aquí determino si el usuario fue encontrado ó no en la Base de Datos
+      if (userLogged.length === 0) {
+        return res.render(path.resolve(__dirname, '../views/users/login'),{ errors: [{ msg: "Credenciales invalidas" }],
           title: "Login",
           styles: "login.css",
-        });
-      }
+        })
+      } else {
+        //Aquí guardo en SESSION al usuario logueado
+        console.log('HOLA', userLogged[0].password)
 
-      if (req.body.remember_me != undefined) {
-        //chequear el timepo de la cookie
-        res.cookie(
-          "recordame",
-          userFound.id
-          // { maxAge: 60000 }
-        );
+        req.session.user = userLogged[0];
       }
-      res.redirect("/");
-    }
+      //Aquí verifico si el usuario le dio click en el check box para recordar al usuario 
+      if(req.body.recordarme){
+        res.cookie('email',userLogged[0].email,{maxAge: 1000 * 60 * 60 * 24})
+      }
+      return res.redirect('/');   //Aquí ustedes mandan al usuario para donde quieran (Perfil- home)
+
+    })
   },
   signin: function (req, res) {
     res.render("users/signin", {
@@ -101,7 +88,7 @@ const userController = {
           memberships: result,
           title: "Home",
           styles: "login.css",
-          user: req.session.userLoged,
+          user: req.session.userLogged,
           
         });
       })
@@ -131,7 +118,7 @@ const userController = {
     .then(users => {   
         res.render('./users/userList', {users: users,title: "User List",
         styles: "index.css",
-        user: req.session.userLoged})
+        user: req.session.userLogged})
     })
   },
 };

@@ -3,7 +3,7 @@ const { body } = require("express-validator");
 module.exports = [
   body("email")
     .notEmpty()
-    .withMessage("debe ingresar un email")
+    .withMessage("¡Debe ingresar un email!")
     .bail()
     .isEmail()
     .withMessage("debe ingresar un email valido")
@@ -16,4 +16,5 @@ module.exports = [
     .isLength({ min: 8 })
     .withMessage("la contraseña debe tener 8 caracteres minimo")
     .bail(),
+
 ];
