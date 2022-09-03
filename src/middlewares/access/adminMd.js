@@ -1,5 +1,6 @@
 const adminAccess = (req, res, next) => {
-    if (req.session.userLoged.isAdmin == true) {
+  console.log(req.session.userLoged)
+    if (req.session.userLoged.id_category == 1) {
       next();
     } else {
       res.redirect("/");

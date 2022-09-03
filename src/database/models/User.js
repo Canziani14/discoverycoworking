@@ -21,6 +21,9 @@ module.exports = (sequelize, dataTypes) => {
         avatar: {
             type: dataTypes.STRING
         },
+       id_category:{
+            type: dataTypes.INTEGER,
+        },
         id_membership:{
             type: dataTypes.INTEGER,
         }
