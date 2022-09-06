@@ -17,11 +17,11 @@ USE discoverycoworking;
 
   /*creamos usuario administrador y usuario comun de prueba*/
 
-  INSERT INTO users (id_users,userName,userEmail,password,avatar,id_category,id_membership)
-  VALUE (default, "Administrador", "javi@javi.com", "12345678", "img avatar", 1, 1);
+  INSERT INTO users (id_users,userName,lastName,userEmail,password,avatar,id_category,id_membership)
+  VALUE (default, 'Matias', 'Canziani', 'mcanziani12@gmail.com', '$2a$10$N0n7vECkmAnkKFLiKLBf6eHmtVxTcuFgCUacMUJX9/xj3r/.yS6Ti', 'avatar-1661947101571.jpg', '1', NULL );
 
-  INSERT INTO users (id_users,userName,userEmail,password,avatar,id_category,id_membership)
-  VALUE (default, "usuario", "user@gmail.com", "12345678", "img avatar", 2,1);
+   INSERT INTO users (id_users,userName,lastName,userEmail,password,avatar,id_category,id_membership)
+  VALUE (default, 'Javier', 'Amarilla', 'javi@javi.com', '$2a$10$N0n7vECkmAnkKFLiKLBf6eHmtVxTcuFgCUacMUJX9/xj3r/.yS6Ti', 'avatar-1661947101572.jpg', '1', NULL );
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------*/  
 
