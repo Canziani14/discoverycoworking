@@ -26,7 +26,8 @@ app.use(express.static(path.resolve(__dirname, ".." ,"public")))
 app.use(express.json());
 app.use(cookieParser());
 app.use(methodOverride('_method'));
-app.use(express.urlencoded({ extended: false}));
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
 
 // ubicacion de la carpeta de vistas para express
 app.set('views', path.join(__dirname, 'views'));
