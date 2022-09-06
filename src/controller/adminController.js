@@ -13,7 +13,7 @@ module.exports = {
             memberships: memberships,
             title: "Admin",
             styles: 'admin.css',
-            user: req.session.userLoged,
+            user: req.session.user,
           });
         }
       )
@@ -22,7 +22,7 @@ module.exports = {
     res.render("admin/create"), {
       title: "Admin create",
       styles: "admin.css",
-      user: req.session.userLoged,
+      user: req.session.user,
     };
   },
   createProcess: (req, res) => {
@@ -34,8 +34,7 @@ module.exports = {
         old: req.body,
         styles: "admin.css",
         title: "Crear Membership",
-        user: req.session.userLoged,
-
+        user: req.session.user,
       });
     }
     else {
@@ -53,7 +52,7 @@ module.exports = {
             memberships: memberships,
             title: "Memberships",
             styles: "membership.css",
-            user: req.session.userLoged,
+            user: req.session.user,
           });
         })
     }
@@ -72,7 +71,8 @@ module.exports = {
     let service = db.Service.findAll();
     Promise.all([membership, service])
       .then(([Membership, Service]) => {
-        return res.render('admin/edit.ejs', { membershipAEditar: Membership, service: Service })
+        return res.render('admin/edit.ejs', {user: req.session.user,
+          membershipAEditar: Membership, service: Service })
       })
       .catch(error => res.send(error));
   },

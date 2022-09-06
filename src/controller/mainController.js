@@ -35,7 +35,7 @@ const mainController = {
         title: filteredMembership.name,
         styles: "carrito.css",
         membership: filteredMembership,
-        user: req.session.userLoged,
+        user: req.session.user,
       });
     } else {
       res.render("carrito", {
@@ -49,7 +49,7 @@ const mainController = {
     res.render("users/shopp", {
       title: "Carrito",
       styles: "carrito.css",
-      user: req.session.userLoged,
+      user: req.session.user,
       memberships: null
     })
   },
@@ -57,7 +57,7 @@ const mainController = {
     res.render("users/toBuy", {
       title: "successful purchase",
       styles: "carrito.css",
-      user: req.session.userLoged,
+      user: req.session.user,
       memberships: null
     })
   },

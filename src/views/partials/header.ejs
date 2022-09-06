@@ -5,7 +5,16 @@
 <header>
     <nav>
         <ul class="menu">
-          <li class="logo" ><a href="/" id="title">DiscoveryCOWORKING </a></li>
+          <li class="logo" ><a href="/" id="title">DiscoveryCOWORKING </a>
+          </li>
+          <% if(locals.user) { %> 
+            <p><%= locals.user?.userName %></p>
+            <p><%= locals.user?.lastName %></p>
+            <hr>
+            <p> id:category: <%= locals.user?.id_category %></p>
+
+
+            <%}%>
 
                     <li class="item"><a href="/">Home<svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +28,7 @@
                         d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"
                       />
                     </svg></a></li>
-          <% if(locals.userLogged) { %>
+          <% if(locals.user?.id_category != null) { %>
             <li class="item">
             <a href="/admin">
               Administrar
@@ -38,7 +47,7 @@
               </svg>
             </a>
           </li>
-     
+          <% } %>
             <li class="item"><a href="/memberships">Memberships
                 <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="20px"
                   viewBox="0 0 24 24" width="20px" fill="#000000">
@@ -73,7 +82,7 @@
               </a>
             </li>
           
-              <% if(locals.users ){ %>
+              <% if(locals.user){ %>
                 <li class="item button secondary">
 
                   <a class="item button" href="/logout">Logout

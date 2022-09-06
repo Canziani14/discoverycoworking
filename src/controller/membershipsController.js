@@ -8,8 +8,6 @@ const { log } = require("console");
 
 const membershipsController = {
  
- 
-
   //BASE DE DATOS
   home: function (req, res) {
     db.Membership.findAll ({
@@ -17,10 +15,10 @@ const membershipsController = {
     })
     .then(memberships => {
       res.render("products/memberships", {
+        user: req.session.user,
         memberships: memberships,
         title: "Memberships",
         styles: "membership.css",
-        user: req.session.userLoged,
       });
     })
   },
@@ -36,7 +34,7 @@ const membershipsController = {
         membership: membership,
         title: "Memberships",
         styles: "membershipDinamic.css",
-        user: req.session.userLoged,
+        user: req.session.user,
       });
       
     })     
