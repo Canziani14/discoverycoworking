@@ -13,11 +13,18 @@
 
         <h1 class="title">Sign In</h1>
         <p class="subtitle">Make an account on Discovery Coworking</p>
-        
+
+        <% if(typeof(errors) != 'undefined'){%>
+          <ul class="alert alert-danger">
+             <% errors.forEach(error => { %>
+                <li><%= error.msg%></li>
+             <%});%>
+           </ul>
+       <%}%>  
         <form
           action="/signin"
           class="form"
-          method="POST"
+          method="post"
           enctype="multipart/form-data"
         >
           <label for="userName" class="label">Name</label>
@@ -25,7 +32,7 @@
           type="text"
           name="userName"
           placeholder="Nombre"
-          value="<%= locals.old && locals.old.userName ? locals.old.userName : '' %>"
+          value="<%= typeof old != 'undefined' ? old.userName : '' %>"
             class="input input-name"
           />
           <% if (locals.errors && locals.errors.userName) { %>
@@ -38,7 +45,7 @@
         name="userLastName"
         placeholder="LastName"
         class="input input-name"
-        value="<%= locals.old && locals.old.userLastName ? locals.old.userLastName : '' %>"
+        value="<%= typeof old != 'undefined' ? old.userLastName : '' %>"
       />
       <% if (locals.errors && locals.errors.userLastName) { %>
       <span class="error-msg"><%= locals.errors.userLastName.msg %></span>
@@ -49,7 +56,7 @@
           type="email"
           name="userEmail"
           placeholder="e-mail adress"
-          value="<%= locals.old && locals.old.userEmail ? locals.old.userEmail : '' %>"
+          value="<%= typeof old != 'undefined' ? old.userEmail : '' %>"
             required
             class="input input-email"
           />
@@ -64,21 +71,20 @@
             id="password"
             placeholder="Password"
             class="input input-password"
-            value="<%= locals.old && locals.old.password ? locals.old.password : '' %>"
+            value="<%= typeof old != 'undefined' ? old.password : '' %>"
           />
           <% if (locals.errors && locals.errors.password) { %>
             <span class="error-msg"><%= locals.errors.password.msg %></span>
             <% } %>
-
-
-          <label for="work" class="label">Category</label>
-          <input
-            type="text"
-            name="category"
-            id="category"
-            placeholder="category"
-            class="input input-category"
-          />
+            <label for="confirmPassword" class="label">confirmPassword</label>
+            <input
+              type="confirmPassword"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="confirmPassword"
+              class="input input-password"
+              value="<%= typeof old != 'undefined' ? old.confirmPassword : '' %>"
+            />
           
           <input type="file" name="avatar" />
       <% if (locals.errors && locals.errors.avatar) { %>

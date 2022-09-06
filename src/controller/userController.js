@@ -15,7 +15,7 @@ const userController = {
     });
   },
   processLogin: function (req, res) {
-    db.User.findAll()
+    User.findAll()
     .then((users) => {		
       //Aquí guardo los errores que vienen desde la ruta, valiendome del validationResult
       let errors = validationResult(req);
@@ -26,27 +26,28 @@ const userController = {
         userLogged = users.filter(function (user) {
           return user.userEmail === req.body.email  
         });
-        console.log('USUARIO:',userLogged);
         //Aquí verifico si la clave que está colocando es la misma que está hasheada en la Base de datos - El compareSync retorna un true ó un false
 
         //
-        if(bcrypt.compareSync(req.body.password,userLogged[0].password) !== true){
-          console.log(req.body.password)
-          console.log('USUARIO LOGGEADO',userLogged[0].password)
-          userLogged = [];
-        }
+      }
+
+      if(bcrypt.compareSync(req.body.password,userLogged[0].password) !== true){
+        console.log(req.body.password)
+        userLogged = [];
       }
       //console.log(userLogged);
       //return res.send(userLogged);
       //Aquí determino si el usuario fue encontrado ó no en la Base de Datos
       if (userLogged.length === 0) {
+        console.log('No hay usuario loggeado por credenciales invalidas, se vuelve a cargar el login')
         return res.render(path.resolve(__dirname, '../views/users/login'),{ errors: [{ msg: "Credenciales invalidas" }],
           title: "Login",
           styles: "login.css",
         })
       } else {
         //Aquí guardo en SESSION al usuario logueado
-        console.log('HOLA', userLogged[0].password)
+        console.log('Se logeo el usuario!')
+        console.log('USUARIO LOGGEADO',userLogged[0].userName)
 
         req.session.user = userLogged[0];
       }
@@ -66,37 +67,33 @@ const userController = {
   },
   processRegister: (req, res) => {
     const errors = validationResult(req);
-
     if (!errors.isEmpty()) {
       return res.render("users/signin", {
-        errors: errors.mapped(),
+        errors: errors.errors,
         old: req.body,
         title: "Signin",
         styles: "login.css",
       });
-    } else {
-      db.User.create({
+    }
+      User.create({
       userName: req.body.userName,
       lastName: req.body.userLastName,
       userEmail: req.body.userEmail,
       password: req.body.password =  bcrypt.hashSync(req.body.password, 10),
-      id_category: req.body.category,
-      avatar:req.file.filename})
+      avatar:req.file.avatar})
 
       .then ( function(result) {
         res.render("users/login", {
-          memberships: result,
           title: "Home",
           styles: "login.css",
           user: req.session.userLogged,
-          
         });
       })
-
-
-    }
+      .catch(error => console.log(error));
   },
   processLogout: (req, res) => {
+    let userLogged = req.session.userLogged;
+    console.log('se deslogea el usuario: ', userLogged);
     res.clearCookie("recordame");
     req.session.destroy();
     res.redirect("/");
@@ -112,7 +109,7 @@ const userController = {
   },
   //BASE DE DATOS
   list: function (req, res) {
-    db.User.findAll ({
+    User.findAll ({
       include: [{association:"category",association:"memberships"}]
     })
     .then(users => {   

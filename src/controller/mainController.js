@@ -7,15 +7,16 @@ const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 
 const mainController = {
   index:   function (req, res) {
+    console.log('usuario en main: ',req.session.user);
     db.Membership.findAll ({
       include: [{association:"service"}]
     })
     .then(memberships => {
       res.render("index", {
+        user: req.session.user,
         memberships: memberships,
         title: "Home",
         styles: "index.css",
-        user: req.session.userLoged,
       });
     })
   },

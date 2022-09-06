@@ -18,6 +18,7 @@
             poster=""
           ></video>
           <div id="text1">
+           
             <h2>Welcome and discover a new way of working with us</h2>
           </div>
           <div id="text2">
@@ -32,7 +33,7 @@
       </section>
 
       <section id="section-products">
-       <a href="/memberships"> <h2 class="sect2-title">Memberships</h2> </a>
+       <a href="/memberships"> <h2 class="sect2-title">Memberships <% user?.userName  %></h2> </a>
        <br><br><br><br>
         <div class="products-container">
 
@@ -41,6 +42,7 @@
                 <div class="product-card">
                   <img class="imgmember" src="imgs/memberships/<%= memberships.img%>" />
                   <div class="product-info">
+                    
                     <p class="product-precio"> $<%= memberships.price %></p>
                     <p class="product-name"> <%= memberships.name %></p>
                     <a href="/memberships/<%= memberships.id_membership %>"
