@@ -39,12 +39,16 @@
 }
 @media (max-width: 820px) {
   #section-products {
-    margin-top: -200px;
+    display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 40px;
+  place-content: center;
+    /*margin-top: -200px;*/
   }
 }
 @media (max-width: 520px) {
   #section-products {
-    margin-top: -370px;
+   /* margin-top: -370px;*/
   }
 }
 @media (max-width: 820px) {
@@ -102,10 +106,12 @@ video {
 }
 
 .products-container {
-  display: grid;
+  display:flex;
+  justify-content: space-around;
+  /*display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
   gap: 40px;
-  place-content: center;
+  place-content: center;*/
 }
 
 .product-card {

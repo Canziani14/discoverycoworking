@@ -7,10 +7,12 @@
   text-decoration: underline #4cb5ae;
 }
 .products-container {
-  display: grid;
+  display:flex;
+  justify-content: space-around;
+  /*display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
   gap: 40px;
-  place-content: center;
+  place-content: center;*/
 }
 
 .product-card {
