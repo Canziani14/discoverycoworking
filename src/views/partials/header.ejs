@@ -8,10 +8,11 @@
           <li class="logo" ><a href="/" id="title">DiscoveryCOWORKING </a>
           </li>
           <% if(locals.user) { %> 
-            <p><%= locals.user?.userName %></p>
-            <p><%= locals.user?.lastName %></p>
+            <img class="imgPerfil" src="/imgs/users/<%= locals.user.avatar%>"  alt=""> 
+            <p>Hi, <%=locals.user?.userName%> <%=   %>  </p>
+            <p><%=locals.user?.lastName%></p>
             <hr>
-            <p> id:category: <%= locals.user?.id_category %></p>
+            
 
 
             <%}%>

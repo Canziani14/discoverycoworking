@@ -131,3 +131,7 @@
       padding-right: 0;
     }
   }
+  .imgPerfil{
+    width: 50px;
+    border-radius: 50%;
+  }
