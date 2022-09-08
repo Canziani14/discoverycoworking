@@ -9,6 +9,8 @@
 .products-container {
   display:flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+
   /*display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
   gap: 40px;
