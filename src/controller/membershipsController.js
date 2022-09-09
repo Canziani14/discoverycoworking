@@ -10,9 +10,7 @@ const membershipsController = {
  
   //BASE DE DATOS
   home: function (req, res) {
-    db.Membership.findAll ({
-      include: [{association:"service"}]
-    })
+    db.Membership.findAll ()
     .then(memberships => {
       res.render("products/memberships", {
         user: req.session.user,
@@ -25,9 +23,7 @@ const membershipsController = {
 
   dinamic: function (req, res) {
     let id = req.params.id;
-    db.Membership.findByPk (id, {
-      include: [{association:"service"}]
-    })
+    db.Membership.findByPk (id)
     .then (function (membership){
 
       res.render ("products/membershipdinamic",{

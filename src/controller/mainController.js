@@ -8,9 +8,7 @@ const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 const mainController = {
   index:   function (req, res) {
     console.log('usuario en main: ',req.session.user);
-    db.Membership.findAll ({
-      include: [{association:"service"}]
-    })
+    db.Membership.findAll ()
     .then(memberships => {
       res.render("index", {
         user: req.session.user,
@@ -22,13 +20,20 @@ const mainController = {
   },
   carrito: function (req, res) {
 
-    //let idMembership = req.baseUrl
 
     let nameMembership = req.params.nameMembership;
-
-    const filteredMembership = memberships.find((membership) => {
-      return membership.name == nameMembership;
-    })
+    db.Membership.findOne()
+    .then(
+      memberships => {
+        res.render(path.join(__dirname, "../views/admin/admin"), {
+          memberships: memberships,
+          title: "Admin",
+          styles: 'admin.css',
+          user: req.session.user,
+          
+        });
+      }
+    )
 
     if (req.session.userLoged) {
       res.render("carrito", {

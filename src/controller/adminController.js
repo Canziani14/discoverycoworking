@@ -52,28 +52,26 @@ module.exports = {
     
   },
   show: (req, res) => {
-    let membership = db.Membership.findByPk(req.params.idMembership, { include: [{ association: 'service' }] });
-    let service = db.Service.findAll();
-    Promise.all([membership, service])
-      .then(([Membership, Service]) => {
+    let membership = db.Membership.findByPk(req.params.idMembership);
+    
+    Promise.all([membership])
+      .then((Membership) => {
         return res.render('admin/detail.ejs', { 
         title:'Edit membership',
         styles: "admin.css",
-        membership: Membership,
-        service: Service })
+        membership: Membership, })
       })
       .catch(error => res.send(error));
   },
   edit: (req, res) => {
-    let membership = db.Membership.findByPk(req.params.idMembership, { include: [{ association: 'service' }] });
-    let service = db.Service.findAll();
-    Promise.all([membership, service])
-      .then(([Membership, Service]) => {
+    let membership = db.Membership.findByPk(req.params.idMembership);
+    Promise.all([membership])
+      .then((Membership) => {
         return res.render('admin/edit.ejs', {
         title:'Edit membership',
         styles: "admin.css",
         user: req.session.user,
-        membershipAEditar: Membership, service: Service })
+        membershipAEditar: Membership, })
       })
       .catch(error => res.send(error));
   },
@@ -96,7 +94,7 @@ module.exports = {
 
   destroy: (req, res) => {
     db.Membership.destroy({ where: { id_membership: req.params.idMembership } })
-    res.redirect('/memberships')
+    res.redirect('/admin')
   },
 
 };

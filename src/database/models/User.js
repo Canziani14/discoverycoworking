@@ -21,8 +21,8 @@ module.exports = (sequelize, dataTypes) => {
         avatar: {
             type: dataTypes.STRING
         },
-       id_category:{
-            type: dataTypes.INTEGER,
+       category:{
+            type: dataTypes.STRING,
         },
         id_membership:{
             type: dataTypes.INTEGER,
@@ -37,10 +37,7 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config);
 //relacion pertenece a
     User.associate = function(models){
-        User.belongsTo (models.Category, {
-            as:"category",
-            foreignKey: "id_category"
-        }), 
+        
 
         User.hasMany (models.Membership, {
             as:"memberships",

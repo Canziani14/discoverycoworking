@@ -5,16 +5,16 @@
     
 </head>
 <body>
-   
+    <%- include("../partials/header") %>
 
     <h1>User List</h1>
 
     <ul>
         <% for( let i = 0; i < users.length; i++ ) { %>
             <li>
-                <%= users[i].id_users + " - " + users[i].userName + " con Email: " +
+                <%= users[i].id_users + " - " + users[i].userName + users[i].lastName + " con Email: " +
                 users[i].userEmail + ", tiene la membresia " + users[i].id_membership +
-                " y con categoria "+ users[i].id_category%> 
+                " y con categoria "+ users[i].category%> 
             </li>
         <% } %>
     </ul>

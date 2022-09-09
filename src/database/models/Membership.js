@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
         details: {
             type: dataTypes.STRING
         },
-        id_services : {
+        services : {
             type: dataTypes.INTEGER
         },
         price: {
@@ -29,11 +29,6 @@ module.exports = (sequelize, dataTypes) => {
     const Membership = sequelize.define(alias, cols, config);
 //relacion pertenece a
     Membership.associate = function(models){
-        Membership.hasMany (models.Service, {
-            as:"service",
-            foreignKey: "id_services"
-        }),
-
         Membership.belongsTo (models.User, {
             as:"users",
             foreignKey: "id_membership"
