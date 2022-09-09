@@ -23,22 +23,33 @@ const userController = {
       let userLogged = [];
       
       if(req.body.email != '' && req.body.password != ''){
+
         userLogged = users.filter(function (user) {
-          return user.userEmail === req.body.email  
-        });
-        //Aquí verifico si la clave que está colocando es la misma que está hasheada en la Base de datos - El compareSync retorna un true ó un false
+            return user.userEmail === req.body.email  
+          });
+          console.log('USUARIO LOGGEADO',userLogged)
 
-        //
-      }
+        if(userLogged.length > 0){
+          userLogged = users.filter(function (user) {
+              return user.userEmail === req.body.email  
+            });
+            console.log('USUARIO LOGGEADO',userLogged[0].userName)
+  }
+        else{
+          console.log('No hay un email registrado con estos valores.');
+          return res.render(path.resolve(__dirname, '../views/users/login'),{ errors: [{ msg: "Este email no está registrado." }],
+          title: "Login",
+          styles: "login.css",
+        })
+        }
 
-      if(bcrypt.compareSync(req.body.password,userLogged[0].password) !== true){
-        console.log(req.body.password)
-        userLogged = [];
       }
-      //console.log(userLogged);
-      //return res.send(userLogged);
-      //Aquí determino si el usuario fue encontrado ó no en la Base de Datos
-      if (userLogged.length === 0) {
+       if(bcrypt.compareSync(req.body.password,userLogged[0].password) !== true){
+    console.log(req.body.password)
+    userLogged = [];
+  }
+
+     if (userLogged.length === 0) {
         console.log('No hay usuario loggeado por credenciales invalidas, se vuelve a cargar el login')
         return res.render(path.resolve(__dirname, '../views/users/login'),{ errors: [{ msg: "Credenciales invalidas" }],
           title: "Login",
@@ -55,9 +66,9 @@ const userController = {
       if(req.body.recordarme){
         res.cookie('email',userLogged[0].email,{maxAge: 1000 * 60 * 60 * 24})
       }
-      return res.redirect('/');   //Aquí ustedes mandan al usuario para donde quieran (Perfil- home)
+      return res.redirect('/'); 
 
-    })
+  })
   },
   signin: function (req, res) {
     res.render("users/signin", {

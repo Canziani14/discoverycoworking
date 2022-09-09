@@ -5,7 +5,17 @@
   </head>
 
   <body>
+  
     <div class="login">
+      <div class="errores">
+        <% if(typeof(errors) != 'undefined'){%>
+          <p class="text-danger">
+            <%= errors[0].msg %>
+          </p>
+          <%}%>
+
+      </div>
+   
       <div class="form-container">
         <a href="/"> <img src="../imgs/logo.png" alt="logo" class="logo" /></a>
         <div>
@@ -13,9 +23,9 @@
         </div>
 
         <form action="/login" method="post" class="form" id="form">
-  
-          <label for="email" class="label">Email</label>
-          <input
+
+            <label for="email" class="label">Email</label>
+            <input
             type="email"
             name="email"
             id="email"
@@ -23,28 +33,20 @@
             required
             class="input input-email"
             value=""
-          />
-          <% if(typeof(errors) != 'undefined'){%>
-            <span class="text-danger">
-              <%= errors[0].msg %>
-            </span>
-         <%}%>
+            />
+     
 
-          <label for="password" class="label">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="new-password"
-            placeholder="Password"
-            class="input input-password"
-            required
-          />
-          <span class="input-group-text" id="eye"><i class="fas fa-eye-slash"></i></span>
-          <% if(typeof(errors) != 'undefined' ){%>
-            <span class="text-danger">
-              <%= errors[0].msg %>
-            </span>
-         <%}%>
+                <label for="password" class="label">Password</label>
+                <input
+                type="password"
+                name="password"
+                id="new-password"
+                placeholder="Password"
+                class="input input-password"
+                required
+                />
+
+       
           <div>
             <input type="checkbox" name="recordarme" id="remember_me" /><label
               class="checkbox-inline">
@@ -52,7 +54,7 @@
             >
           </div>
 
-          <button type="submit" class="btn btn btn-info">Ingresar</button>
+          <button type="submit" class="secondary-button signup-button">Ingresar</button>
 
           <a href="/">Forgot your password?</a>
         </form>
