@@ -1,5 +1,5 @@
 const AuthMiddleware = (req, res, next) => {
-    if (req.session.userLoged) {
+    if (req.session.userLogged) {
       // si estas logueado podes pasar
       next();
     } else {

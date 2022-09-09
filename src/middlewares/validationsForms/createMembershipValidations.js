@@ -16,15 +16,15 @@ const membershipsValidations = [
   body("services").notEmpty().withMessage("El campo services está vacio").bail(),
 
   // validacion de imagenes!
-  body("imgMembership")
-    .custom((value, { req }) => {
-      if (req.files.length === 0) {
-        return false;
-      } else {
-        return true;
-      }
-    })
-    .withMessage("Debe ingresar una imagen"),
+  // body("imgMembership")
+  //   .custom((value, { req }) => {
+  //     if (req.files.length === 0) {
+  //       return false;
+  //     } else {
+  //       return true;
+  //     }
+  //   })
+  //   .withMessage("Debe ingresar una imagen"),
 ];
 
 module.exports = membershipsValidations;
