@@ -8,6 +8,17 @@ const memberships = JSON.parse(fs.readFileSync(membershipsFilePath, "utf-8"));
 const mainController = {
   index:   function (req, res) {
     console.log('usuario en main: ',req.session.user);
+    // if(req.session.user){
+    //   setTimeout(function(){
+    //     Toastify({
+
+    //       text: "This is a toast",
+          
+    //       duration: 3000
+          
+    //       }).showToast();
+    //   },3000)
+    // }
     db.Membership.findAll ()
     .then(memberships => {
       res.render("index", {
@@ -30,7 +41,6 @@ const mainController = {
           title: "Admin",
           styles: 'admin.css',
           user: req.session.user,
-          
         });
       }
     )
@@ -66,7 +76,6 @@ const mainController = {
       memberships: null
     })
   },
-  
 }
 
 

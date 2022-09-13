@@ -40,30 +40,21 @@ img{
   font-weight:bold;
   font-size:30px;
 }
+/*boton*/
 .btn {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
   font-weight: 900;
   color: #313133;
-  background: linear-gradient(90deg, rgb(172, 235, 227) 0%, rgb(26, 70, 66) 100%);
-  border: none;
-  border-radius: 1000px;
-  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
-  transition: all 0.3s ease-in-out 0s;
-  cursor: pointer;
-  outline: none;
-  position: relative;
+  background: linear-gradient(90deg, rgba(23, 228, 201, 0.559) 0%, #3d8ebde1 50%,rgba(23, 228, 201, 0.559)  100% );
+  border-radius: 10px;
+  border: 1px solid #3d8ebde1;
   padding: 10px;
   }
 
 .btn:hover{
-  font-weight: 700;
-  border: 3px solid rgba(79,209,197,.64);
-    background: white;
-  color:rgb(34, 85, 80);
-}
-
-@media (width< 900px) {
-
+  border-radius: 40px;
+  background: linear-gradient(90deg, rgb(23, 228, 201) 0%, #ffffff66 50%,rgb(23, 228, 201) 100% );
+  border: 1px solid #ffffff66;
 }

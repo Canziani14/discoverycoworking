@@ -11,10 +11,7 @@
             <img class="imgPerfil" src="/imgs/users/<%= locals.user?.avatar%>"  alt=""> 
             <p>Hi, <%=locals.user?.userName%> <%=   %>  </p>
             <p><%=locals.user?.lastName%></p>
-            <hr>
-            
-
-
+            <hr>           
             <%}%>
 
                     <li class="item"><a href="/">Home<svg
@@ -84,7 +81,7 @@
             </li>
           
               <% if(locals.user){ %>
-                <li class="item button secondary">
+                <li class="item button ">
 
                   <a class="item button" href="/logout">Logout
                     <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 3 24 24" height="20px"
@@ -116,7 +113,7 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="item button secondary">
+                  <li class="item button ">
 
                     <a class="item button" href="/signin">
                       Sign in

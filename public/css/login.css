@@ -26,9 +26,22 @@ body{
 .errores{
     position: absolute;
     top:10px;
+    left:10px;
     margin: 10 auto;
     height:fit-content;
     background-color:rgba(255, 0, 0, 0.775);
+    color:white;
+    border-radius:10px;
+    padding:10px;
+    text-align: center;
+}
+.erroresDeFront{
+    position: absolute;
+    top:10px;
+    right:10px;
+    margin: 10 auto;
+    height:fit-content;
+    background-color:rgba(255, 0, 255, 0.775);
     color:white;
     border-radius:10px;
     padding:10px;
@@ -141,4 +154,14 @@ position: absolute;
 bottom: 0;
 margin-bottom: 24px;
 }
+}
+
+
+
+/* validaciones front */
+.is-valid{
+    border: 6px solid #009d71;
+}
+.is-invalid{
+    border: 2px solid rgb(231, 46, 46);
 }
