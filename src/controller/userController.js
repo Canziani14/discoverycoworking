@@ -91,7 +91,9 @@ const userController = {
       lastName: req.body.userLastName,
       userEmail: req.body.userEmail,
       password: req.body.password =  bcrypt.hashSync(req.body.password, 10),
-      avatar:req.file.avatar})
+      avatar:req.file ? req.file.filename : '',
+    })
+      
 
       .then ( function(result) {
         res.render("users/login", {

@@ -40,7 +40,7 @@ router.get("/signin", userController.signin);
 User.findAll()
     .then((users) => {
 
-        router.post('/signin', upload.single('avatar'), upload, [
+        router.post('/signin', upload.single('avatar'),  [
             //Aquí incoporé otras validaciones, para que las tengan de guía para sus proyectos  
             check('userName').isLength({
                 min: 1
