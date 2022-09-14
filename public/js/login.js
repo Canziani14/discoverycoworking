@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
     let formulario = document.querySelector('.form');
     //console.log(formulario.elements.email.value);
     formulario.addEventListener('submit', function (evento) {
-
+        evento.preventDefault()
         if (!validaciones(evento)) {
             evento.preventDefault();
         } else {
@@ -15,13 +15,10 @@ window.addEventListener('load', function () {
 
             //Destructuring  
             let { email, password } = formulario.elements;
-            let errors = [];
-            console.log(formulario.elements.email.value);
-            //Validar el email - Expresiones Regulares https://www.w3schools.com/jsref/jsref_obj_regexp.asp       https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+            let errores = [];
             let reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-
             if (!reEmail.test(email.value)) {
-                errors.push('El email es inválido...');
+                errores.push('El email es inválido...');
                 email.classList.add('is-invalid');
                 //errores['last_name'] = 'El campo nombre no puede estar vacio...';
             } else {
@@ -32,7 +29,7 @@ window.addEventListener('load', function () {
             //Esta expresión regular valida como Mínimo seis caracteres, al menos una letra y un número:
             let rePassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
             if (!rePassword.test(password.value)) {
-                errors.push('La contraseña como mínimo debe tener seis caracteres, al menos una letra y un número');
+                errores.push('La contraseña como mínimo debe tener seis caracteres, al menos una letra y un número');
                 password.classList.add('is-invalid');
                 //errores['last_name'] = 'El campo nombre no puede estar vacio...';
             } else {
@@ -41,23 +38,19 @@ window.addEventListener('load', function () {
             }
 
             //Aquí enviamos los errores al usuario
-            let ulErrores = document.getElementById('errors');
+            let ulErrores = document.getElementById('errores');
             ulErrores.classList.add('alert-danger')
-            if (errors.length > 0) {
+            if (errores.length > 0) {
 
                 evento.preventDefault();
                 ulErrores.innerHTML = "";
-                for (let i = 0; i < errors.length; i++) {
-                    ulErrores.innerHTML += `<li> ${errors[i]} </li> `
+                for (let i = 0; i < errores.length; i++) {
+                    ulErrores.innerHTML += `<li> ${errores[i]} </li> `
                 }
                 errores = [];
             } else {
                 return true;
             }
         }
-
     })
-
-
-
 })

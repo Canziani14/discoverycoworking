@@ -13,20 +13,16 @@
             <%= errors[0].msg %>
           </p>
           <%}%>
-
+      </div>
+      
+      <div  id="erroresFront" class="erroresDeFront">
+        <ul id="errores"> </ul>
       </div>
 
-      <ul id="erroresFront">
-
-      </ul>
-
       
-   
       <div class="form-container">
         <a href="/"> <img src="../imgs/logo.png" alt="logo" class="logo" /></a>
-        <div>
-          <ul id="errores"> </ul>
-        </div>
+      
 
         <form action="/login" method="post" class="form" id="form">
 
@@ -36,7 +32,6 @@
             name="email"
             id="email"
             placeholder="Email"
-            required
             class="input input-email"
             value=""
             />
@@ -49,7 +44,7 @@
                 id="new-password"
                 placeholder="Password"
                 class="input input-password"
-                required
+                
                 />
 
        
@@ -69,6 +64,6 @@
         <button class="secondary-button signup-button"><a  href="./signin">Sign up</a></button>
       </div>
     </div>
-    <script src="../../../public/js/login.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>
