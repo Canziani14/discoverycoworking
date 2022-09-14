@@ -50,6 +50,16 @@ window.addEventListener('load', function () {
                 price.classList.remove('is-invalid');   
             }   
 
+            imgMembership
+            if (imgMembership.value == '') {
+                errores.push('El campo imagen no puede estar vacio...');
+                price.classList.add('is-invalid');
+                
+            } else {
+                imgMembership.classList.add('is-valid');
+                imgMembership.classList.remove('is-invalid');   
+            }   
+
 
 
 
@@ -61,7 +71,7 @@ window.addEventListener('load', function () {
       evento.preventDefault();
       ulErrores.innerHTML = "";
       for (let i = 0; i < errores.length; i++) {
-          ulErrores.innerHTML += `<p> ${errores[i]} </p> `
+          ulErrores.innerHTML += `<li> ${errores[i]} </li> `
       }
       errores = [];
   } else {
