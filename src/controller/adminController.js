@@ -9,6 +9,7 @@ module.exports = {
     db.Membership.findAll()
       .then(
         memberships => {
+          console.log(memberships)
           res.render(path.join(__dirname, "../views/admin/admin"), {
             memberships: memberships,
             title: "Admin",

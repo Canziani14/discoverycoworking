@@ -30,17 +30,17 @@ router.post('/login', loginValidations, userController.processLogin);
 
 router.get("/signin", userController.signin);
 
-// router.post(
-//   "/signin",
-//   upload.single("avatar"),
-//   registerValidations,
-//   userController.processRegister
-// );
+ router.post(
+   "/signin",
+  upload.single("avatar"),
+  registerValidations,
+  userController.processRegister
+ );
 
 User.findAll()
     .then((users) => {
 
-        router.post('/signin', upload.single('avatar'), [
+        router.post('/signin', upload.single('avatar'), upload, [
             //Aquí incoporé otras validaciones, para que las tengan de guía para sus proyectos  
             check('userName').isLength({
                 min: 1

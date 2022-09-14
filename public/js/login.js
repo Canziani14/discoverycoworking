@@ -27,7 +27,7 @@ window.addEventListener('load', function () {
             }
             //Aquí valido el password haciendo uso de Expresiones Regulares
             //Esta expresión regular valida como Mínimo seis caracteres, al menos una letra y un número:
-            let rePassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
+           let rePassword = /*/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]*/{8,}$/
             if (!rePassword.test(password.value)) {
                 errores.push('La contraseña como mínimo debe tener seis caracteres, al menos una letra y un número');
                 password.classList.add('is-invalid');

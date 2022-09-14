@@ -8,18 +8,25 @@
     <%- include ("../partials/links") %>
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="stylesheet" href="/css/admin.css">
-    <title>HOME</title>
+    <title>CREATE MEMBERSHIP</title>
   </head>
   <body>
 
     <%- include ("../partials/header") %>
     <section id="create">
       <h2>Create membership</h2>
+
+      <div id="erroresFront" class="erroresDeFront">
+
+      </div>
+
+
       <form
         action="/admin/create"
         method="POST"
         enctype="multipart/form-data"
         id="create"
+        class="form"
       >
       
 
@@ -88,7 +95,9 @@
           <a href="/admin" class="btn btn-danger">Volver</a>
         </div>
       </form>
+   
     </section>
     <%- include ("../partials/footer") %>
+      <script src="/js/create.js"></script>
   </body>
 </html>
