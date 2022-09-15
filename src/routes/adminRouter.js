@@ -23,6 +23,9 @@ router.put(
   upload.single("imagen"),
   adminController.update
 );
-router.get("/admin/delete/:idMembership", adminController.destroy)
+router.get("/admin/delete/:idMembership", adminController.destroy);
+
+router.get("/users", adminController.list)
+
 
 module.exports = router;

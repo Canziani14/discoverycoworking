@@ -7,6 +7,19 @@
   <body>
     <div class="login">
 
+
+
+
+      <div class="form-container">
+        <a href="/"
+          ><img src="../imgs/logo.png" alt="logo" class="logo"
+        /></a>
+
+        
+      <div id="erroresFront" class="erroresDeFront">
+
+      </div>
+
       <div class="errores">
         <% if(typeof(errors) != 'undefined'){%>
           <div>
@@ -18,15 +31,6 @@
            
        <%}%>  
       </div>
-
-      <div id="erroresFront" class="erroresDeFront">
-
-      </div>
-
-      <div class="form-container">
-        <a href="/"
-          ><img src="../imgs/logo.png" alt="logo" class="logo"
-        /></a>
 
         <h1 class="title">Sign In</h1>
         <p class="subtitle">Make an account on Discovery Coworking</p>
@@ -46,9 +50,6 @@
           value="<%= typeof old != 'undefined' ? old.userName : '' %>"
             class="input input-name"
           />
-          <!-- <% if (locals.errors && locals.errors.userName) { %>
-            <span class="error-msg"><%= locals.errors.userName.msg %></span>
-            <% } %> -->
 
             <label for="userLastName" class="label">LastName</label>
             <input

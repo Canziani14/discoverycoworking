@@ -55,8 +55,11 @@ module.exports = {
   show: (req, res) => {
     let membership = db.Membership.findByPk(req.params.idMembership);
     
+
     Promise.all([membership])
       .then((Membership) => {
+        console.log('QUERES VERs:', Membership);
+
         return res.render('admin/detail.ejs', { 
         title:'Edit membership',
         styles: "admin.css",
@@ -97,5 +100,15 @@ module.exports = {
     db.Membership.destroy({ where: { id_membership: req.params.idMembership } })
     res.redirect('/admin')
   },
-
+    //BASE DE DATOS
+    list: function (req, res) {
+      db.User.findAll ({
+        include: [{association:"category",association:"memberships"}]
+      })
+      .then(users => {   
+          res.render('./users/userList', {users: users,title: "User List",
+          styles: "index.css",
+          user: req.session.userLogged})
+      })
+    },
 };

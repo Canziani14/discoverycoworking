@@ -3,7 +3,7 @@ const { body } = require("express-validator");
 const registerValidations = [
   body("userName")
     .notEmpty()
-    .withMessage("el campo nombre esta vacío")
+    .withMessage("E")
     .bail()
     .isLength({ min: 3 })
     .withMessage("El nombre es muy corto")

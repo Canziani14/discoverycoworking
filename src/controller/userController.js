@@ -111,26 +111,40 @@ const userController = {
     req.session.destroy();
     res.redirect("/");
   },
-  editaccount: function (req, res) {
-    res.render("./users/editaccount");
-  },
-  changepassword: function (req, res) {
-    res.render("./users/changepassword");
-  },
   contactus: function (req, res) {
     res.render("./users/contactus");
   },
-  //BASE DE DATOS
-  list: function (req, res) {
-    User.findAll ({
-      include: [{association:"category",association:"memberships"}]
-    })
-    .then(users => {   
-        res.render('./users/userList', {users: users,title: "User List",
-        styles: "index.css",
-        user: req.session.userLogged})
+  shopp: function (req, res) {
+
+    //Acá hay que crear en la base de datos las membresías que tenga adquirido el usuario
+    res.render("users/shopp", {
+      title: "Carrito",
+      styles: "carrito.css",
+      user: req.session.user,
+      memberships: null
     })
   },
+  toBuy:function (req, res) {
+    let membership = db.Membership.findByPk(req.params.idMembership);
+
+    console.log('QUERES COMPRAR:', membership);
+
+    res.render("users/toBuy", {
+      title: "successful purchase",
+      styles: "carrito.css",
+      user: req.session.user,
+      membership
+    })
+  },
+  buy: function (req, res){
+    //acá asignarle la membresia elegida al usuario
+  }
+  // editaccount: function (req, res) {
+  //   res.render("./users/editaccount");
+  // },
+  // changepassword: function (req, res) {
+  //   res.render("./users/changepassword");
+  // },
 };
 
 module.exports = userController;

@@ -1,4 +1,5 @@
 window.addEventListener('load', function () {
+const ulErrores = document.getElementById('erroresFront');
 
     //Capturar el formulario 
     let formulario = document.querySelector('.form');
@@ -13,6 +14,8 @@ window.addEventListener('load', function () {
 
         function validaciones(evento) {
 
+
+
             //Destructuring  
             let { email, password } = formulario.elements;
             let errores = [];
@@ -20,6 +23,7 @@ window.addEventListener('load', function () {
             if (!reEmail.test(email.value)) {
                 errores.push('El email es inválido...');
                 email.classList.add('is-invalid');
+                ulErrores.classList.add('showErrores')
                 //errores['last_name'] = 'El campo nombre no puede estar vacio...';
             } else {
                 email.classList.add('is-valid');
@@ -28,28 +32,25 @@ window.addEventListener('load', function () {
             //Aquí valido el password haciendo uso de Expresiones Regulares
             //Esta expresión regular valida como Mínimo seis caracteres, al menos una letra y un número:
           // let rePassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
-            if(password.value<6){
+            if(password.value.length<6){
                 errores.push('La contraseña como mínimo debe tener seis caracteres');
-            }
-
-           /* if (!rePassword.test(password.value)) {
-                errores.push('La contraseña como mínimo debe tener seis caracteres, al menos una letra y un número');
                 password.classList.add('is-invalid');
-                //errores['last_name'] = 'El campo nombre no puede estar vacio...';*/
+                ulErrores.classList.add('showErrores')
+            }
             else {
                 password.classList.add('is-valid');
                 password.classList.remove('is-invalid');
             }
 
             //Aquí enviamos los errores al usuario
-            let ulErrores = document.getElementById('errores');
-            ulErrores.classList.add('alert-danger')
+
+
             if (errores.length > 0) {
 
                 evento.preventDefault();
                 ulErrores.innerHTML = "";
                 for (let i = 0; i < errores.length; i++) {
-                    ulErrores.innerHTML += `<li> ${errores[i]} </li> `
+                    ulErrores.innerHTML += `<p> ${errores[i]} </p> `
                 }
                 errores = [];
             } else {

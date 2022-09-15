@@ -7,22 +7,20 @@
   <body>
   
     <div class="login">
-      <div class="errores">
-        <% if(typeof(errors) != 'undefined'){%>
-          <p class="text-danger">
-            <%= errors[0].msg %>
-          </p>
-          <%}%>
-      </div>
-      
-      <div  id="erroresFront" class="erroresDeFront">
-        <ul id="errores"> </ul>
-      </div>
 
-      
       <div class="form-container">
         <a href="/"> <img src="../imgs/logo.png" alt="logo" class="logo" /></a>
       
+        <div  id="erroresFront" class="erroresDeFront">
+          
+        </div>
+        <div class="errores">
+          <% if(typeof(errors) != 'undefined'){%>
+            <p class="text-danger">
+              <%= errors[0].msg %>
+            </p>
+            <%}%>
+        </div>
 
         <form action="/login" method="post" class="form" id="form">
 

@@ -30,13 +30,6 @@ router.post('/login', loginValidations, userController.processLogin);
 
 router.get("/signin", userController.signin);
 
- router.post(
-   "/signin",
-  upload.single("avatar"),
-  registerValidations,
-  userController.processRegister
- );
-
 User.findAll()
     .then((users) => {
 
@@ -52,20 +45,6 @@ User.findAll()
 
             //Aquí valido el Password   
             check('password').isLength({ min: 6 }).withMessage('La contraseña debe tener un mínimo de 6 caractéres al menos una letra y un número'),
-            //Aquí valido si eusuario existe o no en la tabla de usuarios Por el campo email)
-            // body('userEmail').custom(function (value) {
-            //   let contador = 0;
-            //   for (let i = 0; i < users.length; i++) {
-            //       if (users[i].userEmail == value) {
-            //           contador++;
-            //       }
-            //   }
-            //   if (contador > 0) {
-            //       return false;   // Si retorno falso no aparece el mensaje de error
-            //   } else {
-            //       return true;    //Si retorno true, aparece el mensaje de error
-            //   }
-            // }).withMessage('Usuario ya se encuentra registrado'),
 
             //Aquí valido la confimación del password dispuesto por el usuario
             check('confirmPassword').isLength({ min: 6 }).withMessage('La confirmación de la contraseña debe tener un mínimo de 6 caractéres'),
@@ -110,15 +89,18 @@ User.findAll()
 
 router.get("/logout", userController.processLogout);
 
-router.get("/editaccount", userController.editaccount);
-
-router.get("/changepassword", userController.changepassword);
 
 router.get("/contactus", userController.contactus);
 
-//BASE DE DATOS
+// router.get("/editaccount", userController.editaccount);
 
-router.get("/users", userController.list)
+// router.get("/changepassword", userController.changepassword);
+
+router.get ("/carrito", userController.shopp);
+// router.get('/carrito/:nameMembership', mainController.carrito);
+router.get ("/toBuy/:idMembership", userController.toBuy);
+router.post('/toBuy/:idMembership', userController.buy);
+
 
 
 module.exports = router;
