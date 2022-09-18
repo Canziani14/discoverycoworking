@@ -99,7 +99,7 @@ router.get("/contactus", userController.contactus);
 router.get ("/carrito", userController.shopp);
 // router.get('/carrito/:nameMembership', mainController.carrito);
 router.get ("/toBuy/:idMembership", userController.toBuy);
-router.post('/toBuy/:idMembership', userController.buy);
+//router.post('/toBuy/:idMembership', userController.buy);
 
 
 

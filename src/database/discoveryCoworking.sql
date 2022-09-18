@@ -12,15 +12,15 @@ USE discoverycoworking;
   `password` VARCHAR(255) NULL,
   `avatar` VARCHAR(255) NULL,
   `category` VARCHAR(15) NULL,
-  `id_membership` VARCHAR(60) NULL,
+  `membership` VARCHAR(25) NULL,
   PRIMARY KEY (`id_users`));
 
   /*creamos usuario administrador y usuario comun de prueba*/
 
-  INSERT INTO users (id_users,userName,lastName,userEmail,password,avatar,category,id_membership)
+  INSERT INTO users (id_users,userName,lastName,userEmail,password,avatar,category,membership)
   VALUE (default, 'Matias ', 'Canziani', 'mcanziani12@gmail.com', '$2a$10$N0n7vECkmAnkKFLiKLBf6eHmtVxTcuFgCUacMUJX9/xj3r/.yS6Ti', 'avatar-1661947101571.jpg', 'admin', NULL );
 
-   INSERT INTO users (id_users,userName,lastName,userEmail,password,avatar,category,id_membership)
+   INSERT INTO users (id_users,userName,lastName,userEmail,password,avatar,category,membership)
   VALUE (default, 'Javier ', 'Amarilla', 'javi@javi.com', '$2a$10$N0n7vECkmAnkKFLiKLBf6eHmtVxTcuFgCUacMUJX9/xj3r/.yS6Ti', 'avatar-1661947101572.jpg', 'admin', NULL ); 
 
   /*creamos tabla de membership*/

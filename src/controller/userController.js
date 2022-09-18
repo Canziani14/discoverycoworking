@@ -124,21 +124,41 @@ const userController = {
       memberships: null
     })
   },
-  toBuy:function (req, res) {
-    let membership = db.Membership.findByPk(req.params.idMembership);
+  toBuy: function (req, res) {
+    
+    let id = db.Membership.findByPk (req.params.idMembership)
+    .then (function (newMembership){
+      
+      console.log("el id es", id)
+      
+      User.update(
+        {
+          membership: newMembership.name
+        },
+        {
+          //cambiar el where para que cambie segun el user que este conectado
+          where:{id_users:1}
+        }
+      )
+      
+      res.render("users/toBuy", {
+        title: "successful purchase",
+        styles: "carrito.css",
+        user: req.session.user,
+        newMembership
+      });
+      
+    })     
 
-    console.log('QUERES COMPRAR:', membership);
-
-    res.render("users/toBuy", {
-      title: "successful purchase",
-      styles: "carrito.css",
-      user: req.session.user,
-      membership
-    })
   },
-  buy: function (req, res){
+
+
+  
+
+ // buy: function (req, res){
     //acá asignarle la membresia elegida al usuario
-  }
+
+  //}
   // editaccount: function (req, res) {
   //   res.render("./users/editaccount");
   // },
