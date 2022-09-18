@@ -12,10 +12,12 @@
     <ul>
         <% for( let i = 0; i < queries.length; i++ ) { %>
             <li>
-                <%=queries[i].id_ContactUs + " -  Name: " + queries[i].name +" Email: "+ queries[i].email  %> 
+                <%=queries[i].id_ContactUs + " -  Name: " + queries[i].name  %> 
                 <br>
+                <%= " Email: "+ queries[i].email  %>
+                <br> 
                 <%= "querie: "+queries[i].comments  %> 
-                <br>
+                <br><br>
             </li>
         <% } %>
     </ul>
