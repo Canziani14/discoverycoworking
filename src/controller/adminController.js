@@ -70,7 +70,6 @@ module.exports = {
     let membership = db.Membership.findByPk(req.params.idMembership);
     Promise.all([membership])
       .then((Membership) => {
-        console.log("aca esta",Membership.img)
         return res.render('admin/edit.ejs', {
         title:'Edit membership',
         styles: "admin.css",
@@ -80,8 +79,9 @@ module.exports = {
       .catch(error => res.send(error));
   },
   update: (req, res) => {
+    console.log("el id es",req.params.idMembership )
   db.Membership.update ({
-    name:req.body.nombre,
+    name:req.body.name,
     details: req.body.details,
     services : req.body.services,
     price: req.body.price,

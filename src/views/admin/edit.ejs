@@ -18,7 +18,7 @@
         <div class="container">
             <h2>Edit membership <%= membershipAEditar[0].name %></h2>
             
-            <form action="/admin/edit/<%= membershipAEditar.name %>?_method=PUT" method="POST" enctype="multipart/form-data" id="create">
+            <form action="/admin/edit/<%= membershipAEditar[0].id_membership %>?_method=PUT" method="POST" enctype="multipart/form-data" id="create">
                     <div class="form-group">
                         <input type="text" class="form-control" name="name" placeholder="name" required="required" value="<%= membershipAEditar[0].name %>">
                     </div>	
