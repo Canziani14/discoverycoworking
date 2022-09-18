@@ -152,13 +152,6 @@ const userController = {
 
   },
 
-
-  
-
- // buy: function (req, res){
-    //acá asignarle la membresia elegida al usuario
-
-  //}
   // editaccount: function (req, res) {
   //   res.render("./users/editaccount");
   // },

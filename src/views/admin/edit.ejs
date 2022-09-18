@@ -16,28 +16,28 @@
 
     <main>
         <div class="container">
-            <h2>Edit membership <%= membershipAEditar.name %></h2>
+            <h2>Edit membership <%= membershipAEditar[0].name %></h2>
             
             <form action="/admin/edit/<%= membershipAEditar.name %>?_method=PUT" method="POST" enctype="multipart/form-data" id="create">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" placeholder="name" required="required" value="<%= membershipAEditar.name %>">
+                        <input type="text" class="form-control" name="name" placeholder="name" required="required" value="<%= membershipAEditar[0].name %>">
                     </div>	
                     <div class="form-group">
-                        <input type="text" class="form-control" name="details" placeholder="details" required="required" value="<%= membershipAEditar.details%>">
+                        <input type="text" class="form-control" name="details" placeholder="details" required="required" value="<%= membershipAEditar[0].details%>">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="services" placeholder="Servicios" required="required" value="<%= membershipAEditar.services%>">
+                        <input type="text" class="form-control" name="services" placeholder="Servicios" required="required" value="<%= membershipAEditar[0].services%>">
                     </div>
                     <div class="form-group">
-                      <input type="number" class="form-control" name="price" placeholder="<%= membershipAEditar.price %>" required="required" value="<%= membershipAEditar.price %>">
+                      <input type="number" class="form-control" name="price" placeholder="<%= membershipAEditar.price %>" required="required" value="<%= membershipAEditar[0].price %>">
                   </div>
 
                     <!--Aquí solicito la imagen-->
                     <div class="custom-file">
                         <figure class="form-group">
-                            <img  class="w-100" src="/imgs/<%= membershipAEditar.img %>" alt=" <%= membershipAEditar.name%>">
+                            <img  class="w-100" src="/imgs/memberships/<%= membershipAEditar[0].img %>" alt=" <%= membershipAEditar[0].name%>">
                         </figure>
-                        <input type="hidden"  name="oldImagen"  value="<%= membershipAEditar.img %>">
+                        <input type="hidden"  name="oldImagen"  value="<%= membershipAEditar[0].img %>">
                        
                         <input type="file" name="imagen" >
                         

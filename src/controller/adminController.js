@@ -54,9 +54,8 @@ module.exports = {
   },
   show: (req, res) => {
     let membership = db.Membership.findByPk(req.params.idMembership);
-    
 
-    Promise.all([membership])
+   Promise.all([membership])
       .then((Membership) => {
         console.log('QUERES VERs:', Membership);
 
@@ -71,6 +70,7 @@ module.exports = {
     let membership = db.Membership.findByPk(req.params.idMembership);
     Promise.all([membership])
       .then((Membership) => {
+        console.log("aca esta",Membership.img)
         return res.render('admin/edit.ejs', {
         title:'Edit membership',
         styles: "admin.css",
