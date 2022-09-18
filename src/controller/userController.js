@@ -128,16 +128,16 @@ const userController = {
     
     let id = db.Membership.findByPk (req.params.idMembership)
     .then (function (newMembership){
-      
-      console.log("el id es", id)
+      let userLogin=req.session.user.id_users;
+      console.log("usuario conectado",)
       
       User.update(
         {
           membership: newMembership.name
         },
         {
-          //cambiar el where para que cambie segun el user que este conectado
-          where:{id_users:1}
+          
+          where:{id_users:userLogin}
         }
       )
       
