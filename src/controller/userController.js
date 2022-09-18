@@ -122,7 +122,7 @@ const userController = {
     .then ( function(result) {
       res.render("users/contactUsSend", {
         title: "Contact Us",
-        styles: "login.css",
+        styles: "carrito.css",
         user: req.session.userLogged,
       });
     })
