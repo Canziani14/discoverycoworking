@@ -94,7 +94,6 @@ const userController = {
       avatar:req.file ? req.file.filename : '',
     })
       
-
       .then ( function(result) {
         res.render("users/login", {
           title: "Home",
@@ -114,9 +113,21 @@ const userController = {
   contactus: function (req, res) {
     res.render("./users/contactus");
   },
-  shopp: function (req, res) {
+  contact:(req, res) => {
+  console.log("antes", req.body)
+      db.ContactUs.create({
+        name: req.body.name,
+        email: req.body.email,
+        comments: req.body.comments
+      })
+        
+        .then(()=> res.redirect('/'))
+        console.log("despues", req.body)
+    
+  },
 
-    //Acá hay que crear en la base de datos las membresías que tenga adquirido el usuario
+  
+  shopp: function (req, res) {
     res.render("users/shopp", {
       title: "Carrito",
       styles: "carrito.css",

@@ -91,6 +91,7 @@ router.get("/logout", userController.processLogout);
 
 
 router.get("/contactus", userController.contactus);
+router.post("/contactus", userController.contact);
 
 // router.get("/editaccount", userController.editaccount);
 
