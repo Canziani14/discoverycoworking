@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    
+</head>
+<body>
+    <%- include("../partials/header") %>
+
+    <h1>Queries List</h1>
+
+    <ul>
+        <% for( let i = 0; i < queries.length; i++ ) { %>
+            <li>
+                <%=queries[i].id_ContactUs + " -  Name: " + queries[i].name +" Email: "+ queries[i].email  %> 
+                <br>
+                <%= "querie: "+queries[i].comments  %> 
+                <br>
+            </li>
+        <% } %>
+    </ul>
+    <%- include("../partials/footer") %>
+</body>
+</html>

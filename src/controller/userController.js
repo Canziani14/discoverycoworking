@@ -167,6 +167,17 @@ const userController = {
     })     
 
   },
+  queries: function (req,res){
+    db.ContactUs.findAll()
+    .then((queries) => {		
+      res.render("users/queries", {
+        title: "Queries List",
+        styles: "carrito.css",
+        user: req.session.user,
+        queries
+    });
+  })
+  }
 
   // editaccount: function (req, res) {
   //   res.render("./users/editaccount");

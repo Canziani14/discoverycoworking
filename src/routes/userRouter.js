@@ -101,6 +101,7 @@ router.get ("/carrito", userController.shopp);
 // router.get('/carrito/:nameMembership', mainController.carrito);
 router.get ("/toBuy/:idMembership", userController.toBuy);
 //router.post('/toBuy/:idMembership', userController.buy);
+router.get("/queries", userController.queries)
 
 
 
