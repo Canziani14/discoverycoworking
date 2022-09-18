@@ -114,16 +114,21 @@ const userController = {
     res.render("./users/contactus");
   },
   contact:(req, res) => {
-  console.log("antes", req.body)
       db.ContactUs.create({
-        name: req.body.name,
-        email: req.body.email,
-        comments: req.body.comments
-      })
-        
-        .then(()=> res.redirect('/'))
-        console.log("despues", req.body)
+      name: req.body.name,
+      email: req.body.email,
+      comments: req.body.comments,
+    })
+    .then ( function(result) {
+      res.render("users/contactUsSend", {
+        title: "Contact Us",
+        styles: "login.css",
+        user: req.session.userLogged,
+      });
+    })
+    .catch(error => console.log(error));
     
+      
   },
 
   

@@ -88,11 +88,12 @@ USE discoverycoworking;
 
   /*creamos tabla pivot de user_membership*/
 
-  CREATE TABLE `discoverycoworking`.`user_membership` (
-  `id_user_membership` INT NOT NULL AUTO_INCREMENT,
-  `id_membership` INT NULL,
-  `id_user` INT NULL,
-  PRIMARY KEY (`id_user_membership`));
+  CREATE TABLE `discoverycoworking`.`contactus` (
+  `id_contactus` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `comments` VARCHAR(255) NULL,
+  PRIMARY KEY (`id_contactus`));
 
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------*/  
