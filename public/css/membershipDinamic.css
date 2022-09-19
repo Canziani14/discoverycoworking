@@ -1,29 +1,32 @@
 main{
-  padding-top:60px;
-  height: 52vh;
+  /* padding-top:60px;
+  height: 52vh; */
 }
-.main-title{
+.title{
   font-family: 'Arimo', sans-serif !important;
-  padding-top: 25px;
+  padding-top: 45px;
   text-align: center;
-  font-size: 2rem;
-  color: black;
-  text-decoration: underline #4cb5ae;
-};
-img{
-  width:150% !important;
+  font-size: 45px;
+  color: #ffffff; 
+  text-decoration: underline rgba(0, 128, 128, 0.502);
+  text-decoration-style: double;
+  text-decoration-thickness: 25%;
+  letter-spacing: 3px;
 }
+
 .container{
   border: 2px  solid #4cb5ae;
+  color:white;
   border-radius: 30px;
-  background-color: rgb(213, 254, 249);
-  padding:80px;
-  width:60%;
+  background-color: rgba(0, 128, 128, 0.502);
   margin:auto;
+  margin-top:50px;
+  width:60%;
+  height:fit-content;
   text-align:center;
   align-items: center;
   display:flex;
-  flex-direction:row;
+  flex-direction:column;
   justify-content:center;
   flex-wrap:wrap;
   gap:30px;
@@ -31,10 +34,39 @@ img{
 
 .container:hover{
   background-color: rgb(183, 255, 247);
+  color:black;
+}
+.containerOne{
+display:flex;
+flex-direction:row;
+justify-content:center;
+text-align:center;
+align-items: center;
+padding:30px;
+flex-wrap: wrap;
+gap:50px;
+}
+.container-img img{
+  flex:2;
+  border-radius: 50%;
 }
 
 .detalle{
-  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex:2;
+
+}
+.servicios{
+  flex:4;
+}
+.divTitle{
+  margin-bottom: 20px;
+  font-size:24px;
+  text-decoration: underline rgba(0, 128, 128, 0.502);
+  text-decoration-thickness: 25%;
+  letter-spacing: 3px;
 }
 .price{
   font-weight:bold;
@@ -51,6 +83,7 @@ img{
   border-radius: 10px;
   border: 1px solid #3d8ebde1;
   padding: 10px;
+  margin-bottom:15px;
   }
 
 .btn:hover{

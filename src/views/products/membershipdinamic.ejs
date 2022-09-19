@@ -8,29 +8,39 @@
 
 <body>
     <%- include ("../partials/header") %>
-        <h1 class="main-title">
-            Membership <%= membership.name %>
-        </h1>
+        
         <main>
 
+            <h2 class="title">
+                Membership <%= membership.name %>
+            </h2>
+
             <div class="container">
+                <div class="containerOne">
+
+                
                 <div class="container-img">
                     <img class="img" src="/imgs/memberships/<%= membership.img %>" alt=" ">
                 </div>
 
                 <div class="detalle">
 
-                    <%= membership.details %>
+                    <p class="divTitle">Detalles:</p>
+                    <p>
+                        <%= membership.details %>
+                    </p>
+
+                    
                 </div>
+                <div class="servicios">
+                    <p class="divTitle">Servicios:</p>
+                        <p>
+                    <%= membership.services %></p>
+                </div>
+            </div>
                 <div class="price"> $<%= membership.price %>
                 </div>
-                <div>
-                    <%= membership.services %>
-                </div>
 
- 
-
- 
                 <% if (locals.user) { %>
                     <a href="/toBuy/<%=membership.id_membership%> "> <button class="btn"> I want to be a member
                         </button>
