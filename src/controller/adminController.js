@@ -70,9 +70,9 @@ module.exports = {
     let membership = db.Membership.findByPk(req.params.idMembership);
     Promise.all([membership])
       .then((Membership) => {
-        return res.render('admin/edit.ejs', {
+        return res.render('admin/edit', {
         title:'Edit membership',
-        styles: "admin.css",
+        styles: "edit.css",
         user: req.session.user,
         membershipAEditar: Membership, })
       })

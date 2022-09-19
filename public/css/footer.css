@@ -1,5 +1,7 @@
 /* FOOTER*/
 footer {
+  /* position:fixed;
+  bottom:0px; */
     background-color: #3d8ebde1;
     background: linear-gradient(180deg, rgba(112, 197, 202, 0.801)  20%, #3d8ebde1  100%);
     width: 100%;

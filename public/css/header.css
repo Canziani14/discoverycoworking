@@ -6,8 +6,8 @@
   }
 
   header{
-    /* background: #3d8ebde1; */
     background: linear-gradient(180deg, rgba(112,198,202,1)  20%, #3d8ebde1 100%);
+    border-bottom: 15px double rgba(0, 128, 128, 0.502);
   }
   nav {
     padding: 5px 20px;
