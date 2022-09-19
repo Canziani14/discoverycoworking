@@ -25,7 +25,7 @@
 
                 <div class="detalle">
 
-                    <p class="divTitle">Detalles:</p>
+                    <p class="divTitle">Details:</p>
                     <p>
                         <%= membership.details %>
                     </p>
@@ -33,13 +33,16 @@
                     
                 </div>
                 <div class="servicios">
-                    <p class="divTitle">Servicios:</p>
+                    <p class="divTitle">Services:</p>
                         <p>
                     <%= membership.services %></p>
                 </div>
             </div>
-                <div class="price"> $<%= membership.price %>
+                <div class="price">
+                    <p class="divTitle">Price</p>
+                    $<%= membership.price %>
                 </div>
+                <div class="containerTwo">
 
                 <% if (locals.user) { %>
                     <a href="/toBuy/<%=membership.id_membership%> "> <button class="btn"> I want to be a member
@@ -50,8 +53,11 @@
                         </button>
                     </a>
                     <% } %>
+                    <a href="/memberships "> <button class="btn"> Back
+                    </button>
+                </a>
                         
-
+            </div>     
 
             </div>
 

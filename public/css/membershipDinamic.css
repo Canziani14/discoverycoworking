@@ -7,8 +7,8 @@ main{
   padding-top: 45px;
   text-align: center;
   font-size: 45px;
-  color: #ffffff; 
-  text-decoration: underline rgba(0, 128, 128, 0.502);
+  color: white;
+  text-decoration: underline rgba(23, 228, 201, 0.707);
   text-decoration-style: double;
   text-decoration-thickness: 25%;
   letter-spacing: 3px;
@@ -45,6 +45,12 @@ align-items: center;
 padding:30px;
 flex-wrap: wrap;
 gap:50px;
+}
+.containerTwo{
+  display:flex;
+  flex-direction: row;
+  justify-content:center;
+  gap:50px;
 }
 .container-img img{
   flex:2;
