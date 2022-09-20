@@ -95,6 +95,8 @@ USE discoverycoworking;
   `comments` VARCHAR(255) NULL,
   PRIMARY KEY (`id_contactus`));
 
+ INSERT INTO contactus (id_contactus,name,email,comments)
+ VALUE (default, "Pedro Garcia", "pgarcia@gmail.com", "queria mas informacion sobre las membresias")
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------*/  
  
