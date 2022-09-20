@@ -4,6 +4,7 @@
     <%- include('./partials/head') %>
       <!-- toastify -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="/css/slider.css">
 
   </head>
   <body>
@@ -11,29 +12,39 @@
     <%- include("./partials/header") %>
 
     <main>
-      <section id="section-1">
-        <div class="video-wrapper">
-          <video
-            src="imgs/videoprincipal.mp4"
-            autoplay="true"
-            muted="true"
-            loop="true"
-            poster=""
-          ></video>
-          <div id="text1">
-           
-            <h2>Welcome and discover a new way of working with us</h2>
-          </div>
-          <div id="text2">
-            <h2>Love the way you work</h2>
-            <h3>
-              We help companies and people to reconvert and personalize their
-              work spaces, giving them tools and services to develop in the best
-              ways.
-            </h3>
-          </div>
-        </div>
-      </section>
+      <section class="containerSlider">
+
+        <ul class="slider">
+            <li class="slid" id="slide1">
+                <img class="imgSlider" src="/imgs/slider/oficina1.jpg" />
+            </li>
+            <li class="slid" id="slide2">
+                <img class="imgSlider" src="/imgs/slider/oficina2.jpg" />
+            </li>
+            <li class="slid" id="slide3">
+                <h1>Welcome and discover a new way of working with us</h1>
+                <p>We help companies and people to reconvert and personalize their
+                  work spaces, giving them tools and services to develop in the best
+                  ways.</p>
+            </li>
+        </ul>
+
+        <ul class="menu">
+            <li class="liMenu">
+                <a class="numMenu" href="#slide1">1</a>
+            </li>
+            <li class="liMenu">
+                <a class="numMenu" href="#slide2">2</a>
+            </li>
+            <li class="liMenu">
+                <a class="numMenu" href="#slide3">3</a>
+            </li>
+        </ul>
+
+    </section>
+    
+  <br><br><br><br>
+  <br><br><br><br>
 
       <section id="section-products">
        <a href="/memberships"> <h2 class="sect2-title">Memberships </h2> </a>
