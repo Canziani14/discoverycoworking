@@ -20,8 +20,6 @@
                 errores.push('El campo nombre no puede estar vacio');
                 userName.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');
-
-
             } else {
                 userName.classList.add('is-valid');
                 userName.classList.remove('is-invalid');}

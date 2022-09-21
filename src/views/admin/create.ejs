@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- FONTS -->
     <%- include ("../partials/links") %>
+    <%- include ("../partials/head") %>
+
     <link rel="stylesheet" href="/css/index.css" />
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/edit.css">
     <title>CREATE MEMBERSHIP</title>
   </head>
   <body>
 
     <%- include ("../partials/header") %>
-    <section id="create">
-      <h2>Create membership</h2>
+    <main>
+      <div class="container">
+      <h2 class="title">Create membership</h2>
 
-      <div id="erroresFront" class="erroresDeFront">
-
-      </div>
 
 
       <form
@@ -26,58 +26,60 @@
         method="POST"
         enctype="multipart/form-data"
         id="create"
-        class="form"
       >
-      
+      <div id="erroresFront" class="erroresDeFront"></div>
 
-        <div class="form-group">
+        <div class="input-container ic1">
           <input
             type="text"
-            class="form-control"
+            class="input"
             name="name"
-            placeholder="Name"
-            
             value=""
           />
+          <div class="cut"></div>
+        <label for="name" class="placeholder">Name</label>
         </div>
         <% if (locals.errors && locals.errors.title) { %>
           <span class="error-msg"><%= locals.errors.title.msg %></span>
           <% } %>
 
-        <div class="form-group">
+        <div class="input-container">
           <input
             type="text"
-            class="form-control"
+            class="input"
             name="details"
-            placeholder="Details"
-            
             value=""
           />
-          <% if (locals.errors && locals.errors.details) { %>
-            <span class="error-msg"><%= locals.errors.details.msg %></span>
-            <% } %>
+          <div class="cut"></div>
+        <label for="details" class="placeholder">Details</label>
+
         </div>
-        <div class="form-group">
+        <% if (locals.errors && locals.errors.details) { %>
+          <span class="error-msg"><%= locals.errors.details.msg %></span>
+          <% } %>
+        <div class="input-container">
           <input
             type="textarea"
-            class="form-control"
+            class="input"
             name="services"
-            placeholder="Services"
             value=""
           />
+          <div class="cut"></div>
+        <label for="services" class="placeholder">Services</label>
         </div>
         
         <% if (locals.errors && locals.errors.services) { %>
           <span class="error-msg"><%= locals.errors.services.msg %></span>
           <% } %>
-        <div class="form-group">
+        <div class="input-container">
           <input
             type="number"
-            class="form-control"
+            class="input"
             name="price"
-            placeholder="Price $$"
             value=""
           />
+          <div class="cut"></div>
+        <label for="price" class="placeholder">Price</label>
         </div>
         <% if (locals.errors && locals.errors.price) { %>
           <span class="error-msg"><%= locals.errors.price.msg %></span>
@@ -90,13 +92,11 @@
         <% if (locals.errors && locals.errors.imgMembership) { %>
           <span class="error-msg"><%= locals.errors.imgMembership.msg %></span>
           <% } %>
-        <div class="form-group">
           <button type="submit" class="btn btn btn-info">Guardar</button>
           <a href="/admin" class="btn btn-danger">Volver</a>
-        </div>
       </form>
-   
-    </section>
+    </div>
+    </main>
     <%- include ("../partials/footer") %>
       <script src="/js/create.js"></script>
   </body>

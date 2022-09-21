@@ -11,8 +11,6 @@
 <body>
     <div class="login">
         <div class="form-container">
-            <a href="/"><img src="../imgs/logo.png" alt="logo" class="logo"></a>
-
             <h1 class="title">Contact Us</h1>
             <p class="subtitle">contact us for better advice</p>
 
@@ -29,13 +27,16 @@
                     class="input input-email" value="">
 
                 <label for="textarea" class="label">Comments</label>
-                <input class="input input-email" type="textarea" name="comments" id="comments" 
+                <input class="input input-email" type="textarea" name="comments" id="comments"  placeholder="Comments"
                 value="">
 
 
 
-                <input type="submit" value="Send" class="primary-button login-button">
+                <input type="submit" value="Send" class="secondary-button ">
+
+                
             </form>
+            <a href="/">Back to home</a>
         </div>
     </div>
     <%- include ("../partials/footer") %>

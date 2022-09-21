@@ -1,7 +1,9 @@
 window.addEventListener('load', function () {
     //Capturar el formulario 
-    let formulario = document.querySelector('.form');
-    
+    let formulario = document.getElementById('create');
+    const ulErrores = document.getElementById('erroresFront');
+
+
     formulario.addEventListener('submit', function (evento) {
         if (!validaciones(evento)) {
             evento.preventDefault();
@@ -64,22 +66,18 @@ window.addEventListener('load', function () {
 
 
   //Aquí enviamos los errores al usuario
-  let ulErrores = document.getElementById('erroresFront');
-  ulErrores.classList.add('alert-danger')
   if (errores.length > 0) {
       console.log('ERRORES: ',errores)
+      ulErrores.classList.add('show')
       evento.preventDefault();
       ulErrores.innerHTML = "";
       for (let i = 0; i < errores.length; i++) {
-          ulErrores.innerHTML += `<li> ${errores[i]} </li> `
+          ulErrores.innerHTML += `<p> ${errores[i]} </p> `
       }
       errores = [];
   } else {
       return true;
   }
-
-
-
 
         }
     })

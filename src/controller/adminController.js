@@ -20,11 +20,10 @@ module.exports = {
       )
   },
   create: (req, res) => {
-    res.render("admin/create"), {
-      title: "Admin create",
-      styles: "admin.css",
-      user: req.session.user,
-    };
+    res.render('admin/create', {
+      title:'Create membership',
+      styles: "edit.css",
+      user: req.session.user})
   },
   createProcess: (req, res) => {
     const errors = validationResult(req);
@@ -62,7 +61,8 @@ module.exports = {
         return res.render('admin/detail.ejs', { 
         title:'Edit membership',
         styles: "admin.css",
-        membership: Membership, })
+        membership: Membership,
+        user: req.session.user,})
       })
       .catch(error => res.send(error));
   },
