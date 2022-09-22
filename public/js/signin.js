@@ -24,6 +24,16 @@
                 userName.classList.add('is-valid');
                 userName.classList.remove('is-invalid');}
 
+                //preguntamos si tiene mas de 2 caracteres
+
+            if (userName.value.length <= 2) {
+                errores.push('el nombre debe tener minimo 2 caracteres');
+                userName.classList.add('is-invalid');
+                ulErrores.classList.add('showErrores');
+            }  else {
+                userName.classList.add('is-valid');
+                userName.classList.remove('is-invalid');}   
+
             //Validar Apellido
             if (userLastName.value == '') {
                 errores.push('El campo apellido no puede estar vacio');
@@ -34,6 +44,14 @@
                 userLastName.classList.add('is-valid');
                 userLastName.classList.remove('is-invalid');
             }
+  //preguntamos si tiene mas de 2 caracteres
+            if (userLastName.value.length <= 2) {
+                errores.push('el apellido debe tener minimo 2 caracteres');
+                userName.classList.add('is-invalid');
+                ulErrores.classList.add('showErrores');
+            }  else {
+                userName.classList.add('is-valid');
+                userName.classList.remove('is-invalid');}   
 
             let reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -57,8 +75,11 @@
                 password.classList.add('is-valid');
                 password.classList.remove('is-invalid');
             }
+//valido que el email no este en la base
+
+
             //Aquí valido a que la confirmación del password no llegue vacia
-            if (confirmPassword.value == ""  && confirmPassword.length < 6) {
+            if (confirmPassword.value == ""  && confirmPassword.length < 8) {
                 errores.push('La confirmación de la contraseña no puede estar vacia');
                 confirmPassword.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');

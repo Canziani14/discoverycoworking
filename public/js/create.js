@@ -25,6 +25,17 @@ window.addEventListener('load', function () {
                 name.classList.remove('is-invalid');   
             }   
 
+            //que tenga al menos 5 caracteres
+
+            if (name.value.length <= 5) {
+                errores.push('el nombre debe tener minimo 5 caracteres');
+                name.classList.add('is-invalid');
+                ulErrores.classList.add('showErrores');
+            }  else {
+                name.classList.add('is-valid');
+                name.classList.remove('is-invalid');} 
+
+
             if (details.value == '') {
                 errores.push('El campo details no puede estar vacio...');
                 details.classList.add('is-invalid');
@@ -33,6 +44,14 @@ window.addEventListener('load', function () {
                 details.classList.add('is-valid');
                 details.classList.remove('is-invalid');   
             }   
+
+            if (details.value.length <= 20) {
+                errores.push('el detalle debe tener minimo 20 caracteres');
+                details.classList.add('is-invalid');
+                ulErrores.classList.add('showErrores');
+            }  else {
+                details.classList.add('is-valid');
+                details.classList.remove('is-invalid');} 
 
             if (services.value == '') {
                 errores.push('El campo services no puede estar vacio...');
@@ -43,6 +62,14 @@ window.addEventListener('load', function () {
                 services.classList.remove('is-invalid');   
             }   
 
+            if (services.value.length <= 20) {
+                errores.push('el detalle debe tener minimo 20 caracteres');
+                services.classList.add('is-invalid');
+                ulErrores.classList.add('showErrores');
+            }  else {
+                services.classList.add('is-valid');
+                services.classList.remove('is-invalid');} 
+
              if (price.value == '') {
                 errores.push('El campo price no puede estar vacio...');
                 price.classList.add('is-invalid');
@@ -52,7 +79,7 @@ window.addEventListener('load', function () {
                 price.classList.remove('is-invalid');   
             }   
 
-            imgMembership
+           // imgMembership
             if (imgMembership.value == '') {
                 errores.push('El campo imagen no puede estar vacio...');
                 price.classList.add('is-invalid');

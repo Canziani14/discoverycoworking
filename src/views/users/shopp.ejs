@@ -8,28 +8,27 @@
 <body>
     <!--header-->
     <%- include ("../partials/header") %>
+        <% if (!locals.user) { %>
+            <main>
+                <div class="shopp-container">
+                    <img class="imgShopp" src="imgs/carritoVacio.png" alt="">
+                    <br>
+                    <br>
+                    <p>¡You haven't bought any membership yet!</p>
 
-        <main>
-            <div class="shopp-container">
-
-    <img class="imgShopp" src="imgs/carritoVacio.png" alt="">
-    <br>
-    <br>
-    <p>¡You haven't bought any membership yet!</p>
-
-    <br>
-    <br>
-     <button class="btn"><a href="/memberships"> Please select a membership  </a></button> 
-</div>
-
-           
+                    <br>
+                    <br>
+                    <button class="btn"><a href="/memberships"> Please select a membership </a></button>
+                </div>
+            </main>
             
-        </main>
+            <% } else { %>
+                <p class="shopp-container">your current membership is <%= memberships.membership %></p>
+                <% } %>
 
 
-
-        <!--footer-->
-        <%- include ("../partials/footer") %>
+                    <!--footer-->
+                    <%- include ("../partials/footer") %>
 
 </body>
 
