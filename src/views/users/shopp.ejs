@@ -21,10 +21,14 @@
                     <button class="btn"><a href="/memberships"> Please select a membership </a></button>
                 </div>
             </main>
-            
+
             <% } else { %>
-                <p class="shopp-container">your current membership is <%= memberships.membership %></p>
+                <div class="shopp-container">
+                    <p class="shopp-container">your current membership is <%= user.membership %></p>
+                    <img class="imgShopp" src="/imgs/memberships/<%= memberships.membership + ".jpg"%>   " alt="">
+                </div>
                 <% } %>
+
 
 
                     <!--footer-->

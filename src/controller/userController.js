@@ -131,18 +131,17 @@ const userController = {
       
   },
 
-  
+
   shopp: function (req, res) {
-
-    console.log("para el carrito",req.session.user)
-
-    res.render("users/shopp", {
-      title: "Carrito",
-      styles: "carrito.css",
-      user: req.session.user,
-      memberships: req.session.user
-    })
+    console.log(req.session.user)
+        res.render("users/shopp", {
+          title: "Carrito",
+          styles: "carrito.css",
+          user: req.session.user,
+          memberships: req.session.user
+        })
   },
+
   toBuy: function (req, res) {
     
     let id = db.Membership.findByPk (req.params.idMembership)
