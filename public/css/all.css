@@ -4,8 +4,9 @@ body {
   margin: 0;
   padding: 0;
   /* background-color: #9df7d6bc !important; */
-  background: rgb(61,142,189) !important;
-background: linear-gradient(180deg, rgba(61,142,189,1) 20%, rgba(112,198,202,1) 100%) !important;
+  /* background: rgb(61,142,189) !important;
+background: linear-gradient(180deg, rgba(61,142,189,1) 20%, rgba(112,198,202,1) 100%) !important; */
+background-image: url('../imgs/bg.jpg');
 
 }
 main{

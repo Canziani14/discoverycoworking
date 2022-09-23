@@ -4,11 +4,6 @@
     padding: 0;
     margin: 0;
   }
-
-  header{
-    background: linear-gradient(180deg, rgba(112,198,202,1)  20%, #3d8ebde1 100%);
-    border-bottom: 15px double rgba(0, 128, 128, 0.502);
-  }
   nav {
     padding: 5px 20px;
   }
@@ -16,12 +11,12 @@
     list-style-type: none;
   }
   #title{
-    color:white;
+    color:rgb(51, 51, 51);
     font-size:2rem;
     font-weight: bold;
   }
   a {
-    color: white;
+    color: rgb(51, 51, 51);
     text-decoration: none;
   }
   a:hover {
@@ -48,12 +43,18 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap:15px;
   }
   .toggle {
     order: 1;
   }
   .item.button {
     order: 2;
+    border-radius: 10px;
+    transition:500ms;
+  }
+  .item.button:hover{
+    transform: scale(1.1)
   }
   .item {
     width: 100%;
@@ -89,7 +90,7 @@
     }
     .button a {
       padding: 7.5px 15px;
-      background: teal;
+      background: white;
       border: 1px #006d6d solid;
     }
     .button.secondary a {
@@ -99,8 +100,9 @@
       text-decoration: none;
     }
     .button:not(.secondary) a:hover {
-      background: #006d6d;
-      border-color: #005959;
+      background: rgb(239, 137, 47);
+      border-color: #2b9a17;
+      color: #2b9a17;
     }
     .button.secondary a:hover {
       color: #ddd;
@@ -132,8 +134,9 @@
     }
   }
   .imgPerfil{
-    width: 50px;
+    width: 70px;
     border-radius: 50%;
+    border: 6px solid #2b9a17;
   }
   .perfil{
     display:flex;
@@ -141,5 +144,5 @@
     justify-content: center;
     align-items: center;
     gap:20px;
-    color: rgb(51, 51, 51);
+    color: #2b9a17;
   }

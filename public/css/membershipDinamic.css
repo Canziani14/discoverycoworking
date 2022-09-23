@@ -7,8 +7,8 @@ main{
   padding-top: 45px;
   text-align: center;
   font-size: 45px;
-  color: white;
-  text-decoration: underline rgba(23, 228, 201, 0.707);
+  color: rgb(51, 51, 51);
+  text-decoration: underline rgb(51, 51, 51);
   text-decoration-style: double;
   text-decoration-thickness: 25%;
   letter-spacing: 3px;
