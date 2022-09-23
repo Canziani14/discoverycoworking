@@ -171,6 +171,29 @@ const userController = {
       })
 
   },
+  toDelete: function (req,res) {
+    let deleteMembership = req.session.user.membership;
+    console.log("probando el user",req.session.user)
+    db.User.update (
+      {
+        membership: null
+      },
+      {
+        where: {membership:deleteMembership}
+      });
+      console.log()
+
+      res.render("index", {
+        title: "Shopp",
+        styles: "carrito.css",
+        user: req.session.user,
+        memberships: req.session.user
+        })
+      
+    
+  },
+
+
   queries: function (req, res) {
     db.ContactUs.findAll()
       .then((queries) => {

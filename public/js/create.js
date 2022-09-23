@@ -89,7 +89,8 @@ window.addEventListener('load', function () {
                 imgMembership.classList.remove('is-invalid');   
             }   
 
-            if (price.value.length <= 100000) {
+            if (price.value.length > 100000) {
+                //
                 errores.push('el precio no puede ser mayo a 100.000');
                 price.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');

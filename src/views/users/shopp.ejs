@@ -8,7 +8,7 @@
 <body>
     <!--header-->
     <%- include ("../partials/header") %>
-        <% if (!locals.user) { %>
+        <% if (!locals.user || user.membership == null) { %>
             <main>
                 <div class="shopp-container">
                     <img class="imgShopp" src="imgs/carritoVacio.png" alt="">
@@ -22,10 +22,13 @@
                 </div>
             </main>
 
-            <% } else { %>
+ 
+            <% } else if (locals.user ) { %>
                 <div class="shopp-container">
                     <p class="shopp-container">your current membership is <%= user.membership %></p>
                     <img class="imgShopp" src="/imgs/memberships/<%= memberships.membership + ".jpg"%>   " alt="">
+                    <br><br>
+                    <a  href="/carrito/delete "> <button class="btn">Delete Membership</button> </a>
                 </div>
                 <% } %>
 

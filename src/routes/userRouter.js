@@ -98,7 +98,7 @@ router.post("/contactus", userController.contact);
 // router.get("/changepassword", userController.changepassword);
 
 router.get ("/carrito", userController.shopp);
-// router.get('/carrito/:nameMembership', mainController.carrito);
+router.get("/carrito/delete", userController.toDelete)
 router.get ("/toBuy/:idMembership", userController.toBuy);
 //router.post('/toBuy/:idMembership', userController.buy);
 router.get("/queries", userController.queries)
