@@ -102,6 +102,7 @@ router.get("/carrito/delete", userController.toDelete)
 router.get ("/toBuy/:idMembership", userController.toBuy);
 //router.post('/toBuy/:idMembership', userController.buy);
 router.get("/queries", userController.queries)
+router.get("/notAcces", userController.notAcces)
 
 
 

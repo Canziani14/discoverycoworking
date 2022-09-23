@@ -203,7 +203,15 @@ const userController = {
           user: req.session.user,
           queries
         });
-      })
+      });
+  },
+
+  notAcces: function(req,res){
+    res.render("users/notAcces", {
+      title: "Not Acces",
+      styles: "carrito.css",
+      user: req.session.user,
+  })
   }
 
   // editaccount: function (req, res) {
