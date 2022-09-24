@@ -1,9 +1,4 @@
-/* FOOTER*/
 footer {
-  /* position:fixed;
-  bottom:0px; */
-    /* background-color: #3d8ebde1;
-    background: linear-gradient(180deg, rgba(112, 197, 202, 0.801)  20%, #3d8ebde1  100%); */
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -16,25 +11,21 @@ footer {
 .footer-title{
   color:rgb(51, 51, 51);
 }
-img{
-    width:200px;
-  }
 
-  .icons-redes {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-    gap:30px;
-  }
-  
-  .footerwhatsapp {
-    position: fixed;
-    right: 15px;
-    bottom: 140px;
-    z-index: 3;
-    background-color: #25d366;
-    color: #fff;
-    border-radius: 20px;
-    text-align: center;
-  }
+.icons-redes a{
+  color:rgb(51, 51, 51);
+  text-decoration: none !important;
+  transition: 500ms;
+}
+.icons-redes a:hover{
+  transform: scale(1.2);
+}
+
+.icons-redes {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  gap:30px;
+}
+
   
