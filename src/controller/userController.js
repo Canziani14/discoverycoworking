@@ -212,14 +212,51 @@ const userController = {
       styles: "carrito.css",
       user: req.session.user,
   })
-  }
+  },
 
-  // editaccount: function (req, res) {
-  //   res.render("./users/editaccount");
-  // },
-  // changepassword: function (req, res) {
-  //   res.render("./users/changepassword");
-  // },
+   edditAccount:(req, res) => {
+    let user = db.User.findByPk(req.params.id_users);
+
+    Promise.all([user])
+   
+       .then((User) => {
+         console.log('QUERES VER:', User);
+ 
+         return  res.render("./users/editaccount", { 
+         title:'Edit membership',
+         styles: "admin.css",
+         userEddit: User,
+         user: req.session.user,})
+       })
+       .catch(error => res.send(error));
+   },
+
+   procesEdittAccount: 
+   function (req, res) {
+    let userEditt = db.User.findByPk(req.params.id_users)
+
+    db.User.update ({
+      name: req.body.name,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      newPassword: req.body.newPassword,
+    } , {
+      where : {
+        id_users: req.params.id_users
+      }
+    })
+
+    .then (user => {
+    console.log("aca el user",user)
+
+      res.render("./users/editaccount", {
+       
+        });
+    })
+    
+    
+   },
+  
 };
 
 module.exports = userController;

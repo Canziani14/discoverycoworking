@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- FONTS -->
     <%- include ("../partials/links") %>
-    <link rel="stylesheet" href="/css/login.css">
+    <%- include('../partials/head') %>
+
+    
     
     <title>Edit Account</title>
 
@@ -20,16 +22,22 @@
             <p class="subtitle">Edit your account information</p>
 
             <form action="/" class="form">
+
                 <label for="name" class="label">Name</label>
                 <input type="text" name="name" id="name" placeholder="Enter your name"
-                class="input input-name">
+                class="input input-name" value="<%= userEddit[0].userName  %>">
+
+                <label for="lastName" class="label">last Name</label>
+                <input type="text" name="lastName" id="name" placeholder="Enter your name"
+                class="input input-name" value="<%= userEddit[0].lastName  %>">
+
                 <label for="email" class="label">Email address</label>
                 <input type="email" name="email" id="email" placeholder="Enter your email adress" required
-                class="input input-email">
+                class="input input-email" value="<%= userEddit[0].userEmail  %>">
 
                 <label for="new-password" class="label"> New password</label>
-                <input type="password" name="new-password" id="new-password" placeholder="New password"
-                class="input input-password">
+                <input type="password" name="newPassword" id="new-password" placeholder="New password"
+                class="input input-password" value="">
 
                 <input type="submit" value="Edit" class="primary-button login-button">
             </form>

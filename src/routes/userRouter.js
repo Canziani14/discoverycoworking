@@ -103,6 +103,9 @@ router.get ("/toBuy/:idMembership", userController.toBuy);
 //router.post('/toBuy/:idMembership', userController.buy);
 router.get("/queries", userController.queries)
 router.get("/notAcces", userController.notAcces)
+router.get ("/edditAccount/:id_users", userController.edditAccount)
+router.put("/edditAccount/:id_users", userController.procesEdittAccount)
+
 
 
 
