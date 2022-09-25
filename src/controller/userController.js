@@ -220,11 +220,10 @@ const userController = {
     Promise.all([user])
    
        .then((User) => {
-         console.log('QUERES VER:', User);
- 
+ console.log(User)
          return  res.render("./users/editaccount", { 
          title:'Edit membership',
-         styles: "admin.css",
+         styles: "login.css",
          userEddit: User,
          user: req.session.user,})
        })
@@ -233,13 +232,12 @@ const userController = {
 
    procesEdittAccount: 
    function (req, res) {
-    let userEditt = db.User.findByPk(req.params.id_users)
-
+    
     db.User.update ({
-      name: req.body.name,
+      userName: req.body.name,
       lastName: req.body.lastName,
       email: req.body.email,
-      newPassword: req.body.newPassword,
+      //newPassword: req.body.password = bcrypt.hashSync(req.body.password, 10),
     } , {
       where : {
         id_users: req.params.id_users
@@ -247,11 +245,7 @@ const userController = {
     })
 
     .then (user => {
-    console.log("aca el user",user)
-
-      res.render("./users/editaccount", {
-       
-        });
+      res.redirect("/")
     })
     
     

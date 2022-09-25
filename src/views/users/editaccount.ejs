@@ -21,7 +21,7 @@
             <h1 class="title">My Account</h1>
             <p class="subtitle">Edit your account information</p>
 
-            <form action="/" class="form">
+            <form action="/edditAccount/<%=userEddit[0].id_users%>?_method=PUT" class="form" method="post">
 
                 <label for="name" class="label">Name</label>
                 <input type="text" name="name" id="name" placeholder="Enter your name"
