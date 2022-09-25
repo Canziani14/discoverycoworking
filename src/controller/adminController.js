@@ -108,7 +108,7 @@ module.exports = {
       .then(users => {   
           res.render('./users/userList', {users: users,title: "User List",
           styles: "index.css",
-          user: req.session.userLogged})
+          user: req.session.user})
       })
     },
 };
