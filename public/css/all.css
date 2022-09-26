@@ -12,3 +12,9 @@ background-image: url('../imgs/bg.jpg');
 main{
   z-index: -1000;
 }
+
+@media (max-width:950px){
+  .containerSlider{
+    display: none
+  }
+}
