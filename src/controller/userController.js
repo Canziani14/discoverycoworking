@@ -220,7 +220,6 @@ const userController = {
     Promise.all([user])
    
        .then((User) => {
- console.log(User)
          return  res.render("./users/editaccount", { 
          title:'Edit membership',
          styles: "login.css",
