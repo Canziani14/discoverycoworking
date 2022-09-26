@@ -11,6 +11,9 @@ main{
     text-decoration: underline #4cb5ae;
   }
 
+  .imgShopp{
+    width: 300px;
+  }
 
   .container{
     border: 2px  solid #4cb5ae;

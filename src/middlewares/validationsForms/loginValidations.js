@@ -13,8 +13,8 @@ module.exports = [
     .notEmpty()
     .withMessage("debe ingresar una contraseña")
     .bail()
-    .isLength({ min: 8 })
-    .withMessage("la contraseña debe tener 8 caracteres minimo")
+    .isLength({ min: 6 })
+    .withMessage("la contraseña debe tener 6 caracteres minimo")
     .bail(),
 
 ];

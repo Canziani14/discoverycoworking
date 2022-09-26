@@ -34,13 +34,13 @@
             type="text"
             class="input"
             name="name"
-            value=""
+            value="<%= typeof old != 'undefined' ? old.name : '' %>"
           />
           <div class="cut"></div>
         <label for="name" class="placeholder">Name</label>
         </div>
-        <% if (locals.errors && locals.errors.title) { %>
-          <span class="error-msg"><%= locals.errors.title.msg %></span>
+        <% if (locals.errors && locals.errors.name) { %>
+          <span class="error-msg"><%= locals.errors.name.msg %></span>
           <% } %>
 
         <div class="input-container">
@@ -48,7 +48,7 @@
             type="text"
             class="input"
             name="details"
-            value=""
+            value="<%= typeof old != 'undefined' ? old.details : '' %>"
           />
           <div class="cut"></div>
         <label for="details" class="placeholder">Details</label>
@@ -62,7 +62,7 @@
             type="textarea"
             class="input"
             name="services"
-            value=""
+            value="<%= typeof old != 'undefined' ? old.services: '' %>"
           />
           <div class="cut"></div>
         <label for="services" class="placeholder">Services</label>
@@ -76,7 +76,7 @@
             type="number"
             class="input"
             name="price"
-            value=""
+            value="<%= typeof old != 'undefined' ? old.price : '' %>"
           />
           <div class="cut"></div>
         <label for="price" class="placeholder">Price</label>
@@ -98,6 +98,6 @@
     </div>
     </main>
     <%- include ("../partials/footer") %>
-      <script src="/js/create.js"></script>
+     <!-- <script src="/js/create.js"></script> -->  
   </body>
 </html>

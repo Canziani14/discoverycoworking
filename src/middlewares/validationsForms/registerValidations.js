@@ -1,9 +1,9 @@
 const { body } = require("express-validator");
 
-const registerValidations = [
+module.exports = [
   body("userName")
     .notEmpty()
-    .withMessage("E")
+    .withMessage("El campo nombre no puede estar vacio")
     .bail()
     .isLength({ min: 3 })
     .withMessage("El nombre es muy corto")
@@ -28,8 +28,16 @@ const registerValidations = [
     .notEmpty()
     .withMessage("debe ingresar una contraseña")
     .bail()
-    .isLength({ min: 8 })
-    .withMessage("la contraseña debe tener 8 caracteres minimo")
+    .isLength({ min: 6 })
+    .withMessage("la contraseña debe tener 6 caracteres minimo")
+    .bail(),
+
+    body("confirmPassword")
+    .notEmpty()
+    .withMessage("debe ingresar la confirmacion de la contraseña")
+    .bail()
+    .isLength({ min: 6 })
+    .withMessage("la contraseña debe tener 6 caracteres minimo")
     .bail(),
 
   // validacion de imagenes!
@@ -44,4 +52,4 @@ const registerValidations = [
     .withMessage("Debe ingresar un avatar de perfil"),
 ];
 
-module.exports = registerValidations;
+

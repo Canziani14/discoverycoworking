@@ -26,11 +26,11 @@ const {
 
 router.get("/login", userController.login);
 
-router.post('/login', loginValidations, userController.processLogin);
+router.post('/login',loginValidations,  userController.processLogin);
 
 router.get("/signin", userController.signin);
-
-User.findAll()
+router.post("/signin", registerValidations, userController.processRegister)
+/*User.findAll()
     .then((users) => {
 
         router.post('/signin', upload.single('avatar'),  [
@@ -83,7 +83,7 @@ User.findAll()
     })
     .catch((errors) => {
         console.log(errors);
-    })
+    })*/
 
 
 
