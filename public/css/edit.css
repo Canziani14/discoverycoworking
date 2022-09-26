@@ -2,26 +2,33 @@
     text-align: center;
     height: fit-content;
 }
+.title {
+  font-family: 'Arimo', sans-serif !important;
 
-.title{
-    font-family: 'Arimo', sans-serif !important;
-    padding-top: 45px;
-    text-align: center;
-    font-size: 45px;
-    color: #ffffff; 
-    text-decoration: underline rgba(23, 228, 201, 0.707);
-    text-decoration-style: double;
-    text-decoration-thickness: 25%;
-    letter-spacing: 3px;
+  font-size: 45px;
+  color: rgb(51, 51, 51);
+  text-decoration: underline rgb(239, 137, 47);
+  text-decoration-style:double;
+  text-decoration-thickness: 10%;
+  letter-spacing: 3px;
+  transition:  500ms;
+  margin: 0px auto 60px 0;
+
 }
-
+.title:hover{
+  transform: scale(1.2);
+  color: rgb(51, 51, 51);
+  text-decoration: underline rgb(239, 137, 47) !important;
+  text-decoration-style: double;
+  text-decoration-thickness: 10%;
+}
 #create{
     margin:auto;
     margin-top: 60px;
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: #ffffff94;
+    background-color: #ffffff51;
     border-radius: 20px;
     height:700px;
     padding: 20px;
@@ -33,14 +40,15 @@
     position: relative;
     width: 100%;
     margin:10px 0px;
+    color:red;
 
   }
   .input {
-    background-color: #006d6d;
+    background-color: #2b9a17;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
-    color: white;
+    color: black;
     font-size: 18px;
     height: 100%;
     outline: 0;
@@ -54,7 +62,7 @@
 }
 
   .cut {
-    background-color: #15172b;
+    background-color: rgba(239, 137, 47, 0.86);
     border-radius: 10px;
     height: 20px;
     left: 20px;
@@ -75,7 +83,7 @@
   }
   
   .placeholder {
-    color: #65657b;
+    color: white;
     font-family: sans-serif;
     left: 20px;
     line-height: 14px;
@@ -92,11 +100,11 @@
   }
   
   .input:not(:placeholder-shown) ~ .placeholder {
-    color: #808097;
+    color: white;
   }
   
   .input:focus ~ .placeholder {
-    color: rgb(0, 128, 128);
+    color: #2b9a17;
   }
 
 /* validaciones front */
@@ -121,3 +129,21 @@
 .show{
   display:block;
 }
+
+/*boton*/
+.boton {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 900;
+  color: #ffffff;
+  background: #2b9a17;
+  border-radius: 10px;
+  border: 1px solid #3d8ebde1;
+  padding: 10px;
+  }
+
+  .boton:hover{
+    background: rgb(239, 137, 47);
+
+  }

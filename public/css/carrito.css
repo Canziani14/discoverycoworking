@@ -1,117 +1,30 @@
-main{
-    padding-top:60px;
-    height: 52vh;
-  }
-.main-title{
-    font-family: 'Arimo', sans-serif !important;
-    padding-top: 25px;
-    text-align: center;
-    font-size: 2rem;
-    color: black;
-    text-decoration: underline #4cb5ae;
-  }
+.shopp-container{
+  height:fit-content;
+  text-align:center;
+}
 
+.shopp-container img{
+  width:500px;
+  height:500px;
+}
+.boton{
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 900;
+  color: #313133;
+  background: #2b9a17ea;
+  border-radius: 10px;
+  border: 1px solid #3d8ebde1;
+  padding: 10px;
+}
+.boton:hover{
+  color: white;
+  background-color:rgb(239, 137, 47);
+}
 
-  .container{
-    border: 2px  solid #4cb5ae;
-    border-radius: 30px;
-    background-color: rgb(213, 254, 249);
-    padding:80px;
-    width:60%;
-    margin:auto;
-    text-align:center;
-    align-items: center;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:30px;
-    border: 2px  solid #14302e;
-
-  }
-
-  .container:hover .info{
-    background-color:#53c2bc9f;
-    border-radius: 10px;
-    /* border: 2px  solid #14302e; */
-    -webkit-box-shadow: 0px 0px 45px 6px #225653; 
-box-shadow: 0px 0px 45px 6px #4cb5ae;
-  }
-  .container:hover .div-total{
-    background-color:#53c2bc9f;
-    border-radius: 10px;
-    /* border: 2px  solid #14302e; */
-    -webkit-box-shadow: 0px 0px 45px 6px #225653; 
-box-shadow: 0px 0px 45px 6px #4cb5ae;
-  }
-  .info{
-    background-color: #57bd9e5e;
-    padding:20px;
-   
-  }
-  .div-total{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    background-color: #57bd9e5e;
-    padding:20px;
-    height:200px;
-    border-radius: 10px;
-    width:100%;
-    
-  }
-  .name{
-    font-size:2rem;
-    font-weight:bold;
-  }
-  .price{
-    font-weight:bold;
-    font-size:30px;
-  }
-  .btn {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1.3px;
-    font-weight: 900;
-  
-    background: linear-gradient(90deg, rgb(172, 235, 227) 0%, rgb(26, 70, 66) 100%);
-    border: none;
-    border-radius: 1000px;
-    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
-    transition: all 0.3s ease-in-out 0s;
-    cursor: pointer;
-    outline: none;
-    position: relative;
-    padding: 10px;
-    }
-
-    a .btn {
-      width:100px;
-        color:black;
-            font-weight: 900;
-        text-decoration: none;
-    }
-  
-  .btn:hover{
-    font-weight: 700;
-    border: 3px solid rgba(79,209,197,.64);
-      background: white;
-    color:rgb(34, 85, 80);
-  }
-
-
-
-  .purchase{
-    background-color: rgb(218, 255, 250);
-    color: rgb(34, 85, 80);
-    width:40%;
-    margin:auto;
-    margin-top:100px;
-    padding:50px;
-    text-align: center;
-    font-size: 2rem;
-  }
-
-  .shopp-container{
-    text-align: center;
-  }
+.current{
+  color:white;
+  font-size: 24px;
+  font-weight: bolder;
+}

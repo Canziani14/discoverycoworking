@@ -56,10 +56,11 @@ gap:50px;
   justify-content:center;
   gap:50px;
 }
-.container-img img{
+.container img{
   flex:2;
-  border-radius: 50%;
-  width:300px;
+  border-radius: 15px;
+  width:60%;
+  height:initial
 }
 
 .detalle{

@@ -23,19 +23,11 @@ main
 }
 /* SECTION-BANNER */
 #section-banner{
-  margin:30px auto 10px auto;
+  margin:30px auto 50px auto;
   padding:0px 50px;
 align-items: center;
 display:flex;
 justify-content: center;
-}
-
-/* SECTION PRODUCTOS */
-#section-products{
-  width:100%;
-}
-.carousel-item{
-
 }
 .carousel-item img{
   transition:500ms;
@@ -46,16 +38,30 @@ justify-content: center;
 
 }
 .carousel-caption h3{
-  color:white;
-  background-color:rgba(239, 137, 47, 0.537);
+  color:rgba(0, 0, 0, 0.834);
+  background-color:rgba(239, 137, 47, 00.8);
   border-radius:10px;
   width:fit-content;
   padding:10px;
   margin:auto;
 }
-.control{
-  color: red !important;
+.carousel-caption p{
+  color:rgb(51, 51, 51);
+  margin-top:10px;
+  padding:10px;
+  background-color:rgba(255, 255, 255, 0.8)
 }
+.carousel-caption p span{
+  color:rgb(239, 137, 47);
+  font-weight: bolder;
+ 
+}
+
+/* SECTION PRODUCTOS */
+#section-products{
+  width:100%;
+}
+
 .sect2-title {
   font-family: 'Arimo', sans-serif !important;
 

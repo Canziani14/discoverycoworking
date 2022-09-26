@@ -3,6 +3,7 @@
 
 <head>
     <%- include('../partials/head') %>
+    <link rel="stylesheet" href="./css/membershipDinamic.css">
 </head>
 
 <body>
@@ -12,24 +13,33 @@
             <main>
                 <div class="shopp-container">
                     <img class="imgShopp" src="imgs/carritoVacio.png" alt="">
-                    <br>
-                    <br>
-                    <p>¡You haven't bought any membership yet!</p>
 
-                    <br>
-                    <br>
-                    <button class="btn"><a href="/memberships"> Please select a membership </a></button>
+                    <p>¡You haven't bought any membership yet!</p>
+                    <a href="/memberships">  <button class="boton"> Please select a membership </button></a>
                 </div>
             </main>
 
  
             <% } else if (locals.user ) { %>
                 <div class="shopp-container">
-                    <p class="shopp-container">your current membership is <%= user.membership %></p>
-                    <img class="imgShopp" src="/imgs/memberships/<%= memberships.membership + ".jpg"%>   " alt="">
-                    <br><br>
-                    <a  href="/carrito/delete "> <button class="btn">Delete Membership</button> </a>
-                </div>
+                    <div class="container">
+                        <div class="containerOne">
+                            <div class="current">Your current membership is <%= user.membership %></div>
+                            <img class="imgShopp" src="/imgs/memberships/<%= memberships.membership + ".jpg"%>   " alt="">
+                            <br><br>
+                         
+                        </div>
+                           
+                            <div class="containerTwo">
+            
+                                <a  href="/carrito/delete "> <button class="btn">Delete Membership</button> </a>
+                                <a href="/memberships "> <button class="btn"> Back
+                                </button>
+                            </a>
+                                    
+                        </div>       
+                    </div>
+                  
                 <% } %>
 
 
