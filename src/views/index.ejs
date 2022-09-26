@@ -4,15 +4,18 @@
     <%- include('./partials/head') %>
       <!-- toastify -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <!-- <link rel="stylesheet" href="/css/slider.css"> -->
-
+    <link rel="stylesheet" href="/css/slider.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </head>
   <body>
 
     <%- include("./partials/header") %>
 
     <main>
-      <section class="containerSlider">
+      <!-- <section class="containerSlider">
 
         <ul class="slider">
             <li class="slid" id="slide1">
@@ -41,6 +44,45 @@
             </li>
         </ul>
 
+    </section> -->
+    <section id="section-banner">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="/imgs/slider/oficina1.jpg" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Discover a new way to WORK</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque porro consequuntur nemo suscipit beatae nulla ad tempore corporis aspernatur autem sequi nobis, necessitatibus vitae vero temporibus placeat aut. Nulla, quidem.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="/imgs/slider/oficina2.jpg" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>img2</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque porro consequuntur nemo suscipit beatae nulla ad tempore corporis aspernatur autem sequi nobis, necessitatibus vitae vero temporibus placeat aut. Nulla, quidem</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="/imgs/slider/oficina1.jpg" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h3>...</h3>
+              <p>...</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="black"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>           <span class="sr-only control">AAAAAAAAPrevious</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only control">Next</span>
+        </a>
+      </div>
     </section>
     
 
