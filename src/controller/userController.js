@@ -181,14 +181,9 @@ const userController = {
       {
         where: {membership:deleteMembership}
       });
-      console.log()
+      
 
-      res.render("index", {
-        title: "Shopp",
-        styles: "carrito.css",
-        user: req.session.user,
-        memberships: req.session.user
-        })
+      res.redirect("/")
       
     
   },
@@ -220,6 +215,7 @@ const userController = {
     Promise.all([user])
    
        .then((User) => {
+ console.log(User)
          return  res.render("./users/editaccount", { 
          title:'Edit membership',
          styles: "login.css",

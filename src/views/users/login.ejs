@@ -34,6 +34,9 @@
             class="input input-email"
             value=""
             />
+            <% if (locals.errors && locals.errors.email) { %>
+              <span class="error-msg"><%= locals.errors.email.msg %></span>
+              <% } %>
      
 
                 <label for="password" class="label">Password</label>
@@ -43,8 +46,10 @@
                 id="new-password"
                 placeholder="Password"
                 class="input input-password"
-                
                 />
+                <% if (locals.errors && locals.errors.password) { %>
+                  <span class="error-msg"><%= locals.errors.email.msg %></span>
+                  <% } %>
 
        
           <div class="recordarme">
@@ -57,13 +62,13 @@
 
           <button type="submit" class="secondary-button signup-button">Ingresar</button>
 
-          <a href="/">Forgot your password?</a>
+         
         </form>
 
 
         <button class="secondary-button signup-button"><a  href="/signin">Sign up</a></button>
       </div>
     </div>
-    <script src="./js/login.js"></script>
+   <!-- <script src="./js/login.js"></script> -->
   </body>
 </html>

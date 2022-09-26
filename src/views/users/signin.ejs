@@ -1,89 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head') %>
-  </head>
 
-  <body>
-    <div class="login">
+<head>
+  <%- include('../partials/head') %>
+</head>
+
+<body>
+  <div class="login">
 
 
 
 
-      <div class="form-container">
+    <div class="form-container">
 
-        <a href="/"> <h2 class="title">Discovery Coworking </h2></a>
-        
+      <a href="/">
+        <h2 class="title">Discovery Coworking </h2>
+      </a>
+
       <div id="erroresFront" class="erroresDeFront">
 
       </div>
 
       <div class="errores">
-        <% if(typeof(errors) != 'undefined'){%>
+        <% if(typeof(errors) !='undefined' ){%>
           <div>
 
-            <% errors.forEach(error => { %>
-              <p><%= error.msg%></p>
+            <% errors.forEach(error=> { %>
+              <p>
+                <%= error.msg%>
+              </p>
               <%});%>
-            </div>
-           
-       <%}%>  
+          </div>
+          <%}%>
       </div>
 
-        <h1 class="title2">Sign In</h1>
-        <p class="subtitle">Make an account on Discovery Coworking</p>
+      <h1 class="title2">Sign In</h1>
+      <p class="subtitle">Make an account on Discovery Coworking</p>
 
-       
-        <form
-          action="/signin"
-          class="form"
-          method="post"
-          enctype="multipart/form-data"
-        >
-          <label for="userName" class="label">Name</label>
-          <input
-          type="text"
-          name="userName"
-          placeholder="Nombre"
-          value="<%= typeof old != 'undefined' ? old.userName : '' %>"
-            class="input input-name"
-          />
 
-            <label for="userLastName" class="label">LastName</label>
-            <input
-        type="text"
-        name="userLastName"
-        placeholder="LastName"
-        class="input input-name"
-        value="<%= typeof old != 'undefined' ? old.userLastName : '' %>"
-      />
-      <!-- <% if (locals.errors && locals.errors.userLastName) { %>
+      <form action="/signin" class="form" method="post" enctype="multipart/form-data">
+        <label for="userName" class="label">Name</label>
+        <input type="text" name="userName" placeholder="Nombre"
+          value="<%= typeof old != 'undefined' ? old.userName : '' %>" class="input input-name" />
+
+            <% if (locals.errors && locals.errors.userName) { %>
+      <span class="error-msg"><%= locals.errors.userName.msg %></span>
+      <% } %> 
+
+
+        <label for="userLastName" class="label">LastName</label>
+        <input type="text" name="userLastName" placeholder="LastName" class="input input-name"
+          value="<%= typeof old != 'undefined' ? old.userLastName : '' %>" />
+        <!-- <% if (locals.errors && locals.errors.userLastName) { %>
       <span class="error-msg"><%= locals.errors.userLastName.msg %></span>
       <% } %> -->
 
-          <label for="email" class="label">Email address</label>
-          <input
-          type="email"
-          name="userEmail"
-          placeholder="e-mail adress"
-          value="<%= typeof old != 'undefined' ? old.userEmail : '' %>"
-            required
-            class="input input-email"
-          />
-          <!-- <% if (locals.errors && locals.errors.userEmail) { %>
+        <label for="email" class="label">Email address</label>
+        <input type="email" name="userEmail" placeholder="e-mail adress"
+          value="<%= typeof old != 'undefined' ? old.userEmail : '' %>" required class="input input-email" />
+        <!-- <% if (locals.errors && locals.errors.userEmail) { %>
             <span class="error-msg"><%= locals.errors.userEmail.msg %></span>
             <% } %> -->
 
-          <label for="password" class="label">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-            class="input input-password"
-            value="<%= typeof old != 'undefined' ? old.password : '' %>"
-          />
-          <!-- <% if (locals.errors && locals.errors.password) { %>
+        <label for="password" class="label">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password" class="input input-password"
+          value="<%= typeof old != 'undefined' ? old.password : '' %>" />
+        <!-- <% if (locals.errors && locals.errors.password) { %>
             <span class="error-msg"><%= locals.errors.password.msg %></span>
             <% } %> -->
             <label for="confirmPassword" class="label">confirmPassword</label>
@@ -101,14 +83,11 @@
       <span class="error-msg"><%= locals.errors.avatar.msg %></span>
       <% } %> -->
 
-          <button
-            type="submit"
-            value="Sign in"
-            class="secondary-button login-button"
-          >Sign in</button>
-        </form>
-      </div>
+        <button type="submit" value="Sign in" class="secondary-button login-button">Sign in</button>
+      </form>
     </div>
-    <script src="./js/signin.js"></script>
-  </body>
+  </div>
+  <!-- <script src="./js/signin.js"></script> -->
+</body>
+
 </html>
