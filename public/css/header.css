@@ -63,11 +63,36 @@
   .item.active {
     display: block;
   }
+  .item:focus{
+    color:blue !important;
+  }
 
   .items{
     display:flex;
     flex-direction: row;
     justify-content: flex-end;
+  }
+  .itemAdmin{
+    color: rgb(51, 51, 51);
+    text-decoration: none;
+    font-size: 20px !important;
+    text-transform: capitalize !important;
+    padding: 15px 5px;
+    white-space: nowrap;
+    background-color: transparent !important;
+    border: none !important;
+  }
+  .itemAdmin:focus{
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .menuAdmin{
+    background-color:rgba(239, 137, 47, 1);
+  }
+  .menuAdmin a{
+    padding:10px;
+    display: block !important;
   }
   /* Tablet menu */
   @media all and (min-width: 600px) {
