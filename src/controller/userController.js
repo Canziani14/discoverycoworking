@@ -237,7 +237,7 @@ const userController = {
       userName: req.body.name,
       lastName: req.body.lastName,
       email: req.body.email,
-      //newPassword: req.body.password = bcrypt.hashSync(req.body.password, 10),
+      password: req.body.newPassword = bcrypt.hashSync(req.body.newPassword, 10),
     } , {
       where : {
         id_users: req.params.id_users
