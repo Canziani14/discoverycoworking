@@ -19,8 +19,17 @@ const userController = {
       .then((users) => {
         //Aquí guardo los errores que vienen desde la ruta, valiendome del validationResult
         let errors = validationResult(req);
-
         let userLogged = [];
+        
+        if (!errors.isEmpty()) {
+          return res.render("users/signin", {
+            errors: errors.mapped(),
+            old: req.body,
+            title: "Signin",
+            styles: "login.css",  
+          });
+        }
+        
 
         if (req.body.email != '' && req.body.password != '') {
 
@@ -80,12 +89,14 @@ const userController = {
   },
   processRegister: (req, res) => {
     const errors = validationResult(req);
+    console.log("los errores son",errors.errors)
     if (!errors.isEmpty()) {
       return res.render("users/signin", {
-        errors: errors.errors,
+        errors: errors.mapped(),
         old: req.body,
         title: "Signin",
         styles: "login.css",
+        
       });
     }
     User.create({
@@ -93,6 +104,7 @@ const userController = {
       lastName: req.body.userLastName,
       userEmail: req.body.userEmail,
       password: req.body.password = bcrypt.hashSync(req.body.password, 10),
+      confirmPassword: req.body.confirmPassword =  bcrypt.hashSync(req.body.password, 10),
       avatar: req.file ? req.file.filename : '',
     })
 

@@ -32,13 +32,7 @@ module.exports = [
     .withMessage("la contraseña debe tener 6 caracteres minimo")
     .bail(),
 
-    body("confirmPassword")
-    .notEmpty()
-    .withMessage("debe ingresar la confirmacion de la contraseña")
-    .bail()
-    .isLength({ min: 6 })
-    .withMessage("la contraseña debe tener 6 caracteres minimo")
-    .bail(),
+
 
   // validacion de imagenes!
   body("avatar")
@@ -50,6 +44,7 @@ module.exports = [
       }
     })
     .withMessage("Debe ingresar un avatar de perfil"),
+
 ];
 
 
