@@ -1,6 +1,6 @@
 const { body } = require("express-validator");
 
-module.exports = [
+const loginValidations= [
   body("email")
     .notEmpty()
     .withMessage("¡Debe ingresar un email!")
@@ -8,7 +8,7 @@ module.exports = [
     .isEmail()
     .withMessage("debe ingresar un email valido")
     .bail(),
-
+    
   body("password")
     .notEmpty()
     .withMessage("debe ingresar una contraseña")
@@ -18,3 +18,5 @@ module.exports = [
     .bail(),
 
 ];
+
+module.exports=loginValidations;

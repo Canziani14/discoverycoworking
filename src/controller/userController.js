@@ -22,10 +22,10 @@ const userController = {
         let userLogged = [];
         
         if (!errors.isEmpty()) {
-          return res.render("users/signin", {
+          return res.render("users/login", {
             errors: errors.mapped(),
             old: req.body,
-            title: "Signin",
+            title: "Login",
             styles: "login.css",  
           });
         }
@@ -46,7 +46,7 @@ const userController = {
           }
           else {
             console.log('No hay un email registrado con estos valores.');
-            return res.render(path.resolve(__dirname, '../views/users/login'), {
+            return res.render("users/login", {
               errors: [{ msg: "Este email no está registrado." }],
               title: "Login",
               styles: "login.css",
@@ -61,7 +61,7 @@ const userController = {
 
         if (userLogged.length === 0) {
           console.log('No hay usuario loggeado por credenciales invalidas, se vuelve a cargar el login')
-          return res.render(path.resolve(__dirname, '../views/users/login'), {
+          return res.render("users/login", {
             errors: [{ msg: "Credenciales invalidas" }],
             title: "Login",
             styles: "login.css",

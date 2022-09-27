@@ -15,13 +15,7 @@
         <div  id="erroresFront" class="erroresDeFront">
           
         </div>
-        <div class="errores">
-          <% if(typeof(errors) != 'undefined'){%>
-            <p class="text-danger">
-              <%= errors[0].msg %>
-            </p>
-            <%}%>
-        </div>
+     
 
         <form action="/login" method="post" class="form" id="form">
 
@@ -32,11 +26,13 @@
             id="email"
             placeholder="Email"
             class="input input-email"
-            value=""
+            value="<%= typeof old != 'undefined' ? old.email : '' %>"
             />
+
             <% if (locals.errors && locals.errors.email) { %>
               <span class="error-msg"><%= locals.errors.email.msg %></span>
               <% } %>
+              
      
 
                 <label for="password" class="label">Password</label>
@@ -47,8 +43,11 @@
                 placeholder="Password"
                 class="input input-password"
                 />
+
+               
+
                 <% if (locals.errors && locals.errors.password) { %>
-                  <span class="error-msg"><%= locals.errors.email.msg %></span>
+                  <span class="error-msg"><%= locals.errors.password.msg %></span>
                   <% } %>
 
        
