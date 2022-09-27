@@ -29,13 +29,12 @@ router.get("/login", userController.login);
 router.post('/login',loginValidations,  userController.processLogin);
 
 router.get("/signin", userController.signin);
-//router.post("/signin", registerValidations, userController.processRegister)
+
 User.findAll()
     .then((users) => {
 
         router.post('/signin', upload.single('avatar'),registerValidations,
-        [ //Aquí valido la confimación del password dispuesto por el usuario
-        check('confirmPassword').isLength({ min: 6 }).withMessage('La confirmación de la contraseña debe tener un mínimo de 6 caractéres'),
+        [ 
       
         //Aquí valido si las contraseñas son iguales o no
         //El ( value ) viene a ser el valor que viaje en el name del del input del campo 
@@ -66,7 +65,8 @@ User.findAll()
                 return true;
             }
             return false;
-        }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF')], userController.processRegister)
+        }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF')],
+        userController.processRegister)
 })
 
 
