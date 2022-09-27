@@ -20,16 +20,16 @@ const userController = {
         //Aquí guardo los errores que vienen desde la ruta, valiendome del validationResult
         let errors = validationResult(req);
         let userLogged = [];
-        
+
         if (!errors.isEmpty()) {
           return res.render("users/login", {
             errors: errors.mapped(),
             old: req.body,
             title: "Login",
-            styles: "login.css",  
+            styles: "login.css",
           });
         }
-        
+
 
         if (req.body.email != '' && req.body.password != '') {
 
@@ -89,14 +89,14 @@ const userController = {
   },
   processRegister: (req, res) => {
     const errors = validationResult(req);
-    console.log("los errores son",errors.errors)
+    console.log("los errores son", errors.errors)
     if (!errors.isEmpty()) {
       return res.render("users/signin", {
         errors: errors.mapped(),
         old: req.body,
         title: "Signin",
         styles: "login.css",
-        
+
       });
     }
     User.create({
@@ -104,7 +104,7 @@ const userController = {
       lastName: req.body.userLastName,
       userEmail: req.body.userEmail,
       password: req.body.password = bcrypt.hashSync(req.body.password, 10),
-      confirmPassword: req.body.confirmPassword =  bcrypt.hashSync(req.body.password, 10),
+      confirmPassword: req.body.confirmPassword = bcrypt.hashSync(req.body.password, 10),
       avatar: req.file ? req.file.filename : '',
     })
 
@@ -183,21 +183,21 @@ const userController = {
       })
 
   },
-  toDelete: function (req,res) {
+  toDelete: function (req, res) {
     let deleteMembership = req.session.user.membership;
-    console.log("probando el user",req.session.user)
-    db.User.update (
+    console.log("probando el user", req.session.user)
+    db.User.update(
       {
         membership: null
       },
       {
-        where: {membership:deleteMembership}
+        where: { membership: deleteMembership }
       });
-      
 
-      res.redirect("/")
-      
-    
+
+    res.redirect("/")
+
+
   },
 
 
@@ -213,51 +213,52 @@ const userController = {
       });
   },
 
-  notAcces: function(req,res){
+  notAcces: function (req, res) {
     res.render("users/notAcces", {
       title: "Not Acces",
       styles: "carrito.css",
       user: req.session.user,
-  })
+    })
   },
 
-   edditAccount:(req, res) => {
+  edditAccount: (req, res) => {
     let user = db.User.findByPk(req.params.id_users);
 
     Promise.all([user])
-   
-       .then((User) => {
- console.log(User)
-         return  res.render("./users/editaccount", { 
-         title:'Edit membership',
-         styles: "login.css",
-         userEddit: User,
-         user: req.session.user,})
-       })
-       .catch(error => res.send(error));
-   },
 
-   procesEdittAccount: 
-   function (req, res) {
-    
-    db.User.update ({
-      userName: req.body.name,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      password: req.body.newPassword = bcrypt.hashSync(req.body.newPassword, 10),
-    } , {
-      where : {
-        id_users: req.params.id_users
-      }
-    })
+      .then((User) => {
+        console.log(User)
+        return res.render("./users/editaccount", {
+          title: 'Edit membership',
+          styles: "login.css",
+          userEddit: User,
+          user: req.session.user,
+        })
+      })
+      .catch(error => res.send(error));
+  },
 
-    .then (user => {
-      res.redirect("/")
-    })
-    
-    
-   },
-  
+  procesEdittAccount:
+    function (req, res) {
+
+      db.User.update({
+        userName: req.body.name,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: req.body.newPassword = bcrypt.hashSync(req.body.newPassword, 10),
+      }, {
+        where: {
+          id_users: req.params.id_users
+        }
+      })
+
+        .then(user => {
+          res.redirect("/")
+        })
+
+
+    },
+
 };
 
 module.exports = userController;

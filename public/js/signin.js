@@ -65,8 +65,18 @@
                 userEmail.classList.remove('is-invalid');
             }
            
+
+            if (password.value.length ==0) {
+                errores.push('La contraseña no puede estar vacia');
+                password.classList.add('is-invalid');
+                ulErrores.classList.add('showErrores');
+            }  else {
+                password.classList.add('is-valid');
+                password.classList.remove('is-invalid');}   
+                
             let rePassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
-            if (!rePassword.test(password.value) && password.length < 6) {
+
+            if (password.length < 6) {
                 errores.push('La contraseña como mínimo debe tener seis caracteres.');
                 password.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');
@@ -75,11 +85,19 @@
                 password.classList.add('is-valid');
                 password.classList.remove('is-invalid');
             }
+
+            if (confirmPassword.value.length <6) {
+                errores.push('La confirmacion de contraseña debe tener mas de 6 caracteres');
+                confirmPassword.classList.add('is-invalid');
+                ulErrores.classList.add('showErrores');
+            }  else {
+                confirmPassword.classList.add('is-valid');
+                confirmPassword.classList.remove('is-invalid');}   
 //valido que el email no este en la base
 
 
             //Aquí valido a que la confirmación del password no llegue vacia
-            if (confirmPassword.value == ""  && confirmPassword.length < 8) {
+          if (confirmPassword.value == "" ) {
                 errores.push('La confirmación de la contraseña no puede estar vacia');
                 confirmPassword.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');
