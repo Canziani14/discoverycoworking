@@ -83,14 +83,14 @@ formulario.addEventListener('submit', function (evento) {
         //VALIDAMOS CONTRASEÑA
 
         //validamos que la contraseña no este vacia
-      /*  if (password.value == "") {
-            errores.push('La contraseña no puede estar vacia');
-            password.classList.add('is-invalid');
-            ulErrores.classList.add('showErrores');
-        } else {
-            password.classList.add('is-valid');
-            password.classList.remove('is-invalid');
-        }*/
+        /*  if (password.value == "") {
+              errores.push('La contraseña no puede estar vacia');
+              password.classList.add('is-invalid');
+              ulErrores.classList.add('showErrores');
+          } else {
+              password.classList.add('is-valid');
+              password.classList.remove('is-invalid');
+          }*/
 
         //validamos que la contraseña tenga mas de 6 caracteres      
         let rePassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
@@ -117,16 +117,16 @@ formulario.addEventListener('submit', function (evento) {
             confirmPassword.classList.add('is-valid');
             confirmPassword.classList.remove('is-invalid');
         }
-       
+
         //Aquí valido a que la confirmación del password no llegue vacia
-       /* if (confirmPassword.value == "") {
-            errores.push('La confirmación de la contraseña no puede estar vacia');
-            confirmPassword.classList.add('is-invalid');
-            ulErrores.classList.add('showErrores');
-        } else {
-            confirmPassword.classList.add('is-valid');
-            confirmPassword.classList.remove('is-invalid');
-        }*/
+        /* if (confirmPassword.value == "") {
+             errores.push('La confirmación de la contraseña no puede estar vacia');
+             confirmPassword.classList.add('is-invalid');
+             ulErrores.classList.add('showErrores');
+         } else {
+             confirmPassword.classList.add('is-valid');
+             confirmPassword.classList.remove('is-invalid');
+         }*/
 
         //VALIDAMOS CONTRASEÑA Y LA CONFIRMACION DE CONTRASEÑA
 

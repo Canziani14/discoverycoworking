@@ -19,11 +19,11 @@ window.addEventListener('load', function () {
             if (name.value == '') {
                 errores.push('El campo nombre no puede estar vacio...');
                 name.classList.add('is-invalid');
-                
+
             } else {
                 name.classList.add('is-valid');
-                name.classList.remove('is-invalid');   
-            }   
+                name.classList.remove('is-invalid');
+            }
 
             //que tenga al menos 5 caracteres
 
@@ -31,89 +31,93 @@ window.addEventListener('load', function () {
                 errores.push('el nombre debe tener minimo 5 caracteres');
                 name.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');
-            }  else {
+            } else {
                 name.classList.add('is-valid');
-                name.classList.remove('is-invalid');} 
+                name.classList.remove('is-invalid');
+            }
 
 
             if (details.value == '') {
                 errores.push('El campo details no puede estar vacio...');
                 details.classList.add('is-invalid');
-                
+
             } else {
                 details.classList.add('is-valid');
-                details.classList.remove('is-invalid');   
-            }   
+                details.classList.remove('is-invalid');
+            }
 
             if (details.value.length <= 20) {
                 errores.push('el detalle debe tener minimo 20 caracteres');
                 details.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');
-            }  else {
+            } else {
                 details.classList.add('is-valid');
-                details.classList.remove('is-invalid');} 
+                details.classList.remove('is-invalid');
+            }
 
             if (services.value == '') {
                 errores.push('El campo services no puede estar vacio...');
                 services.classList.add('is-invalid');
-                
+
             } else {
                 services.classList.add('is-valid');
-                services.classList.remove('is-invalid');   
-            }   
+                services.classList.remove('is-invalid');
+            }
 
             if (services.value.length <= 20) {
                 errores.push('el detalle debe tener minimo 20 caracteres');
                 services.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');
-            }  else {
+            } else {
                 services.classList.add('is-valid');
-                services.classList.remove('is-invalid');} 
+                services.classList.remove('is-invalid');
+            }
 
-             if (price.value == '') {
+            if (price.value == '') {
                 errores.push('El campo price no puede estar vacio...');
                 price.classList.add('is-invalid');
-                
+
             } else {
                 price.classList.add('is-valid');
-                price.classList.remove('is-invalid');   
-            }   
+                price.classList.remove('is-invalid');
+            }
 
-           // imgMembership
-            if (imgMembership.value == '') {
+            // imgMembership
+            if (imgMembership.value.length == 0) {
                 errores.push('El campo imagen no puede estar vacio...');
                 price.classList.add('is-invalid');
-                
+
             } else {
                 imgMembership.classList.add('is-valid');
-                imgMembership.classList.remove('is-invalid');   
-            }   
+                imgMembership.classList.remove('is-invalid');
+            }
 
             if (price.value.length > 10000) {
-                
+
                 errores.push('el precio no puede ser mayor a 100.000');
                 price.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');
-            }  else {
+            } else {
                 price.classList.add('is-valid');
-                price.classList.remove('is-invalid');} 
+                price.classList.remove('is-invalid');
+            }
 
 
 
 
-  //Aquí enviamos los errores al usuario
-  if (errores.length > 0) {
-      console.log('ERRORES: ',errores)
-      ulErrores.classList.add('show')
-      evento.preventDefault();
-      ulErrores.innerHTML = "";
-      for (let i = 0; i < errores.length; i++) {
-          ulErrores.innerHTML += `<p> ${errores[i]} </p> `
-      }
-      errores = [];
-  } else {
-      return true;
-  }
+            //Aquí enviamos los errores al usuario
+            if (errores.length > 0) {
+                console.log('ERRORES: ', errores)
+                ulErrores.classList.add('show')
+                evento.preventDefault();
+                ulErrores.innerHTML = "";
+                for (let i = 0; i < errores.length; i++) {
+                    ulErrores.innerHTML += `<p> ${errores[i]} </p> `
+                }
+                errores = [];
+            } else {
+                return true;
+            }
 
         }
     })

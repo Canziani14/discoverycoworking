@@ -1,6 +1,8 @@
 const { body } = require("express-validator");
 
 module.exports = [
+
+  //validamos name
   body("userName")
     .notEmpty()
     .withMessage("El campo nombre no puede estar vacio")
@@ -8,7 +10,7 @@ module.exports = [
     .isLength({ min: 3 })
     .withMessage("El nombre es muy corto")
     .bail(),
-
+  //validamos apellido
   body("userLastName")
     .notEmpty()
     .withMessage("el campo apellido esta vacío")
@@ -16,14 +18,14 @@ module.exports = [
     .isLength({ min: 3 })
     .withMessage("El apellido es muy corto")
     .bail(),
-
+  //validamos email
   body("userEmail")
     .notEmpty()
     .withMessage("debe ingresar un email")
     .bail()
     .isEmail()
     .withMessage("debe ingresar un email valido"),
-
+  //validamos contraseña
   body("password")
     .notEmpty()
     .withMessage("debe ingresar una contraseña")
@@ -31,8 +33,8 @@ module.exports = [
     .isLength({ min: 6 })
     .withMessage("la contraseña debe tener 6 caracteres minimo")
     .bail(),
-
-    body("confirmPassword")
+  //validamos confirmar contraseña
+  body("confirmPassword")
     .notEmpty()
     .withMessage("debe ingresar una contraseña")
     .bail()

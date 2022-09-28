@@ -1,78 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head') %>
-  </head>
 
-  <body>
-  
-    <div class="login">
+<head>
+  <%- include('../partials/head') %>
+</head>
 
-      <div class="form-container">
+<body>
 
-        <a href="/"> <h2 class="title">Discovery Coworking </h2></a>
-      
-        <div  id="erroresFront" class="erroresDeFront">
-          
-        </div>
-     
+  <div class="login">
 
-        <form action="/login" method="post" class="form" id="form">
+    <div class="form-container">
 
-            <label for="email" class="label">Email</label>
-            <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email"
-            class="input input-email"
-            value="<%= typeof old != 'undefined' ? old.email : '' %>"
-            />
+      <a href="/">
+        <h2 class="title">Discovery Coworking </h2>
+      </a>
 
-            <% if (locals.errors && locals.errors.email) { %>
-              <span class="error-msg"><%= locals.errors.email.msg %></span>
-              <% } %>
+      <div id="erroresFront" class="erroresDeFront">
 
-              <% if (errors = null ) { %>
-                <%= errors.msg%> 
-              <% } %>
-              
-              
-     
-
-                <label for="password" class="label">Password</label>
-                <input
-                type="password"
-                name="password"
-                id="new-password"
-                placeholder="Password"
-                class="input input-password"
-                />
-
-               
-
-                <% if (locals.errors && locals.errors.password) { %>
-                  <span class="error-msg"><%= locals.errors.password.msg %></span>
-                  <% } %>
-
-       
-          <div class="recordarme">
-            <input type="checkbox" name="recordarme" id="remember_me" />
-            <label
-              class="checkbox-inline">
-              Remember me</label
-            >
-          </div>
-
-          <button type="submit" class="primary-button signup-button">Ingresar</button>
-
-         
-        </form>
-
-
-        <button class="secondary-button signup-button"><a  href="/signin">Sign up</a></button>
       </div>
+
+
+      <form action="/login" method="post" class="form" id="form">
+
+        <label for="email" class="label">Email</label>
+        <input type="email" name="email" id="email" placeholder="Email" class="input input-email"
+          value="<%= typeof old != 'undefined' ? old.email : '' %>" />
+
+        <% if (locals.errors && locals.errors.email) { %>
+          <span class="error-msg">
+            <%= locals.errors.email.msg %>
+          </span>
+          <% } %>
+
+            <% if (errors=null ) { %>
+              <%= errors.msg%>
+                <% } %>
+
+
+
+
+                  <label for="password" class="label">Password</label>
+                  <input type="password" name="password" id="new-password" placeholder="Password"
+                    class="input input-password" />
+
+
+
+                  <% if (locals.errors && locals.errors.password) { %>
+                    <span class="error-msg">
+                      <%= locals.errors.password.msg %>
+                    </span>
+                    <% } %>
+
+
+                      <div class="recordarme">
+                        <input type="checkbox" name="recordarme" id="remember_me" />
+                        <label class="checkbox-inline">
+                          Remember me</label>
+                      </div>
+
+                      <button type="submit" class="primary-button signup-button">Ingresar</button>
+
+
+      </form>
+
+
+      <button class="secondary-button signup-button"><a href="/signin">Sign up</a></button>
     </div>
-    <script src="./js/login.js"></script> 
-  </body>
+  </div>
+  <script src="./js/login.js"></script>
+</body>
+
 </html>
