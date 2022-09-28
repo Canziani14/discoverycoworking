@@ -45,14 +45,14 @@ const userController = {
             console.log('USUARIO LOGGEADO', userLogged[0].userName)
           }
           else {
+            
             console.log('No hay un email registrado con estos valores.');
 
-            res.render("users/login", {
-              errors: { msg: "Este email no está registrado." },
+           return res.render("users/login", {
+            errors:  [{ msg: "No hay un email registrado con estos valores." }],
               title: "Login",
               styles: "login.css",
             })
-            console.log("errors mail no registrado", errors)
           }
 
         }

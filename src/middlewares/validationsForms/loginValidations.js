@@ -6,15 +6,15 @@ const loginValidations= [
     .withMessage("¡Debe ingresar un email!")
     .bail()
     .isEmail()
-    .withMessage("debe ingresar un email valido")
+    .withMessage("¡Debe ingresar un email!")
     .bail(),
     
   body("password")
     .notEmpty()
-    .withMessage("debe ingresar una contraseña")
+    .withMessage("¡Debe ingresar una contraseña!")
     .bail()
     .isLength({ min: 6 })
-    .withMessage("la contraseña debe tener 6 caracteres minimo")
+    .withMessage("La contraseña debe tener 6 caracteres como mínimo.")
     .bail(),
 
 ];

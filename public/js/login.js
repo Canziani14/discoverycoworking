@@ -20,53 +20,37 @@ window.addEventListener('load', function () {
             let errores = [];
             let reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
+            let erroresEmail = [];
+            let erroresPassword = [];
             //que no este vacio
             if (email.value == '') {
                 errores.push('El campo email no puede estar vacio');
-                email.classList.add('is-invalid');
-                ulErrores.classList.add('showErrores');
-            } else {
-                email.classList.add('is-valid');
-                email.classList.remove('is-invalid');
+                erroresEmail.push('1');
             }
+            
             //que no sea invalido el email (con el tipo de input email ya lo valida igual)
-            if (!reEmail.test(email.value)) {
+            if ( email.value.length > 0 && !reEmail.test(email.value)) {
                 errores.push('El email es inválido...');
-                email.classList.add('is-invalid');
-                ulErrores.classList.add('showErrores')
-                //errores['last_name'] = 'El campo nombre no puede estar vacio...';
-            } else {
-                email.classList.add('is-valid');
-                email.classList.remove('is-invalid');
+                erroresEmail.push('2');
             }
+
+
+
+
 
             //que la clave no este vacia
 
             if (password.value == '') {
                 errores.push('El campo password no puede estar vacio');
-                password.classList.add('is-invalid');
-                ulErrores.classList.add('showErrores');
-            } else {
-                password.classList.add('is-valid');
-                password.classList.remove('is-invalid');
+                erroresPassword.push('1');
             }
 
             //que la contraseña tenga minimo 6 caracteres
             let rePassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
-            if (password.value.length < 6) {
+            if ( password.value.length >1 &&password.value.length < 6) {
                 errores.push('La contraseña como mínimo debe tener seis caracteres');
-                password.classList.add('is-invalid');
-                ulErrores.classList.add('showErrores')
+                erroresPassword.push('2');
             }
-            else {
-                password.classList.add('is-valid');
-                password.classList.remove('is-invalid');
-            }
-
-
-
-
-
 
 
             /*  
@@ -97,6 +81,29 @@ window.addEventListener('load', function () {
             } else {
                 return true;
             }
+
+            if(erroresEmail.length >0){
+                email.classList.add('is-invalid');
+                email.classList.remove('is-valid');
+                ulErrores.classList.add('showErrores');
+            }
+            else{
+                email.classList.add('is-valid');
+                email.classList.remove('is-invalid');
+
+            }
+
+            
+            if(erroresPassword.length >0){
+                password.classList.add('is-invalid');
+                password.classList.remove('is-valid');
+                ulErrores.classList.add('showErrores');
+            }
+            else{
+                password.classList.remove('is-invalid');
+                password.classList.add('is-valid');
+            }
+
         }
     })
 })
