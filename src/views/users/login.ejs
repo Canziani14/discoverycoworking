@@ -32,6 +32,11 @@
             <% if (locals.errors && locals.errors.email) { %>
               <span class="error-msg"><%= locals.errors.email.msg %></span>
               <% } %>
+
+              <% if (errors = null ) { %>
+                <%= errors.msg%> 
+              <% } %>
+              
               
      
 
@@ -68,6 +73,6 @@
         <button class="secondary-button signup-button"><a  href="/signin">Sign up</a></button>
       </div>
     </div>
-   <!-- <script src="./js/login.js"></script> -->
+    <script src="./js/login.js"></script> 
   </body>
 </html>
