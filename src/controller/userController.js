@@ -217,8 +217,8 @@ const userController = {
 
   notAcces: function (req, res) {
     res.render("users/notAcces", {
-      title: "Not Acces",
-      styles: "carrito.css",
+      title: "Not Access",
+      styles: "notAccess.css",
       user: req.session.user,
     })
   },

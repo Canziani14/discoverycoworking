@@ -1,0 +1,28 @@
+main{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+}
+.not{
+    color: rgb(239, 137, 47);
+    font-weight: bold;
+    font-size:2rem;
+}
+button{
+    width:fit-content;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 900;
+    background: #2b9a176b;
+    border-radius: 10px;
+    border:none;
+    padding: 10px;
+    }
+
+    button a{
+        color: rgb(239, 137, 47);;
+
+    }
