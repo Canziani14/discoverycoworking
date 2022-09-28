@@ -22,9 +22,16 @@
 
       <form action="/login" method="post" class="form" id="form">
 
+        <% if(typeof(errors) != 'undefined'){%>
+          <p class="text-danger">
+            <%= errors[0].msg %>
+          </p>
+          <%}%>
+
         <label for="email" class="label">Email</label>
         <input type="email" name="email" id="email" placeholder="Email" class="input input-email"
           value="<%= typeof old != 'undefined' ? old.email : '' %>" />
+
 
         <% if (locals.errors && locals.errors.email) { %>
           <span class="error-msg">
@@ -45,6 +52,8 @@
                       <%= locals.errors.password.msg %>
                     </span>
                     <% } %>
+
+
 
 
                       <div class="recordarme">

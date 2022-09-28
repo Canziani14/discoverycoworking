@@ -36,16 +36,13 @@ const userController = {
           userLogged = users.filter(function (user) {
             return user.userEmail === req.body.email
           });
-          console.log('USUARIO LOGGEADO', userLogged)
 
           if (userLogged.length > 0) {
-            userLogged = users.filter(function (user) {
-              return user.userEmail === req.body.email
-            });
+
             console.log('USUARIO LOGGEADO', userLogged[0].userName)
           }
           else {
-            
+            userLogged = null;
             console.log('No hay un email registrado con estos valores.');
 
            return res.render("users/login", {
