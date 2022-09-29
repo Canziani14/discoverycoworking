@@ -69,19 +69,6 @@ window.addEventListener('load', function () {
 
             //Aquí enviamos los errores al usuario
 
-
-            if (errores.length > 0) {
-
-                evento.preventDefault();
-                ulErrores.innerHTML = "";
-                for (let i = 0; i < errores.length; i++) {
-                    ulErrores.innerHTML += `<p> ${errores[i]} </p> `
-                }
-                errores = [];
-            } else {
-                return true;
-            }
-
             if(erroresEmail.length >0){
                 email.classList.add('is-invalid');
                 email.classList.remove('is-valid');
@@ -103,6 +90,19 @@ window.addEventListener('load', function () {
                 password.classList.remove('is-invalid');
                 password.classList.add('is-valid');
             }
+
+            if (errores.length > 0) {
+
+                evento.preventDefault();
+                ulErrores.innerHTML = "";
+                for (let i = 0; i < errores.length; i++) {
+                    ulErrores.innerHTML += `<p> ${errores[i]} </p> `
+                }
+                errores = [];
+            } else {
+                return true;
+            }
+
 
         }
     })
