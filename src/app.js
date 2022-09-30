@@ -13,6 +13,8 @@ const mainRouter = require ("./routes/mainRouter");
 const membershipsRouter = require ('./routes/membershipsRouter');
 const userRouter = require ('./routes/userRouter');
 const adminRouter = require ('./routes/adminRouter')
+const apiUsersRoutes = require('./routes/apiUsersRouter.js');
+const apiMembershipsRoutes = require('./routes/apiMembershipsRouter.js');
 
 //SESSION
 app.use(session({
@@ -34,6 +36,10 @@ app.set('views', path.join(__dirname, 'views'));
 //motor de vista usado en la app
 app.set('view engine','ejs');
 
+
+//APIS
+app.use(apiUsersRoutes)
+app.use(apiMembershipsRoutes)
 
 
 

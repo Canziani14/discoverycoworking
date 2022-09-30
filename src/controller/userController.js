@@ -45,8 +45,8 @@ const userController = {
             userLogged = null;
             console.log('No hay un email registrado con estos valores.');
 
-           return res.render("users/login", {
-            errors:  [{ msg: "No hay un email registrado con estos valores." }],
+            return res.render("users/login", {
+              errors: [{ msg: "No hay un email registrado con estos valores." }],
               title: "Login",
               styles: "login.css",
             })
@@ -87,17 +87,70 @@ const userController = {
     });
   },
   processRegister: (req, res) => {
-    const errors = validationResult(req);
-    console.log("los errores son", errors.errors)
-    if (!errors.isEmpty()) {
-      return res.render("users/signin", {
-        errors: errors.mapped(),
-        old: req.body,
-        title: "Signin",
-        styles: "login.css",
+    
 
-      });
-    }
+    User.findAll()
+      .then((users) => {
+        //Aquí guardo los errores que vienen desde la ruta, valiendome del validationResult
+        let errors = validationResult(req);
+        let userLogged = [];
+
+        if (!errors.isEmpty()) {
+          return res.render("users/signin", {
+            errors: errors.mapped(),
+            old: req.body,
+            title: "Sign In",
+            styles: "login.css",
+          });
+        } 
+
+      if (req.body.userEmail != '' ) {
+
+          userLogged = users.filter(function (user) {
+            console.log("el registrado",userLogged)
+            return user.userEmail === req.body.email
+          });
+         
+
+          if (userLogged.length > 0) {
+          console.log("el usuario repetido",userLogged)
+
+            return res.render("users/singin", {
+              errors: [{ msg: "Email ya registrado en la base de datos" }],
+              title: "Login",
+              styles: "login.css",
+            })
+          }
+          
+          if (bcrypt.compareSync(req.body.password, userLogged[0].password) !== true) {
+            console.log(req.body.password)
+            userLogged = [];
+          }
+  
+          if (userLogged.length === 0) {
+            console.log('No hay usuario loggeado por credenciales invalidas, se vuelve a cargar el login')
+            return res.render("users/login", {
+              errors: [{ msg: "Credenciales invalidas" }],
+              title: "Login",
+              styles: "login.css",
+            })
+          } else {
+            //Aquí guardo en SESSION al usuario logueado
+            console.log('Se logeo el usuario!')
+            console.log('USUARIO LOGGEADO', userLogged[0].userName)
+  
+            req.session.user = userLogged[0];
+          }
+          //Aquí verifico si el usuario le dio click en el check box para recordar al usuario 
+          if (req.body.recordarme) {
+            res.cookie('email', userLogged[0].email, { maxAge: 1000 * 60 * 60 * 24 })
+          }
+          return res.redirect('/');
+  
+        }
+      
+      })
+    
     User.create({
       userName: req.body.userName,
       lastName: req.body.userLastName,
@@ -116,6 +169,8 @@ const userController = {
       })
       .catch(error => console.log(error));
   },
+
+
   processLogout: (req, res) => {
     let userLogged = req.session.userLogged;
     console.log('se deslogea el usuario: ', userLogged);
