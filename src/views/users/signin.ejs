@@ -47,11 +47,7 @@
                 <input type="email" name="userEmail" placeholder="e-mail adress"
                   value="<%= typeof old != 'undefined' ? old.userEmail : '' %>" required class="input input-email" />
 
-                  <% if(typeof(errors) != 'undefined'){%>
-                    <p class="text-danger">
-                      <%= errors[0].msg %>
-                    </p>
-                    <%}%>
+                
           
                     
                 <% if (locals.errors && locals.errors.userEmail) { %>
@@ -90,7 +86,7 @@
       </form>
     </div>
   </div>
-<!-- <script src="/js/signin.js"></script> -->
+ <script src="/js/signin.js"></script> 
 </body>
 
 </html>
