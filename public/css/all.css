@@ -47,7 +47,8 @@ background: linear-gradient(180deg, rgba(61,142,189,1) 20%, rgba(112,198,202,1) 
 }
 
 .soon-mode{
-  background-image: url('../imgs/bg.jpg');
+  background-color:#1A1C1E;
+  
   transition:background-image .5s;
 }
 

@@ -98,7 +98,10 @@ module.exports = {
 
   destroy: (req, res) => {
     db.Membership.destroy({ where: { id_membership: req.params.idMembership } })
-    res.redirect('/admin')
+    .then(membership => {
+      res.redirect('/admin')
+    })
+    
   },
     //BASE DE DATOS
     list: function (req, res) {

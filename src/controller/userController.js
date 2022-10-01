@@ -110,8 +110,8 @@ const userController = {
             console.log("el registrado",userLogged)
             return user.userEmail === req.body.email
           });
-         
 
+/*
           if (userLogged.length > 0) {
           console.log("el usuario repetido",userLogged)
 
@@ -126,7 +126,7 @@ const userController = {
             console.log(req.body.password)
             userLogged = [];
           }
-  
+  */
           if (userLogged.length === 0) {
             console.log('No hay usuario loggeado por credenciales invalidas, se vuelve a cargar el login')
             return res.render("users/login", {

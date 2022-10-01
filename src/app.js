@@ -15,6 +15,7 @@ const userRouter = require ('./routes/userRouter');
 const adminRouter = require ('./routes/adminRouter')
 const apiUsersRoutes = require('./routes/apiUsersRouter.js');
 const apiMembershipsRoutes = require('./routes/apiMembershipsRouter.js');
+const apiQueriesRoutes = require('./routes/apiQueriesRouter.js');
 
 //SESSION
 app.use(session({
@@ -40,6 +41,7 @@ app.set('view engine','ejs');
 //APIS
 app.use(apiUsersRoutes)
 app.use(apiMembershipsRoutes)
+app.use(apiQueriesRoutes)
 
 
 
