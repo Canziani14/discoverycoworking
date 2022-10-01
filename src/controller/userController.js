@@ -178,10 +178,24 @@ const userController = {
     req.session.destroy();
     res.redirect("/");
   },
+
   contactus: function (req, res) {
     res.render("./users/contactus");
   },
+
   contact: (req, res) => {
+    const errors = validationResult(req);
+    console.log('ERRORES',errors)
+    if (!errors.isEmpty()) {
+      return res.render("contactus", {
+        errors: errors.mapped(),
+        old: req.body,
+        styles: "login.css",
+        title: "Contact Us",
+        
+      });
+    }
+    else {
     db.ContactUs.create({
       name: req.body.name,
       email: req.body.email,
@@ -190,12 +204,12 @@ const userController = {
       .then(function (result) {
         res.render("users/contactUsSend", {
           title: "Contact Us",
-          styles: "carrito.css",
+          styles: "login.css",
           user: req.session.userLogged,
         });
       })
       .catch(error => console.log(error));
-
+}
 
   },
 

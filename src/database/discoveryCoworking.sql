@@ -86,7 +86,7 @@ USE discoverycoworking;
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------*/  
 
-  /*creamos tabla pivot de user_membership*/
+  /*creamos tabla contact us*/
 
   CREATE TABLE `discoverycoworking`.`contactus` (
   `id_contactus` INT NOT NULL AUTO_INCREMENT,
@@ -96,7 +96,11 @@ USE discoverycoworking;
   PRIMARY KEY (`id_contactus`));
 
  INSERT INTO contactus (id_contactus,name,email,comments)
- VALUE (default, "Pedro Garcia", "pgarcia@gmail.com", "queria mas informacion sobre las membresias")
+ VALUE (default, "Pedro Garcia", "pgarcia@gmail.com", "queria mas informacion sobre las membresias");
+  INSERT INTO contactus (id_contactus,name,email,comments)
+ VALUE (default, "Homero Simpson", "hsimpson@gmail.com", "queria mas informacion sobre la membresia office");
+  INSERT INTO contactus (id_contactus,name,email,comments)
+ VALUE (default, "Bart Simpson", "bsimpson@gmail.com", "queria mas informacion sobre la membresia lab")
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------*/  
  

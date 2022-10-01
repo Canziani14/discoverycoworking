@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include ("../partials/links") %>
+
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/carrito.css">
+    
     <title>Contact Us</title>
 </head>
 <body>
@@ -19,7 +22,13 @@
             <form 
              action="/contactus"
             class="form"
+            id="form"
             method="POST">
+
+            <div id="erroresFront" style="color: red ;">
+
+            </div>
+
                 <label for="name" class="label">Name</label>
                 <input type="text" name="name" id="name" placeholder="Enter your name"
                     class="input input-email" value="">
@@ -41,8 +50,9 @@
             <a href="/">Back to home</a>
         </div>
     </div>
+    <br><br><br><br><br><br><br><br><br><br><br>
     <%- include ("../partials/footer") %>
 
-
+    <script src="/js/contactus.js"></script> 
 </body>
 </html>

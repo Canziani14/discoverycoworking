@@ -2,7 +2,7 @@ import React,{ useState, useEffect } from "react";
 
 
 function LastProductInDb(){
-  
+
     // Fetch PRODUCTS
     const [membership,setMembership] = useState(["Cargando.."])
     async function fetchLastMembership() {       
@@ -26,8 +26,7 @@ function LastProductInDb(){
                     </div>
                     <div className="card-body">
                         <div className="text-center">
-                        <img src={`./${last.img }`} alt={last.name} />
-                            
+                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={ last.img} alt={last.name}/>
                         </div>
                         <h2>{last.name}</h2>
                         <p> {last.img} </p>
