@@ -46,9 +46,6 @@ function ListadoMemberships(){
                                                 if (elem.active == true ){
                                                     icono = 'fa fa-check';
                                                     color = 'green'
-                                                }else{
-                                                    icono = 'fa fa-thin fa-times';
-                                                    color = 'red'
                                                 }
                                                 return (
                                                     <React.Fragment>

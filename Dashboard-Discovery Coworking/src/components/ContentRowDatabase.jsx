@@ -53,13 +53,13 @@ function ContentRowDatabase(){
     
     let productsCard = {
         color: "papahoePink",
-        titulo: "Productos en Database",
+        titulo: "Membresias en Database",
         valor: memberships,
         icono: "fa-solid fa-box-open",
     }    
     let queriesCard = {
         color: "papahoeGreen",
-        titulo: "Cantidad de Consultas",
+        titulo: "Consultas en Database",
         valor: queries,
         icono: "fa-industry",
     }

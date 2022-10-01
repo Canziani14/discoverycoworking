@@ -1,7 +1,7 @@
 import React from 'react';
 import ContentRowDatabase from './ContentRowDatabase';
 import LastProductInDb from './LastProductInDb';
-import Membership from './Membership';
+
 function ContentRowTop(){
     return(
         <React.Fragment>
@@ -18,7 +18,7 @@ function ContentRowTop(){
 
 					<div className="row">						
 						<LastProductInDb />
-						< Membership/>
+					
 						
 						
 						{/* last product */}
