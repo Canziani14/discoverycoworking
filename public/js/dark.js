@@ -6,6 +6,7 @@ let sun = document.getElementById('id-moon')
 let moon =  document.getElementById('id-sun')
 document.getElementById('id-sun').onclick = function(){
   body.classList.add('soon-mode')
+  body.classList.remove('dark-mode')
   sun.classList.remove('active')
   sun.classList.add('active')
   }
@@ -13,6 +14,7 @@ document.getElementById('id-sun').onclick = function(){
   con id page y se aplicará el estilo active a la luna*/
   document.getElementById('id-moon').onclick = function(){
     body.classList.add('dark-mode')
+    body.classList.remove('sun-mode')
     moon.classList.remove('active')
     moon.classList.add('active')
   }
