@@ -1,2 +1,2 @@
-# Grupo-3-Dashboard
+# Grupo-10-Dashboard
 Dashboard hecho en react
