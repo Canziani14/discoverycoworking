@@ -19,12 +19,10 @@ function ContentRowDatabase(){
 
     // Fetch MMBERSHIPS
     const [memberships,setProducts] = useState(["Cargando.."])
-    const [membershipsStock,setStock] = useState(["Cargando.."])
     async function fetchMemberships() {       
         const response = await fetch('http://localhost:3010/apiMemberships/list');        
         const membershipArray = await response.json()
         setProducts(membershipArray.info.total)
-        setStock(membershipArray.data)
     }
 	useEffect(()=>{
 		fetchMemberships()
@@ -37,7 +35,6 @@ function ContentRowDatabase(){
        const response = await fetch('http://localhost:3010/apiQueries/list');        
        const QueriesArray = await response.json()
        setQueries(QueriesArray.info.total)
-       setStock(QueriesArray.data)
    }
    useEffect(()=>{
     fetchQueries()

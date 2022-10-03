@@ -17,7 +17,7 @@ function ListadoMemberships(){
 
 
     return(
-        <React.Fragment>
+        <>
 				{/*<!-- PRODUCTS LIST -->*/}
 					<div className='container-fluid'>
 					<h1 className="h3 mb-2 text-gray-800">Listado completo de Productos</h1>
@@ -43,24 +43,24 @@ function ListadoMemberships(){
                                                 
                                                 let icono;
                                                 let color;
-                                                if (elem.active == true ){
+                                                if (elem.active === true ){
                                                     icono = 'fa fa-check';
                                                     color = 'green'
                                                 }
                                                 return (
-                                                    <React.Fragment>
+                                                    <React.Fragment key={index}>
                                                     <tr>
                                                         <td>{elem.id_membership}</td>
                                                         <td>{elem.name}</td>                                  
                                                         <td>{elem.price}</td>
                                                         <td>{elem.details}</td>
                                                         <td>{elem.services}</td>
-                                                        <td style={{color: color}}><i class={icono}></i></td>
+                                                        <td style={{color: color}}><i className={icono}></i></td>
                                                         <td>
-                                                            <a target="_blank" href={'http://localhost:3001/apiMemberships/list/'+ elem.id_membership}>Ver producto</a>
+                                                            <a target="_blank" rel="noreferrer" href={'http://localhost:3001/apiMemberships/list/'+ elem.id_membership}>Ver producto</a>
                                                         </td>
                                                     </tr>                                                      
-                                                    </React.Fragment>
+                                                    </React.Fragment >
                                                 )
                                             })
                                         }   
@@ -70,7 +70,7 @@ function ListadoMemberships(){
 							{/* </div> */}
 						</div>
 					</div>            
-        </React.Fragment>
+        </>
     )
 }
 export default ListadoMemberships;

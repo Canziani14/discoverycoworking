@@ -31,7 +31,7 @@ function LastProductInDb(){
                         <h2>{last.name}</h2>
                         <p>{last.details}</p>
                         <h2>USD {last.price}</h2>
-                        <a className="btn btn-papahoe" target="_blank" rel="nofollow" href={"http://localhost:3010/apiMemberships/list/"+ last.id_memberhsip}>Ver detalle</a>
+                        <a className="btn btn-papahoe" target="_blank" rel="noreferrer"href={"http://localhost:3010/apiMemberships/list/"+ last.id_memberhsip} >Ver detalle</a>
                     </div>
                 </div>
             </div>
