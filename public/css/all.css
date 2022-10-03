@@ -48,13 +48,13 @@ background: linear-gradient(180deg, rgba(61,142,189,1) 20%, rgba(112,198,202,1) 
 
 .soon-mode{
   background-color:white;
-  transition:background-color .5s;
+  
 }
 
 
 .dark-mode{
   background-color: #0e0e0e;
-  transition:background-color .5s;
+  
 }
 .dark-mode .card{
   background-color: #1A1C1E;
