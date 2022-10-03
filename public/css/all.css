@@ -3,6 +3,8 @@ body {
   font-weight: 400;
   margin: 0;
   padding: 0;
+  background-image: url('../imgs/bg.jpg');
+
   /* background-color: #9df7d6bc !important; */
   /* background: rgb(61,142,189) !important;
 background: linear-gradient(180deg, rgba(61,142,189,1) 20%, rgba(112,198,202,1) 100%) !important; */
@@ -47,13 +49,13 @@ background: linear-gradient(180deg, rgba(61,142,189,1) 20%, rgba(112,198,202,1) 
 }
 
 .soon-mode{
-  background-color:white;
+  background-image: url('../imgs/bg.jpg');
   
 }
 
 
 .dark-mode{
-  background-color: #0e0e0e;
+  background-image: url('../imgs/bgDark2.jpg');
   
 }
 .dark-mode .card{

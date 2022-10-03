@@ -5,41 +5,41 @@ module.exports = [
   //validamos name
   body("userName")
     .notEmpty()
-    .withMessage("El campo nombre no puede estar vacio")
+    .withMessage("The name field cannot be empty.")
     .bail()
     .isLength({ min: 3 })
-    .withMessage("El nombre es muy corto")
+    .withMessage("The name must be at least 3 characters long.")
     .bail(),
   //validamos apellido
   body("userLastName")
     .notEmpty()
-    .withMessage("el campo apellido esta vacío")
+    .withMessage("The lastName field cannot be empty.")
     .bail()
     .isLength({ min: 3 })
-    .withMessage("El apellido es muy corto")
+    .withMessage("The lasTname must be at least 3 characters long.")
     .bail(),
   //validamos email
   body("userEmail")
     .notEmpty()
-    .withMessage("debe ingresar un email")
+    .withMessage("¡You must enter an email!")
     .bail()
     .isEmail()
-    .withMessage("debe ingresar un email valido"),
+    .withMessage("¡You must enter an email!"),
   //validamos contraseña
   body("password")
     .notEmpty()
-    .withMessage("debe ingresar una contraseña")
+    .withMessage("¡You must enter a password!")
     .bail()
     .isLength({ min: 6 })
-    .withMessage("la contraseña debe tener 6 caracteres minimo")
+    .withMessage("Password field must have at least 6 characters.")
     .bail(),
   //validamos confirmar contraseña
   body("confirmPassword")
     .notEmpty()
-    .withMessage("debe ingresar una contraseña")
+    .withMessage("¡You must enter a confirmPassword!")
     .bail()
     .isLength({ min: 6 })
-    .withMessage("la contraseña debe tener 6 caracteres minimo")
+    .withMessage("confirmPassword field must have at least 6 characters.")
     .bail(),
   // validacion de imagenes!
   body("avatar")
@@ -50,7 +50,7 @@ module.exports = [
         return true;
       }
     })
-    .withMessage("Debe ingresar un avatar de perfil"),
+    .withMessage("¡You must enter an avatar!"),
 
 ];
 

@@ -3,18 +3,18 @@ const { body } = require("express-validator");
 const loginValidations= [
   body("email")
     .notEmpty()
-    .withMessage("¡Debe ingresar un email!")
+    .withMessage("¡You must enter an email!")
     .bail()
     .isEmail()
-    .withMessage("¡Debe ingresar un email!")
+    .withMessage("¡You must enter an email!")
     .bail(),
     
   body("password")
     .notEmpty()
-    .withMessage("¡Debe ingresar una contraseña!")
+    .withMessage("¡You must enter a passwor!")
     .bail()
     .isLength({ min: 6 })
-    .withMessage("La contraseña debe tener 6 caracteres como mínimo.")
+    .withMessage("Password field must have at least 6 characters.")
     .bail(),
 
 ];

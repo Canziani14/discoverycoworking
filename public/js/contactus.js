@@ -18,7 +18,7 @@ window.addEventListener('load', function () {
             let errores = [];
 
             if (name.value == '') {
-                errores.push('El campo nombre no puede estar vacio...');
+                errores.push('The name field cannot be empty.');
                 name.classList.add('is-invalid');
 
             } else {
@@ -28,7 +28,7 @@ window.addEventListener('load', function () {
 
             
             if (name.value.length <= 2) {
-                errores.push('El campo nombre debe tener mas de 2 caracteres...');
+                errores.push('The name field must have more than 2 characters.');
                 name.classList.add('is-invalid');
 
             } else {
@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
 
             
             if (email.value == '') {
-                errores.push('El campo email no puede estar vacio...');
+                errores.push('The email field cannot be empty.');
                 email.classList.add('is-invalid');
 
             } else {
@@ -47,7 +47,7 @@ window.addEventListener('load', function () {
             }
 
             if (email.value.length <= 5) {
-                errores.push('El campo email debe tener mas de 5 caracteres...');
+                errores.push('The email field must have more than 5 characters...');
                 name.classList.add('is-invalid');
 
             } else {
@@ -56,7 +56,7 @@ window.addEventListener('load', function () {
             }
 
             if (comments.value == '') {
-                errores.push('El campo comments no puede estar vacio...');
+                errores.push('The comments field cannot be empty.');
                 comments.classList.add('is-invalid');
 
             } else {
@@ -65,7 +65,7 @@ window.addEventListener('load', function () {
             }
 
             if (comments.value.length <= 10) {
-                errores.push('El campo comments debe tener mas de 10 caracteres...');
+                errores.push('The comment must be at least 10 characters long.');
                 name.classList.add('is-invalid');
 
             } else {

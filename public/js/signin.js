@@ -21,7 +21,7 @@ formulario.addEventListener('submit', function (evento) {
 
         //Validar que el nombre no este vacio
         if (userName.value == '') {
-            errores.push('El campo nombre no puede estar vacio');
+            errores.push('The name field cannot be empty.');
             userName.classList.add('is-invalid');
             ulErrores.classList.add('showErrores');
         } else {
@@ -32,7 +32,7 @@ formulario.addEventListener('submit', function (evento) {
         //preguntamos si tiene mas de 2 caracteres
 
         if (userName.value.length <= 2) {
-            errores.push('el nombre debe tener minimo 2 caracteres');
+            errores.push('The name must have at least 2 characters.');
             userName.classList.add('is-invalid');
             ulErrores.classList.add('showErrores');
         } else {
@@ -45,7 +45,7 @@ formulario.addEventListener('submit', function (evento) {
 
         //Validar que el apellido no este vacio
         if (userLastName.value == '') {
-            errores.push('El campo apellido no puede estar vacio');
+            errores.push('The lastName field cannot be empty.');
             userLastName.classList.add('is-invalid');
             ulErrores.classList.add('showErrores');
 
@@ -55,7 +55,7 @@ formulario.addEventListener('submit', function (evento) {
         }
         //preguntamos si tiene mas de 2 caracteres
         if (userLastName.value.length <= 2) {
-            errores.push('el apellido debe tener minimo 2 caracteres');
+            errores.push('The lastName must have at least 2 characters.');
             userName.classList.add('is-invalid');
             ulErrores.classList.add('showErrores');
         } else {
@@ -70,7 +70,7 @@ formulario.addEventListener('submit', function (evento) {
         let reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
         if (!reEmail.test(userEmail.value)) {
-            errores.push('El Email es inválido');
+            errores.push('The email is invalid.');
             email.classList.add('is-invalid');
             ulErrores.classList.add('showErrores');
 
@@ -96,7 +96,7 @@ formulario.addEventListener('submit', function (evento) {
         let rePassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
 
         if (password.length < 6) {
-            errores.push('La contraseña como mínimo debe tener seis caracteres.');
+            errores.push('The password must be at least 6 characters.');
             password.classList.add('is-invalid');
             ulErrores.classList.add('showErrores');
 
@@ -110,7 +110,7 @@ formulario.addEventListener('submit', function (evento) {
 
         //validamos que la confirmacion de la clave sea tenga mas de 6 caracteres
         if (confirmPassword.value.length < 6) {
-            errores.push('La confirmacion de contraseña debe tener mas de 6 caracteres');
+            errores.push('The password confirm must be at least 6 characters.');
             confirmPassword.classList.add('is-invalid');
             ulErrores.classList.add('showErrores');
         } else {
@@ -133,7 +133,7 @@ formulario.addEventListener('submit', function (evento) {
 
         //Ahora valido si las dos contraseñas son iguales
         if (password.value != confirmPassword.value) {
-            errores.push('Las contraseñas deben ser iguales');
+            errores.push('Passwords must be the same.');
             confirmPassword.classList.add('is-invalid');
             password.classList.add('is-invalid');
             ulErrores.classList.add('showErrores');
@@ -146,7 +146,7 @@ formulario.addEventListener('submit', function (evento) {
         }
 
         if (password.value == confirmPassword.value && confirmPassword.value == "" && password.value == "") {
-            errores.push('La contraseña y la confirmacion no pueden estar vacias');
+            errores.push('Password and confirmation cannot be empty.');
             confirmPassword.classList.add('is-invalid');
             password.classList.add('is-invalid');
             ulErrores.classList.add('showErrores');
@@ -160,7 +160,7 @@ formulario.addEventListener('submit', function (evento) {
 
         //Aquí valido que el usuario coloque su avatar (Yo en mi caso lo considero como un dato obligatorio, ustedes si quieren lo validan como deseen)
         if (avatar.value == '') {
-            errores.push('Debe seleccionar su avatar en formato JPG - PNG ó JPEG');
+            errores.push('You must select your avatar in JPG - PNG or JPEG format.');
             avatar.classList.add('is-invalid');
             ulErrores.classList.add('showErrores');
 

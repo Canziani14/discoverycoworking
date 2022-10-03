@@ -17,7 +17,7 @@ window.addEventListener('load', function () {
             let errores = [];
 
             if (name.value == '') {
-                errores.push('El campo nombre no puede estar vacio...');
+                errores.push('The name field cannot be empty.');
                 name.classList.add('is-invalid');
 
             } else {
@@ -28,7 +28,7 @@ window.addEventListener('load', function () {
             //que tenga al menos 5 caracteres
 
             if (name.value.length <= 5) {
-                errores.push('el nombre debe tener minimo 5 caracteres');
+                errores.push('The name must have at least 5 characters.');
                 name.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');
             } else {
@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
 
 
             if (details.value == '') {
-                errores.push('El campo details no puede estar vacio...');
+                errores.push('The details field cannot be empty.');
                 details.classList.add('is-invalid');
 
             } else {
@@ -47,7 +47,7 @@ window.addEventListener('load', function () {
             }
 
             if (details.value.length <= 20) {
-                errores.push('el detalle debe tener minimo 20 caracteres');
+                errores.push('The detail must have a minimum of 20 characters');
                 details.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');
             } else {
@@ -56,7 +56,7 @@ window.addEventListener('load', function () {
             }
 
             if (services.value == '') {
-                errores.push('El campo services no puede estar vacio...');
+                errores.push('The services field cannot be empty.');
                 services.classList.add('is-invalid');
 
             } else {
@@ -65,7 +65,7 @@ window.addEventListener('load', function () {
             }
 
             if (services.value.length <= 20) {
-                errores.push('el detalle debe tener minimo 20 caracteres');
+                errores.push('The service must have a minimum of 20 characters.');
                 services.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');
             } else {
@@ -74,7 +74,7 @@ window.addEventListener('load', function () {
             }
 
             if (price.value == '') {
-                errores.push('El campo price no puede estar vacio...');
+                errores.push('The price field cannot be empty.');
                 price.classList.add('is-invalid');
 
             } else {
@@ -84,7 +84,7 @@ window.addEventListener('load', function () {
 
             // imgMembership
             if (imgMembership.value.length == 0) {
-                errores.push('El campo imagen no puede estar vacio...');
+                errores.push('The image field cannot be empty.');
                 price.classList.add('is-invalid');
 
             } else {
@@ -92,9 +92,9 @@ window.addEventListener('load', function () {
                 imgMembership.classList.remove('is-invalid');
             }
 
-            if (price.value.length > 10000) {
+            if (price.value > 100000) {
 
-                errores.push('el precio no puede ser mayor a 100.000');
+                errores.push('The price cannot be greater than 100,000$.');
                 price.classList.add('is-invalid');
                 ulErrores.classList.add('showErrores');
             } else {

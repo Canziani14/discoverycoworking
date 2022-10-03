@@ -46,7 +46,7 @@ User.findAll()
                     } else {
                         return false   // Si retorno un false si se muestra el error
                     }
-                }).withMessage('Las contraseñas deben ser iguales'),
+                }).withMessage('Password must be the same'),
 
                 //Aquí obligo a que el usuario seleccione su avatar
                 body('avatar').custom(function (value, { req }) {
@@ -65,7 +65,7 @@ User.findAll()
                         return true;
                     }
                     return false;
-                }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF')],
+                }).withMessage('You must select your avatar in JPG - PNG or JPEG format.')],
             userController.processRegister)
     })
 

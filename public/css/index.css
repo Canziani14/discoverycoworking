@@ -127,6 +127,13 @@ justify-content: center;
   padding: 5px;
   color: black;
 }
+.product-info2{
+  background: rgba(255, 255, 255, 0.346);
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px;
+  color: black;
+}
 
 .product-precio {
   font-weight: bold;
@@ -144,7 +151,7 @@ justify-content: center;
   text-transform: uppercase;
   letter-spacing: 1.3px;
   font-weight: 900;
-  color: #313133;
+  color: white;
   background: #2b9a1784;
   border-radius: 10px;
   border: 1px solid #3d8ebde1;

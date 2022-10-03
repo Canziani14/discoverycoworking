@@ -4,17 +4,17 @@ const membershipsValidations = [
   //validamos name
   body("name")
     .notEmpty()
-    .withMessage("el campo name esta vacío")
+    .withMessage("The name field cannot be empty")
     .bail(),
 //validamos price
-  body("price").notEmpty().withMessage("El campo precio está vacio").bail(),
+  body("price").notEmpty().withMessage("The price field cannot be empty").bail(),
 //validamos details
   body("details")
     .notEmpty()
-    .withMessage("El campo details está vacio")
+    .withMessage("The details field cannot be empty")
     .bail(),
 //validamos services
-  body("services").notEmpty().withMessage("El campo services está vacio").bail(),
+  body("services").notEmpty().withMessage("The services field cannot be empty").bail(),
 
   // validacion de imagenes!
      body("imgMembership")
@@ -25,7 +25,7 @@ const membershipsValidations = [
          return true;
        }
      })
-     .withMessage("Debe ingresar una imagen"),
+     .withMessage("You must enter an image!"),
 ];
 
 module.exports = membershipsValidations;

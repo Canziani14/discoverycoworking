@@ -24,13 +24,13 @@ window.addEventListener('load', function () {
             let erroresPassword = [];
             //que no este vacio
             if (email.value == '') {
-                errores.push('El campo email no puede estar vacio');
+                errores.push('The email field cannot be empty.');
                 erroresEmail.push('1');
             }
             
             //que no sea invalido el email (con el tipo de input email ya lo valida igual)
             if ( email.value.length > 0 && !reEmail.test(email.value)) {
-                errores.push('El email es inválido...');
+                errores.push('The email is invalid.');
                 erroresEmail.push('2');
             }
 
@@ -41,14 +41,14 @@ window.addEventListener('load', function () {
             //que la clave no este vacia
 
             if (password.value == '') {
-                errores.push('El campo password no puede estar vacio');
+                errores.push('The password field cannot be empty.');
                 erroresPassword.push('1');
             }
 
             //que la contraseña tenga minimo 6 caracteres
             let rePassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
             if ( password.value.length >1 &&password.value.length < 6) {
-                errores.push('La contraseña como mínimo debe tener seis caracteres');
+                errores.push('The password must have at least 6 characters.');
                 erroresPassword.push('2');
             }
 

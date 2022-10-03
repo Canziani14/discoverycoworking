@@ -14,15 +14,16 @@
         <h2 class="title">Discovery Coworking </h2>
       </a>
 
-      <div id="erroresFront" class="erroresDeFront">
 
-      </div>
 
       <h1 class="title2">Sign In</h1>
       <p class="subtitle">Make an account on Discovery Coworking</p>
 
 
       <form action="/signin" class="form" method="post" enctype="multipart/form-data">
+        <div id="erroresFront" class="text-danger">
+
+        </div>
         <label for="userName" class="label">Name</label>
         <input type="text" name="userName" placeholder="Nombre"
           value="<%= typeof old != 'undefined' ? old.userName : '' %>" class="input input-name" />
