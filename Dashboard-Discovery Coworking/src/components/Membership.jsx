@@ -7,8 +7,8 @@ const Membership = ( props ) => {
     <div className="col-lg-6 mb-4">
                 <div className="card bg-dark text-white shadow">
                   <div className="card-body">
-                   <p>{props.name}</p> 
-                   <p>{props.id}</p> 
+                  <p>{props.name}</p>  
+                  <p>{props.id_mmberships}</p> 
                   </div>
                 </div>
               </div>
