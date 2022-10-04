@@ -6,10 +6,13 @@ const db = require("../database/models");
 
 module.exports = {
   index: (req, res) => {
+
+    if (req.session.user.category !=null) {
+      
     db.Membership.findAll()
       .then(
         memberships => {
-          console.log(memberships)
+          //console.log(memberships)
           res.render(path.join(__dirname, "../views/admin/admin"), {
             memberships: memberships,
             title: "Admin",
@@ -18,12 +21,19 @@ module.exports = {
           });
         }
       )
+    } else {
+         res.redirect("/notAcces");
+    }
   },
   create: (req, res) => {
+    if (req.session.user.category !=null) {
     res.render('admin/create', {
       title:'Create membership',
       styles: "edit.css",
       user: req.session.user})
+    } else {
+      res.redirect("/notAcces");
+ }
   },
   createProcess: (req, res) => {
     const errors = validationResult(req);
@@ -52,6 +62,7 @@ module.exports = {
     
   },
   show: (req, res) => {
+    if (req.session.user.category !=null) {
     let membership = db.Membership.findByPk(req.params.idMembership);
 
    Promise.all([membership])
@@ -65,8 +76,12 @@ module.exports = {
         user: req.session.user,})
       })
       .catch(error => res.send(error));
+    } else {
+      res.redirect("/notAcces");
+ }
   },
   edit: (req, res) => {
+    if (req.session.user.category !=null) {
     let membership = db.Membership.findByPk(req.params.idMembership);
     Promise.all([membership])
       .then((Membership) => {
@@ -77,6 +92,9 @@ module.exports = {
         membershipAEditar: Membership, })
       })
       .catch(error => res.send(error));
+    } else {
+      res.redirect("/notAcces");
+ }
   },
   update: (req, res) => {
     console.log("el id es",req.params.idMembership )
@@ -97,14 +115,19 @@ module.exports = {
 
 
   destroy: (req, res) => {
+    if (req.session.user.category !=null) {
     db.Membership.destroy({ where: { id_membership: req.params.idMembership } })
     .then(membership => {
       res.redirect('/admin')
     })
+  } else {
+    res.redirect("/notAcces");
+}
     
   },
-    //BASE DE DATOS
+    
     list: function (req, res) {
+      if (req.session.user.category !=null) {
       db.User.findAll ({
         include: [{association:"category",association:"memberships"}]
       })
@@ -113,5 +136,8 @@ module.exports = {
           styles: "index.css",
           user: req.session.user})
       })
+    } else {
+      res.redirect("/notAcces");
+ }
     },
 };
