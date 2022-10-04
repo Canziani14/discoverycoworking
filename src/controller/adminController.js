@@ -127,7 +127,7 @@ module.exports = {
   },
     
     list: function (req, res) {
-      if (req.session.user.category !=null) {
+      
       db.User.findAll ({
         include: [{association:"category",association:"memberships"}]
       })
@@ -136,8 +136,6 @@ module.exports = {
           styles: "index.css",
           user: req.session.user})
       })
-    } else {
-      res.redirect("/notAcces");
- }
+  
     },
 };
