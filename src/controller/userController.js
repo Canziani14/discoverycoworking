@@ -268,11 +268,6 @@ const userController = {
         req.session.destroy();
         res.redirect("/login")
       });
-
-
-
-
-
   },
 
 
@@ -320,7 +315,7 @@ const userController = {
         userName: req.body.name,
         lastName: req.body.lastName,
         email: req.body.email,
-        password: req.body.newPassword ? req.body.newPassword = bcrypt.hashSync(req.body.newPassword, 10) : '',
+      //  password: req.body.newPassword ? req.body.newPassword = bcrypt.hashSync(req.body.newPassword, 10) : '',
 
       }, {
         where: {
@@ -329,7 +324,8 @@ const userController = {
       })
 
         .then(user => {
-          res.redirect("/")
+          req.session.destroy();
+          res.redirect("/login")
         })
 
 
