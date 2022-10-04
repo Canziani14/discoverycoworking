@@ -127,25 +127,25 @@ const userController = {
                       userLogged = [];
                     }
             */
-          if (userLogged.length === 0) {
-            console.log('No hay usuario loggeado por credenciales invalidas, se vuelve a cargar el login')
-            return res.render("users/login", {
-              errors: [{ msg: "Credenciales invalidas" }],
-              title: "Login",
-              styles: "login.css",
-            })
-          } else {
-            //Aquí guardo en SESSION al usuario logueado
-            console.log('Se logeo el usuario!')
-            console.log('USUARIO LOGGEADO', userLogged[0].userName)
+          // if (userLogged.length === 0) {
+          //   console.log('No hay usuario loggeado por credenciales invalidas, se vuelve a cargar el login')
+          //   return res.render("users/login", {
+          //     errors: [{ msg: "Credenciales invalidas" }],
+          //     title: "Login",
+          //     styles: "login.css",
+          //   })
+          // } else {
+          //   //Aquí guardo en SESSION al usuario logueado
+          //   console.log('Se logeo el usuario!')
+          //   console.log('USUARIO LOGGEADO', userLogged[0].userName)
 
-            req.session.user = userLogged[0];
-          }
-          //Aquí verifico si el usuario le dio click en el check box para recordar al usuario 
-          if (req.body.recordarme) {
-            res.cookie('email', userLogged[0].email, { maxAge: 1000 * 60 * 60 * 24 })
-          }
-          return res.redirect('/');
+          //   req.session.user = userLogged[0];
+          // }
+          // //Aquí verifico si el usuario le dio click en el check box para recordar al usuario 
+          // if (req.body.recordarme) {
+          //   res.cookie('email', userLogged[0].email, { maxAge: 1000 * 60 * 60 * 24 })
+          // }
+          // return res.redirect('/');
 
         }
 
@@ -241,17 +241,17 @@ const userController = {
           }
         )
 
-        /*res.render("users/toBuy", {
+        res.render("users/toBuy", {
           title: "successful purchase",
           styles: "carrito.css",
           user: req.session.user,
           newMembership
-        });*/
+        });
       })
-      .then(function (newMembership) {
-        req.session.destroy();
-        res.redirect("/login")
-      });
+      // .then(function (newMembership) {
+      //   req.session.destroy();
+      //   res.redirect("/login")
+      // });
   },
   toDelete: function (req, res) {
     let deleteMembership = req.session.user.membership;
@@ -266,7 +266,7 @@ const userController = {
 
       .then(function (newMembership) {
         req.session.destroy();
-        res.redirect("/login")
+        res.redirect("/")
       });
   },
 
