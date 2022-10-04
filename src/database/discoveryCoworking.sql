@@ -22,6 +22,12 @@ USE discoverycoworking;
 
    INSERT INTO users (id_users,userName,lastName,userEmail,password,avatar,category,membership)
   VALUE (default, 'Javier ', 'Amarilla', 'javi@javi.com', '$2a$10$N0n7vECkmAnkKFLiKLBf6eHmtVxTcuFgCUacMUJX9/xj3r/.yS6Ti', 'avatar-1661947101572.jpg', 'admin', NULL ); 
+  
+  INSERT INTO users (id_users,userName,lastName,userEmail,password,avatar,category,membership)
+  VALUE (default, 'Tulio ', 'Castillo', 'tuliocastillo@gmail.com', '$2a$10$N0n7vECkmAnkKFLiKLBf6eHmtVxTcuFgCUacMUJX9/xj3r/.yS6Ti', 'avatar-1661947101572.jpg', 'admin', NULL );
+  
+  INSERT INTO users (id_users,userName,lastName,userEmail,password,avatar,category,membership)
+  VALUE (default, 'Gabriel ', 'Garcia', 'gabrielgarcia@gmail.com', '$2a$10$N0n7vECkmAnkKFLiKLBf6eHmtVxTcuFgCUacMUJX9/xj3r/.yS6Ti', 'avatar-1661947101572.jpg', 'admin', NULL );
 
   /*creamos tabla de membership*/
 
