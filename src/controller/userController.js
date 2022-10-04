@@ -87,7 +87,7 @@ const userController = {
     });
   },
   processRegister: (req, res) => {
-    
+
 
     User.findAll()
       .then((users) => {
@@ -102,31 +102,31 @@ const userController = {
             title: "Sign In",
             styles: "login.css",
           });
-        } 
+        }
 
-      if (req.body.userEmail != '' ) {
+        if (req.body.userEmail != '') {
 
           userLogged = users.filter(function (user) {
-            console.log("el registrado",userLogged)
+            console.log("el registrado", userLogged)
             return user.userEmail === req.body.email
           });
 
-/*
-          if (userLogged.length > 0) {
-          console.log("el usuario repetido",userLogged)
-
-            return res.render("users/singin", {
-              errors: [{ msg: "Email ya registrado en la base de datos" }],
-              title: "Login",
-              styles: "login.css",
-            })
-          }
+          /*
+                    if (userLogged.length > 0) {
+                    console.log("el usuario repetido",userLogged)
           
-          if (bcrypt.compareSync(req.body.password, userLogged[0].password) !== true) {
-            console.log(req.body.password)
-            userLogged = [];
-          }
-  */
+                      return res.render("users/singin", {
+                        errors: [{ msg: "Email ya registrado en la base de datos" }],
+                        title: "Login",
+                        styles: "login.css",
+                      })
+                    }
+                    
+                    if (bcrypt.compareSync(req.body.password, userLogged[0].password) !== true) {
+                      console.log(req.body.password)
+                      userLogged = [];
+                    }
+            */
           if (userLogged.length === 0) {
             console.log('No hay usuario loggeado por credenciales invalidas, se vuelve a cargar el login')
             return res.render("users/login", {
@@ -138,7 +138,7 @@ const userController = {
             //Aquí guardo en SESSION al usuario logueado
             console.log('Se logeo el usuario!')
             console.log('USUARIO LOGGEADO', userLogged[0].userName)
-  
+
             req.session.user = userLogged[0];
           }
           //Aquí verifico si el usuario le dio click en el check box para recordar al usuario 
@@ -146,11 +146,11 @@ const userController = {
             res.cookie('email', userLogged[0].email, { maxAge: 1000 * 60 * 60 * 24 })
           }
           return res.redirect('/');
-  
+
         }
-      
+
       })
-    
+
     User.create({
       userName: req.body.userName,
       lastName: req.body.userLastName,
@@ -185,31 +185,31 @@ const userController = {
 
   contact: (req, res) => {
     const errors = validationResult(req);
-    console.log('ERRORES',errors)
+    console.log('ERRORES', errors)
     if (!errors.isEmpty()) {
       return res.render("contactus", {
         errors: errors.mapped(),
         old: req.body,
         styles: "login.css",
         title: "Contact Us",
-        
+
       });
     }
     else {
-    db.ContactUs.create({
-      name: req.body.name,
-      email: req.body.email,
-      comments: req.body.comments,
-    })
-      .then(function (result) {
-        res.render("users/contactUsSend", {
-          title: "Contact Us",
-          styles: "login.css",
-          user: req.session.userLogged,
-        });
+      db.ContactUs.create({
+        name: req.body.name,
+        email: req.body.email,
+        comments: req.body.comments,
       })
-      .catch(error => console.log(error));
-}
+        .then(function (result) {
+          res.render("users/contactUsSend", {
+            title: "Contact Us",
+            styles: "login.css",
+            user: req.session.userLogged,
+          });
+        })
+        .catch(error => console.log(error));
+    }
 
   },
 
@@ -226,7 +226,7 @@ const userController = {
 
   toBuy: function (req, res) {
 
-    let id = db.Membership.findByPk(req.params.idMembership)
+    db.Membership.findByPk(req.params.idMembership)
       .then(function (newMembership) {
         let userLogin = req.session.user.id_users;
         console.log("usuario conectado",)
@@ -241,15 +241,17 @@ const userController = {
           }
         )
 
-        res.render("users/toBuy", {
+        /*res.render("users/toBuy", {
           title: "successful purchase",
           styles: "carrito.css",
           user: req.session.user,
           newMembership
-        });
-
+        });*/
       })
-
+      .then(function (newMembership) {
+        req.session.destroy();
+        res.redirect("/login")
+      });
   },
   toDelete: function (req, res) {
     let deleteMembership = req.session.user.membership;
@@ -260,10 +262,15 @@ const userController = {
       },
       {
         where: { membership: deleteMembership }
+      })
+
+      .then(function (newMembership) {
+        req.session.destroy();
+        res.redirect("/login")
       });
 
 
-    res.redirect("/")
+
 
 
   },
@@ -313,8 +320,8 @@ const userController = {
         userName: req.body.name,
         lastName: req.body.lastName,
         email: req.body.email,
-        password: req.body.newPassword ? req.body.newPassword = bcrypt.hashSync(req.body.newPassword, 10): '',
-          
+        password: req.body.newPassword ? req.body.newPassword = bcrypt.hashSync(req.body.newPassword, 10) : '',
+
       }, {
         where: {
           id_users: req.params.id_users
