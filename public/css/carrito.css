@@ -7,12 +7,15 @@
   width:500px;
   height:500px;
 }
+.shopp-container p{
+  color:white;
+}
 .boton{
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
   font-weight: 900;
-  color: #313133;
+  color: white;
   background: #2b9a17ea;
   border-radius: 10px;
   border: 1px solid #3d8ebde1;
