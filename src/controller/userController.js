@@ -46,7 +46,7 @@ const userController = {
             console.log('No hay un email registrado con estos valores.');
 
             return res.render("users/login", {
-              errors: [{ msg: "No hay un email registrado con estos valores." }],
+              errors: [{ msg: "There is no registered email with these values." }],
               title: "Login",
               styles: "login.css",
             })
@@ -61,7 +61,7 @@ const userController = {
         if (userLogged.length === 0) {
           console.log('No hay usuario loggeado por credenciales invalidas, se vuelve a cargar el login')
           return res.render("users/login", {
-            errors: [{ msg: "Credenciales invalidas" }],
+            errors: [{ msg: "Invalid credentials." }],
             title: "Login",
             styles: "login.css",
           })
@@ -111,42 +111,7 @@ const userController = {
             return user.userEmail === req.body.email
           });
 
-          /*
-                    if (userLogged.length > 0) {
-                    console.log("el usuario repetido",userLogged)
           
-                      return res.render("users/singin", {
-                        errors: [{ msg: "Email ya registrado en la base de datos" }],
-                        title: "Login",
-                        styles: "login.css",
-                      })
-                    }
-                    
-                    if (bcrypt.compareSync(req.body.password, userLogged[0].password) !== true) {
-                      console.log(req.body.password)
-                      userLogged = [];
-                    }
-            */
-          // if (userLogged.length === 0) {
-          //   console.log('No hay usuario loggeado por credenciales invalidas, se vuelve a cargar el login')
-          //   return res.render("users/login", {
-          //     errors: [{ msg: "Credenciales invalidas" }],
-          //     title: "Login",
-          //     styles: "login.css",
-          //   })
-          // } else {
-          //   //Aquí guardo en SESSION al usuario logueado
-          //   console.log('Se logeo el usuario!')
-          //   console.log('USUARIO LOGGEADO', userLogged[0].userName)
-
-          //   req.session.user = userLogged[0];
-          // }
-          // //Aquí verifico si el usuario le dio click en el check box para recordar al usuario 
-          // if (req.body.recordarme) {
-          //   res.cookie('email', userLogged[0].email, { maxAge: 1000 * 60 * 60 * 24 })
-          // }
-          // return res.redirect('/');
-
         }
 
       })
